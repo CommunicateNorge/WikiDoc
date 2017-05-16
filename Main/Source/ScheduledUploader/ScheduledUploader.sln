@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduledUploader", "ScheduledUploader\ScheduledUploader.csproj", "{601EB76F-8110-41AD-88C5-218390810D13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureStorage", "..\Documenter\AzureStorage\AzureStorage.csproj", "{126081CF-06DF-43C3-81F9-63EFECF7C390}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D252DAB7-5FE9-48C8-9074-754567BF9398}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wiki.Models", "..\TPDoc\Wiki.Models\Wiki.Models.csproj", "{319EEC35-DC96-45D3-B6A0-B46D9199C951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wiki.Utilities", "..\TPDoc\Wiki.Utilities\Wiki.Utilities.csproj", "{CDC775F8-E557-4D2E-9565-0A5F560546CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{601EB76F-8110-41AD-88C5-218390810D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601EB76F-8110-41AD-88C5-218390810D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601EB76F-8110-41AD-88C5-218390810D13}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{601EB76F-8110-41AD-88C5-218390810D13}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{601EB76F-8110-41AD-88C5-218390810D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601EB76F-8110-41AD-88C5-218390810D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601EB76F-8110-41AD-88C5-218390810D13}.Release|x64.ActiveCfg = Release|Any CPU
+		{601EB76F-8110-41AD-88C5-218390810D13}.Release|x86.ActiveCfg = Release|Any CPU
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Debug|x64.ActiveCfg = Debug|x64
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Debug|x64.Build.0 = Debug|x64
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Debug|x86.ActiveCfg = Debug|x86
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Debug|x86.Build.0 = Debug|x86
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Release|x64.ActiveCfg = Release|x64
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Release|x64.Build.0 = Release|x64
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Release|x86.ActiveCfg = Release|x86
+		{126081CF-06DF-43C3-81F9-63EFECF7C390}.Release|x86.Build.0 = Release|x86
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Debug|x64.Build.0 = Debug|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Debug|x86.Build.0 = Debug|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Release|x64.ActiveCfg = Release|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Release|x64.Build.0 = Release|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Release|x86.ActiveCfg = Release|Any CPU
+		{319EEC35-DC96-45D3-B6A0-B46D9199C951}.Release|x86.Build.0 = Release|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Debug|x64.Build.0 = Debug|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Debug|x86.Build.0 = Debug|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Release|x64.ActiveCfg = Release|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Release|x64.Build.0 = Release|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Release|x86.ActiveCfg = Release|Any CPU
+		{CDC775F8-E557-4D2E-9565-0A5F560546CA}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://communicatenorge.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Documenter\\AzureStorage\\AzureStorage.csproj
+		SccProjectName1 = ../Documenter/AzureStorage
+		SccLocalPath1 = ..\\Documenter\\AzureStorage
+		SccProjectUniqueName2 = ScheduledUploader\\ScheduledUploader.csproj
+		SccProjectName2 = ScheduledUploader
+		SccLocalPath2 = ScheduledUploader
+		SccProjectUniqueName3 = ..\\TPDoc\\Wiki.Models\\Wiki.Models.csproj
+		SccProjectName3 = ../TPDoc/Wiki.Models
+		SccLocalPath3 = ..\\TPDoc\\Wiki.Models
+		SccProjectUniqueName4 = ..\\TPDoc\\Wiki.Utilities\\Wiki.Utilities.csproj
+		SccProjectName4 = ../TPDoc/Wiki.Utilities
+		SccLocalPath4 = ..\\TPDoc\\Wiki.Utilities
+	EndGlobalSection
+EndGlobal

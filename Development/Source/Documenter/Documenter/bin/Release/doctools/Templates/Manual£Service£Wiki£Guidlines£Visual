@@ -1,0 +1,20 @@
+<p><strong>Structuring your pages</strong></p>
+
+<p>This is first and foremost a WIki and therefore follows standard Wiki practices. We have compiled a short list of the most essential rules in this section, but we implore you to read the whole guide <a href="#">here</a>&nbsp;before starting you documenting career.&nbsp;</p>
+
+<p><strong>Cheat sheet:</strong></p>
+
+<ol>
+	<li>Content should only be <span style="color:#FF0000;"><strong>written once</strong></span> and then linked to, if you are writing&nbsp;something for the second time you should absolutely consider linking to the first place you wrote it, this leads to better maintainability and ultimately less work for everyone!</li>
+	<li><span style="color:#FF0000;"><strong>Don&#39;t put everything on one page!</strong></span> If you find yourself editing a page with a lot of content touching on a lot of topics i.e. say you have a page for an API and you start writing about security, you should probably make a <a href="https://tpdoc.azurewebsites.net/Wiki/Page/Manual%C2%A3Service%C2%A3Wiki%C2%A3FAQ#NewPage">new page</a>&nbsp;and link to it from the API page, maybe you should even&nbsp;make a new header in the main menu&nbsp;labeled security and put all of your shared security documentation there.</li>
+	<li><span style="color:#FF0000;"><strong>Make your content look good!</strong></span> If you think your page looks kind of ugly it&#39;s probably also both boring and difficult to read. Try to use images and tables to make it more interesting. We have <a href="https://tpdoc.azurewebsites.net/Wiki/Page/Manual%C2%A3Service%C2%A3Wiki%C2%A3FAQ#flowcharts">Draw.IO</a> support, could you make a diagram to explain this?</li>
+	<li><span style="color:#FF0000;"><strong>Avoid using miscellaneous&nbsp;headers</strong></span>. If you have some content you wish to add to the Wiki and you&#39;re unsure of where to put it; don&#39;t&nbsp;just put it under a generic header. Nobody will find it and all your hard work is wasted! The best thing to do is give it some taught and if you cant come up with a solution then ask somebody else or request a new header from your admin, he probably has some ideas anyway.</li>
+</ol>
+
+<p><strong>Headers and levels</strong></p>
+
+<p>Use <strong><span style="color:#FF0000;">only</span>&nbsp;Heading 2</strong>, <strong>Heading 3</strong> and <strong>Heading 4</strong> on your pages. Heading 2 is used only once as the top level header. Heading 3 for section headings and Heading 4 is used for sections under Heading 3. Heading 3 and 4 are used in the header menu at the top of the page.</p>
+
+<p><strong>Images</strong></p>
+
+<p>If an image is of considerable size you should <span style="color:#FF0000;"><strong>restrict the image to thumbnail size</strong></span> on the page itself and instead make the image a link to itself. This will cause the image to appear to be magnifiable.</p>

@@ -1,0 +1,202 @@
+﻿body{
+    background-color:#060606 !important;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.searchOccurences
+{
+    color:green;
+}
+
+.siteMap{
+    color: white;
+}
+.yellowText{
+    background: yellow;
+}
+
+.autoNavDivider
+{
+    border-color: white !important;
+}
+
+.jumbotron 
+{
+    padding: 30px;
+}
+
+font
+{
+    color: #2a9fd6 !important;
+}
+
+.manualContent table, #manualContentLinks table, .simpleTable
+{
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color: black;
+	border-color: white;
+    color: white;
+}
+.manualContent table th, #manualContentLinks  table th, .simpleTable th
+{
+	border-color: white;
+    color: black;
+	background-color: #B3B3B3;
+}
+
+.manualContent table thead td, #manualContentLinks table thead td, .simpleTable thead td
+{
+	border-color: white;
+     color: black;
+	background-color: #B3B3B3;
+}
+
+.manualContent table td, #manualContentLinks table td, .simpleTable td
+{
+	border-color: white;
+	background-color: #282828;
+}
+
+@media screen and (max-width: 1480px)
+{
+    .projectInternalLinks 
+    {
+        background-color: white;
+        border-bottom-color: grey;
+        border-left-color: grey;
+        border-right-color:grey;   }
+
+}
+
+.pageNavDiv
+{
+    background-color: black;
+    border-color: rgb(170, 170, 170);
+    border-color: #aaa;
+}
+
+.pageNavDiv li
+{
+}
+
+fieldset
+{
+    border-color: #ddd;
+}
+
+#siteMap a:link
+{
+    color: white;
+    text-decoration: none;
+}
+
+#siteMap a:visited
+{
+    color: white;
+}
+
+#siteMap a:hover
+{
+    color: white;
+    text-decoration:underline;
+}
+
+#manualContentLinks h3 a:link, .indexEditGlyph a:link, #indexNewThumbButton, .removeThumbIcon, .smallEditIndexText a:visited, .smallEditIndexText a:link, 
+#indexHistoryGlyph a:link, #indexHistoryGlyph a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
+#manualContentLinks h3 a:visited, .indexEditGlyph a:visited
+{
+    color: black;
+}
+
+#manualContentLinks h3 a:hover, .indexEditGlyph a:hover
+{
+    color: black;
+    text-decoration:underline;
+}
+
+#headerText a
+{
+    color:white;
+}
+
+#headerText a:hover
+{
+    color:white;
+    text-decoration: none;
+}
+
+.newMenuItemGlyph
+{
+    color: green;
+}
+
+.sectionDividerMenu .navbar-text, .sectionDividerMenu a
+{
+    color: #000 !important;
+}
+
+.rightMenuText a
+{
+    color: white !important;
+}
+
+.newMenuItemInput:focus 
+{   
+  border-color: rgba(126, 239, 104, 0.8);
+}
+
+.simpleHr 
+{
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.NBText
+{
+    background-color: red;
+    color: white;
+}
+
+.thumbH3
+{
+    color: white !important;
+}
+
+.caption > a:link, .caption > a:visited
+{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.env0
+{   
+    color: darkgreen;
+}
+
+.env1
+{
+    color: darkred;
+}
+
+.env2{
+    color: darkblue;
+}
+
+.env3{
+    color: darkorange;
+}
+
+.env4{
+    color: darkgoldenrod;
+}
+
+.autoNavDivider
+{
+    border-color: #000 !important;
+}

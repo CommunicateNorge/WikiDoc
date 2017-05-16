@@ -1,0 +1,18 @@
+﻿@model Dictionary<string, string>
+
+@{
+    string linkToThis = @"/Wiki/AllTFSLogs";
+    ViewBag.Title = "AllTFSLogs";
+}
+<section id="allContent" class="content">
+    <section id="manualContentPage">
+        <p id="hiddenLinkText" hidden>@linkToThis</p>
+        <span class="smallEditText"><a class="getLinkToThisPage">[Link]</a></span>
+        <div class="displayLinkToThisPage"></div>
+    </section>
+
+    <section class="simpleTable" id="generatedContentPage">
+        @Html.Raw(Model["TFSLogs"])
+    </section>
+</section>
+

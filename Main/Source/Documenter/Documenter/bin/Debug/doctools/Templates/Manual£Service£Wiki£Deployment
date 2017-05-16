@@ -1,0 +1,81 @@
+<h2>Wiki-Deployment</h2>
+
+<h3>Background</h3>
+
+<p>The Documentation-Wiki works as a portal for tying&nbsp;automatically generated documentation and manual documentation together. We support a multitude of different components with more added all the time. At this time we support BizTalk, API&#39;s and&nbsp;MSSQL&nbsp;Databases for auto generated documentation.</p>
+
+<p>This documentation portal is comprised of three projects to date, this includes the Web-Portal itself, a Documenter&nbsp;command line tool and a ScheduledUploader.</p>
+
+<ul>
+	<li>The Web-Portal is obviously the project&nbsp;that contains this site and is the most extensive part to deploy, this is thoroughly explained further down the page.</li>
+	<li>The Documenter is the &quot;brains of the operation&quot; and is the part that actually uploads all the documenation to the Azure Blobs.</li>
+	<li>The ShecduledUploader&nbsp;is a small program that runs BizTalk documenter on a Biztalk&nbsp;server and uploads the resulting files to blob.</li>
+</ul>
+
+<p>This page contains the deployment procedure for all three projects and&nbsp;information about configurations and the recommended&nbsp;deployment order.</p>
+
+<h3><a id="Environments" name="Environments"></a>Environments</h3>
+
+<p>WikiDoc is being used in multiple projects and therefore is deployed to in multiple instances. Under follows lists over the current instances of WikiDoc.</p>
+
+<h4>Vendor specific instances</h4>
+
+<ul>
+	<li><strong>REMA1000</strong>&nbsp;
+
+	<ul>
+		<li>Url:&nbsp;<a href="https://tpdoc.azurewebsites.net/">https://tpdoc.azurewebsites.net</a></li>
+	</ul>
+	</li>
+	<li><strong>Br&oslash;drene Dahl</strong>
+	<ul>
+		<li>Url:&nbsp;<a href="http://wikidocbd.azurewebsites.net/">http://wikidocbd.azurewebsites.net</a></li>
+	</ul>
+	</li>
+</ul>
+
+<h4>Developement&nbsp;and demo</h4>
+
+<ul>
+	<li><strong>Developement</strong>
+
+	<ul>
+		<li>Url:&nbsp;<a href="http://wikidocdev.azurewebsites.net/">http://wikidocdev.azurewebsites.net</a></li>
+	</ul>
+	</li>
+</ul>
+
+<h3><a id="Settings" name="Settings"></a>Customer specific settings</h3>
+
+<p>You&#39;ve probably noticed that the TPDoc and Documenter projects copies some files into your solution when you build, these files are the configuration files specific for a&nbsp;branch or customer.&nbsp;You can specify which customer&nbsp;or branch configuration you want to use by changing the pre-build event in the project properties of the runnable&nbsp;project.</p>
+
+<p>Specifically&nbsp;in the TPDoc project you go to TPDocWeb and right click the solution file. You then go to properties and click &quot;Build Events&quot;</p>
+
+<p><img alt="" src="/Images/UploadedImages/Image£manual£Service£Wiki£Deployment£deployconfig€png" style="width: 738px; height: 463px;" /></p>
+
+<p>In the call &quot;$(SolutionDir)...&quot;-line you change &quot;Dev&quot; to your desired configuration. The configurations to date are:</p>
+
+<ul>
+	<li>REMA1000</li>
+	<li>BrodreneDahl</li>
+	<li>Dev</li>
+	<li>BOS (Not configured yet)</li>
+</ul>
+
+<p>To change or edit one of these configurations you need to open the file separately from your project or all your changes will be overwritten when you build. This is easy to do in VS with <em>source control explorer</em>. Just navigate to the relevant file and open it directly.&nbsp;</p>
+
+<h3>Deploying TPDoc.Web</h3>
+
+<p>&nbsp;Deploying the web part of WikiDoc is relatively simple. The required steps are described below.</p>
+
+<h4>Step 1: Decide on an environment</h4>
+
+<p>Firstly you need to pick your <a href="#Environments">environment</a>. Follow the link for more information.&nbsp;&nbsp;</p>
+
+<h4>Step 2: Enable use of environment specific settings</h4>
+
+<p>When you know which environment to use you need to update the pre-build event to use the settings for the right environment. The guide to do this can be found <a href="#Settings">here</a>.</p>
+
+<h3>Kildekode</h3>
+
+<p><img src="/Images/UploadedImages/Image£Manual£Service£Wiki£Deployment£wikidocumenter£jpg" /></p>

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>
+					Map To ..\Schemas\ServiceOperation_POC_Envelope.xsd</title>
+<style type="text/css">
+					/*
+					Branding Colour palette.
+					Blue light				R:070 G:155 B:200	#469bc8
+					Blue dark				R:050 G:075 B:118	#324b76
+					Shade 1	(dark mauve)	R:129 G:158 B:187	#819ebb
+					Shade 2	(mauve)			R:174 G:200 B:216	#aec8d8
+					Shade 3	(light mauve)	R:215 G:231 B:239	#d7e7ef
+					Grey dark				R:070 G:070 B:070	#464646
+					Grey medium				R:165 G:165 B:165	#a5a5a5
+					Grey light				R:190 G:190 B:190	#bcbfbe
+					*/
+
+					body	{ font-family: Arial }
+					hr		{ border: 0; height: 2px; width: 100%; }
+					table	{ width: 100%; font-size: small; }
+					th		{ color: white;	background-color: #324b76; text-align: left;}
+					h1		{ color: #469bc8; font-family: Arial; }
+					h2		{ color: #324b76; font-family: Arial; }
+					h3		{ color: #464646; font-family: Arial; }
+
+					#pageTitle { color: #469bc8; font-size: 20px; font-weight: bold }
+
+					.titleArea { border-left: 5px solid #333366; padding-left: 5px }
+					.titleSchema { color: #324b76; font-size: 14px; font-weight: bold }
+					.linkTableAltRow { 	background-color: #ededed; }
+					.linkTableDiffNodeRow { background-color: #C8E2FF }
+					.linkTableCol { border-bottom: 1px solid black; background-color: #CCCC99 }
+					.functoidArea { font-family: Lucida Console, Courier New; font-size: 11px }
+					.functoidName { color: blue }
+					.functoidBracket { color: green; font-weight: bold }
+					.functoidScript { color: #003300 }
+					.paramComma { color: blue; font-weight: bold }
+					.internalLink { font-size: 10px }
+					.collapseref { font-size: 10px; cursor:pointer }
+				</style>
+</head>
+<body>
+<a name="top"></a>
+<div class="titleArea">
+<h1>BizTalk Map Documentation</h1>
+<table border="0">
+<tr class="titleSchema">
+<td>From Schema(s):</td>
+<td>..\Schemas\Kia_SparePartsInvoiceGrouped.xsd</td>
+</tr>
+<tr class="titleSchema">
+<td>To Schema:</td>
+<td>..\Schemas\ServiceOperation_POC_Envelope.xsd</td>
+</tr>
+</table>
+</div>
+<a href="#functoids" class="internalLink">Functoids</a>
+<a href="#constantvalues" class="internalLink">Constant Values</a>
+<hr />
+<h2>Direct Node-to-Node Links (No Functoids)</h2>
+<h3>Page 1: Page 1</h3>
+<p>
+<a id="pageDirect1Anchor" onclick="toggleCollapse('pageDirect1', 'pageDirect1Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageDirect1">
+<table>
+<tr>
+<th width="40%">From</th>
+<th width="40%">To</th>
+<th width="20%">Label</th>
+</tr>
+<tr>
+<td>InvoiceRecord/Header/H_FakturaNr</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_INVOICE_NO</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>InvoiceRecord/Header/Orders/Order/Items/Item/D_Ordre</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_LIEFERCHEIN</td>
+<td></td>
+</tr>
+<tr>
+<td>InvoiceRecord/Header/Orders/Order/Items/Item/D_DelnrSendt</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_PART_NO_DELIVERED</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>InvoiceRecord/Header/Orders/Order/Items/Item/D_DelnrSendt</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/SUPPLIER_PART_NO</td>
+<td></td>
+</tr>
+<tr>
+<td>InvoiceRecord/Header/Orders/Order/Items/Item/D_PkNr</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_PACKING_NO_1</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>InvoiceRecord/Header/Orders/Order/Items/Item/D_Tekst</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_VENDOR_PART_DESCRIPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>InvoiceRecord/Header/H_TransporterCode</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_DELIVERY_ID</td>
+<td></td>
+</tr>
+</table>
+</div>
+<hr />
+<a name="functoids"></a>
+<span style="font-size: 12px">^ </span>
+<a href="#top" class="internalLink">Top</a>
+<br />
+<br />
+<h2>Functoid Mappings</h2>
+<h3>Page 1: Page 1</h3>
+<p>
+<a id="pageFunctoids1Anchor" onclick="toggleCollapse('pageFunctoids1', 'pageFunctoids1Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageFunctoids1">
+<table>
+<tr>
+<th width="40%">Functoid Sequence</th>
+<th width="40%">Destination Node</th>
+<th width="20%">Labels</th>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Looping</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">Looping</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Division</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_DelPris<span class="paramComma">,</span>
+<br />"100"<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/SALE_UNIT_PRICE</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">String Left</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_KundeOrdre<span class="paramComma">,</span>
+<br />"1"<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/SERIAL_ID</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">String Right</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_KundeOrdre<span class="paramComma">,</span>
+<br />"8"<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/SUPPLIER_ORDER_NO</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">String Concatenate</span>
+<br /><span class="functoidBracket">(</span>
+<br />"KIA:"<span class="paramComma">,</span>
+<br />&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_Rectype<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_RECTYPE</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Round</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item/D_AntallSendt<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_QTY_DELIVERED</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">String Concatenate</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidName">String Left</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/H_AnkDato<span class="paramComma">,</span>
+<br />"4"<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">)</span>
+<span class="paramComma">,</span>
+<br />"-"<span class="paramComma">,</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidName">String Extract</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/H_AnkDato<span class="paramComma">,</span>
+<br />"5"<span class="paramComma">,</span>
+<br />"6"<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">)</span>
+<span class="paramComma">,</span>
+<br />"-"<span class="paramComma">,</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidName">String Right</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/H_AnkDato<span class="paramComma">,</span>
+<br />"2"<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">)</span>
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/PLANNED_DELIVERY_DATE</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Value Mapping</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidName">Equal</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_RepKode<span class="paramComma">,</span>
+<br />""<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">)</span>
+<span class="paramComma">,</span>
+<br />"N/A"<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_CONFIRMATION_CODE</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">String Right</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_Linje<span class="paramComma">,</span>
+<br />"1"<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/RELEASE_NO</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Value Mapping</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidName">Logical NOT</span>
+<span class="functoidBracket">( </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="functoidName">Equal</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_RepKode<span class="paramComma">,</span>
+<br />""<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="functoidBracket">)</span>
+<span class="functoidBracket"> )</span>
+<span class="paramComma">,</span>
+<br />&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_RepKode<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_CONFIRMATION_CODE</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">Integer</span>
+<span class="functoidBracket">( </span>&nbsp;&nbsp;&nbsp;<span class="functoidName">String Left</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_Linje<span class="paramComma">,</span>
+<br />"3"<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">)</span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/CUSTOMER_PO_LINE_NO</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Date</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/HEADER_NOTE</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">Round</span>
+<br /><span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidName">Division</span>
+<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">(</span>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InvoiceRecord/Header/Orders/Order/Items/Item/D_DelVekt<span class="paramComma">,</span>
+<br />"10000"<br />&nbsp;&nbsp;&nbsp;<span class="functoidBracket">)</span>
+<span class="paramComma">,</span>
+<br />"3"<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_WEIGHT</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Integer</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item/D_PkLengde<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_LENGTH</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">Integer</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item/D_PkBredde<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_WIDTH</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Integer</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item/D_PkHoyde<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_HEIGHT</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">Integer</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item/D_PkCBM<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_VOLUME</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName">Round</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item/D_AntallBekreftet<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/BUY_QUANTITY_DUE</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName">Round</span>
+<span class="functoidBracket">( </span>InvoiceRecord/Header/Orders/Order/Items/Item/D_AntallSendt<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_QTY_CONFIRMED</td>
+<td></td>
+</tr>
+</table>
+</div>
+<hr />
+<a name="constantvalues"></a>
+<span style="font-size: 12px">^ </span>
+<a href="#top" class="internalLink">Top</a>
+<br />
+<br />
+<h2>Constant Values</h2>
+<p>
+<a id="constant1ValuesAnchor" onclick="toggleCollapse('constant1Values', 'constant1ValuesAnchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="constant1Values">
+<table>
+<tr>
+<th width="40%">Value</th>
+<th width="60%">Destination Node</th>
+</tr>
+<tr>
+<td>003</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/CONTRACT</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>7003820</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/OUR_SUPPLIER_NO</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/CUSTOMER_COMMUNICATION_ID</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>CONNECT</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/SUPPLIER_COMMUNICATION_ID</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/CUSTOMER_PO_NO</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>N/A</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/ORDER_NO</td>
+</tr>
+<tr>
+<td>0</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/DISCOUNT</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>N/A</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/CUSTOMER_PO_NO</td>
+</tr>
+<tr>
+<td>0</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_BACK_ORDER_QTY</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>N/A</td>
+<td>ORDER_CONFIRMAITON_ENVELOPE/ORDER_CONFIRMATION/ORDER_LINE/ORDER_LINE_CONFIRMATION/C_CUSTOMER_ID_ORDER_NO</td>
+</tr>
+</table>
+</div>
+</body>
+<script type="text/javascript">
+				
+	function toggleCollapse(obj, objAnchor) {
+	var el = document.getElementById(obj);
+	var elAnchor = document.getElementById(objAnchor);
+	if ( el.style.display != "none" ) {
+	  el.style.display = 'none';
+	  elAnchor.innerHTML = 'Expand';
+	}
+	else {
+	  el.style.display = '';
+	  elAnchor.innerHTML = 'Collapse';
+	}
+	}
+	
+				</script>
+</html>

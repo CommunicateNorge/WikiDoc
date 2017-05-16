@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>XML Schema Documentation</title>
+    <meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1" />
+    <style type="text/css">
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* More-configurable styles */
+
+/******** General ********/
+
+/* Document body */
+body {
+   color: Black;
+   background-color: White;
+   font-family: Arial, sans-serif;
+   font-size: 10pt;
+}
+/* Horizontal rules */
+hr {
+   color: black;
+}
+/* Document title */
+h1 {
+   font-size: 18pt;
+   letter-spacing: 2px;
+   border-bottom: 1px #ccc solid;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+/* Main section headers */
+h2 {
+   font-size: 14pt;
+   letter-spacing: 1px;
+}
+/* Sub-section headers */
+h3, h3 a, h3 span {
+   font-size: 12pt;
+   font-weight: bold;
+   color: black;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties th, table.properties th a {
+   color: black;
+   background-color: #F99; /* Pink */
+}
+table.properties td {
+   background-color: #eee; /* Gray */
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   color: #963; /* Orange-brown */
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   border: 2px solid #999;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+   background-color: #ccc;
+}
+table.namespaces td {
+   background-color: #eee;
+}
+/* Target namespace of the schema */
+span.targetNS {
+   color: #06C;
+   font-weight: bold;
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+   color: #F93; /* Orange */
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   border: 2px solid #999; /* Gray */
+}
+
+/* XML Instance Representation table */
+div.sample div.contents {
+   border: 2px dashed black;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent div.contents {
+   border: 2px black solid;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   color: #036; /* Blue */
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Printer-version styles */
+
+@media print {
+
+/* Ensures that controls are hidden when printing */
+div#printerControls {
+   visibility: hidden;
+}
+div#globalControls {
+   visibility: hidden;
+}
+#legend {
+   display: none;
+}
+#legendTOC {
+   display: none;
+}
+#glossary {
+   display: none;
+}
+#glossaryTOC {
+   display: none;
+}
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Base styles */
+
+/******** General ********/
+
+/* Unordered lists */
+ul {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+/* Tables */
+table {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+table th, table td {
+   font-size: 10pt;
+   vertical-align: top;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+table th {
+   font-weight: bold;
+   text-align: left;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties {
+   width: 90%;
+}
+table.properties th {
+   width: 30%;
+}
+/* Boxes that can make its content appear and disappear*/
+div.box {
+   margin: 1em;
+}
+   /* Box caption */
+div.box span.caption {
+   font-weight: bold;
+}
+   /* Button to open and close the box */
+div.box input.control {
+   width: 1.4em;
+   height: 1.4em;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 11pt;
+}
+   /* Box contents */
+div.box div.contents {
+   margin-top: 3px;
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   white-space: nowrap;
+   font-weight: bold;
+   padding: 5px;
+   margin: 5px;
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   padding: 10px;
+   margin: 5px;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+}
+table.namespaces td {
+}
+/* Target namespace of the schema */
+span.targetNS {
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   width: 90%;
+}
+table.hierarchy th {
+   font-weight: normal;
+   font-style: italic;
+   width: 20%;
+}
+table.hierarchy th, table.hierarchy td {
+   padding: 5px;
+}
+
+/* XML Instance Representation table */
+div.sample {
+   width: 90%;
+}
+div.sample div.contents {
+   padding: 5px;
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+}
+   /* Normal elements and attributes */
+div.sample div.contents, div.sample div.contents a {
+   color: black;
+}
+   /* Group Headers */
+div.sample div.contents .group, div.sample div.contents .group a {
+   color: #999; /* Light gray */
+}
+   /* Type Information */
+div.sample div.contents .type, div.sample div.contents .type a {
+   color: #999; /* Light gray */
+}
+   /* Occurrence Information */
+div.sample div.contents .occurs, div.sample div.contents .occurs a {
+   color: #999; /* Light gray */
+}
+   /* Fixed values */
+div.sample div.contents .fixed {
+   color: #063; /* Green */
+   font-weight: bold;
+}
+   /* Simple type constraints */
+div.sample div.contents .constraint, div.sample div.contents .constraint a {
+   color: #999; /* Light gray */
+}
+   /* Elements and attributes inherited from base type */
+div.sample div.contents .inherited, div.sample div.contents .inherited a {
+   color: #666; /* Dark gray */
+}
+   /* Elements and attributes added to or changed from base type */
+div.sample div.contents .newFields {
+   font-weight: bold;
+}
+   /* Other type of information */
+div.sample div.contents .other, div.sample div.contents .other a {
+   color: #369; /* Blue */
+   font-style: italic;
+}
+   /* Link to open up window displaying documentation */
+div.sample div.contents a.documentation {
+   text-decoration: none;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-weight: bold;
+   font-size: 11pt;
+   background-color: #FFD;
+   color: #069;
+}
+   /* Invert colors when hovering over link to open up window 
+      displaying documentation */
+div.sample div.contents a.documentation:hover {
+   color: #FFD;
+   background-color: #069;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent {
+   width: 90%;
+}
+div.schemaComponent div.contents {
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+   padding: 5px;
+}
+   /* Syntax characters */
+div.schemaComponent div.contents {
+   color: #00f; /* blue */
+}
+   /* Element and attribute tags */
+div.schemaComponent div.contents .scTag {
+   color: #933; /* maroon */
+}
+   /* Element and attribute content */
+div.schemaComponent div.contents .scContent, div.schemaComponent div.contents .scContent a {
+   color: black;
+   font-weight: bold;
+}
+   /* Comments */
+div.schemaComponent div.contents .comment {
+   color: #999; /* Light gray */
+}
+
+/******** Legend Section ********/
+
+div#legend table, div#legend div {
+   margin-bottom: 3px;
+}
+div#legend div.hint {
+   color: #999; /* Light gray */
+   width: 90%;
+   margin-left: 1em;
+   margin-bottom: 2em;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   font-weight: bold;
+}
+
+
+/******** Footer ********/
+
+.footer {
+   font-size: 8pt;
+}
+</style>
+    <script type="text/javascript">
+<!--
+/* IDs of XML Instance Representation boxes */
+var xiBoxes = new Array('type_BinaryObjectMimeCodeContentType_xibox');
+/* IDs of Schema Component Representation boxes */
+var scBoxes = new Array('schema_scbox', 'type_BinaryObjectMimeCodeContentType_scbox');
+
+/**
+ * Can get the ID of the button controlling
+ * a collapseable box by concatenating
+ * this string onto the ID of the box itself.
+ */
+var B_SFIX = "_button";
+
+/**
+ * Counter of documentation windows
+ * Used to give each window a unique name
+ */
+var windowCount = 0;
+
+/**
+ * Returns an element in the current HTML document.
+ * 
+ * @param elementID Identifier of HTML element
+ * @return               HTML element object
+ */
+function getElementObject(elementID) {
+    var elemObj = null;
+    if (document.getElementById) {
+        elemObj = document.getElementById(elementID);
+    }
+    return elemObj;
+}             
+
+/**
+ * Closes a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function closeBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="none";
+
+     // Change text of button 
+     if (boxObj.style.display=="none") {
+        buttonObj.value=" + ";
+     }
+  }
+}
+
+/**
+ * Opens a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function openBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="block";
+
+     // Change text of button
+     if (boxObj.style.display=="block") {
+        buttonObj.value=" - ";
+     }
+  }
+}
+
+/**
+ * Sets the state of a collapseable box.
+ * 
+ * @param boxID Identifier of box
+ * @param open If true, box is "opened",
+ *             Otherwise, box is "closed".
+ */
+function setState(boxID, open) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (open) {
+     openBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  } else {
+     closeBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  }
+}
+
+/**
+ * Switches the state of a collapseable box, e.g.
+ * if it's opened, it'll be closed, and vice versa.
+ * 
+ * @param boxID Identifier of box
+ */
+function switchState(boxID) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (boxObj.style.display=="none") {
+     // Box is closed, so open it
+     openBox(boxObj, buttonObj);
+  } else if (boxObj.style.display=="block") {
+     // Box is opened, so close it
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Closes all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function collapseAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Open all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function expandAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     openBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Makes all the control buttons of boxes appear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function viewControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "inline";
+        }
+    }
+}
+
+/**
+ * Makes all the control buttons of boxes disappear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function hideControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "none";
+        }
+    }
+}
+
+/**
+ * Sets the page for either printing mode
+ * or viewing mode. In printing mode, the page
+ * is made to be more readable when printing it out.
+ * In viewing mode, the page is more browsable.
+ *
+ * @param isPrinterVersion If true, display in
+ *                                 printing mode; otherwise, 
+ *                                 in viewing mode
+ */
+function displayMode(isPrinterVersion) {
+    var obj;
+    if (isPrinterVersion) {
+        // Hide global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "hidden";
+        }
+        // Hide Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        // Hide Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Expand all Schema Component Representation tables
+        expandAll(scBoxes);
+
+        // Hide Control buttons
+        hideControlButtons(xiBoxes);
+        hideControlButtons(scBoxes);
+    } else {
+        // View global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "visible";
+        }
+        // View Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        // View Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Collapse all Schema Component Representation tables
+        collapseAll(scBoxes);
+
+        // View Control buttons
+        viewControlButtons(xiBoxes);
+        viewControlButtons(scBoxes);
+    }
+}
+
+/**
+ * Opens up a window displaying the documentation
+ * of a schema component in the XML Instance
+ * Representation table.
+ * 
+ * @param compDesc      Description of schema component 
+ * @param compName      Name of schema component 
+ * @param docTextArray Array containing the paragraphs 
+ *                           of the new document
+ */
+function viewDocumentation(compDesc, compName, docTextArray) {
+  var width = 400;
+  var height = 200;
+  var locX = 100;
+  var locY = 200;
+
+  /* Generate content */
+  var actualText = "<html>";
+  actualText += "<head><title>";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": " + compName;
+  }
+  actualText += "</title></head>";
+  actualText += "<body bgcolor=\"#FFFFEE\">";
+  // Title
+  actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; letter-spacing:1px;\">";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": <span style=\"color:#006699\">" + compName + "</span>";
+  }
+  actualText += "</p>";
+  // Documentation
+  var idx;
+  for (idx = 0; idx < docTextArray.length; idx++) {
+     actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 10pt;\">" + docTextArray[idx] + "</p>";
+  }
+  // Link to close window
+  actualText += "<a href=\"javascript:void(0)\" onclick=\"window.close();\" style=\"font-family: Arial, sans-serif; font-size: 8pt;\">Close</a>";
+  actualText += "</body></html>";
+
+  /* Display window */
+  windowCount++;
+  var docWindow = window.open("", "documentation"+windowCount, "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable,alwaysRaised,dependent,titlebar=no,width="+width+",height="+height+",screenX="+locX+",left="+locX+",screenY="+locY+",top="+locY);
+  docWindow.document.write(actualText);
+}
+
+// -->
+</script>
+  </head>
+  <body>
+    <h1>
+      <a name="top">XML Schema Documentation</a>
+    </h1>
+    <div style="float: right;">
+      <div id="printerControls" style="display:none;">
+        <input type="checkbox" onclick="displayMode(this.checked)" />Printer-friendly Version</div>
+      <script type="text/javascript">
+<!--
+
+var pc = getElementObject("printerControls");
+if (pc != null) {
+   pc.style.display="block";
+}
+               
+// -->
+</script>
+      <div id="globalControls" style="display:none">
+        <strong>XML Instance Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(xiBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(xiBoxes)">Collapse All</a> ]</span>
+        <br />
+        <br />
+        <strong>Schema Component Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(scBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(scBoxes)">Collapse All</a> ]</span>
+      </div>
+      <script type="text/javascript">
+<!--
+
+var gc = getElementObject("globalControls");
+if (gc != null) {
+   gc.style.display="block";
+}
+               
+// -->
+</script>
+    </div>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li>
+        <a href="#SchemaProperties">Schema Document Properties</a>
+      </li>
+      <li>
+        <a href="#SchemaDefinitions">Global Definitions</a>
+        <ul>
+          <li>
+            <a href="#type_BinaryObjectMimeCodeContentType">Simple Type: <strong>BinaryObjectMimeCodeContentType</strong></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="legendTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Legend">Legend</a>
+      </li>
+    </ul>
+    <ul id="glossaryTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Glossary">Glossary</a>
+      </li>
+    </ul>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaProperties">Schema Document Properties</a>
+    </h2>
+    <table class="properties">
+      <tr>
+        <th>
+          <a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+        </th>
+        <td>
+          <span class="targetNS">urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Element and Attribute Namespaces</th>
+        <td>
+          <ul>
+            <li>Global element and attribute declarations belong to this schema's target namespace.</li>
+            <li>By default, local element declarations belong to this schema's target namespace.</li>
+            <li>By default, local attribute declarations have no namespace.</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <h3>Declared Namespaces</h3>
+    <table class="namespaces">
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xml">xml</a>
+        </td>
+        <td>http://www.w3.org/XML/1998/namespace</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ccts">ccts</a>
+        </td>
+        <td>urn:un:unece:uncefact:documentation:2</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_clmIANAMIMEMediaType">clmIANAMIMEMediaType</a>
+        </td>
+        <td>
+          <span class="targetNS">urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xsd">xsd</a>
+        </td>
+        <td>http://www.w3.org/2001/XMLSchema</td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="schema_scbox_button" class="control" onclick="switchState('schema_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="schema_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:schema</span> <span class="scTag">targetNamespace</span>="<span class="scContent">urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003</span>" <span class="scTag">elementFormDefault</span>="<span class="scContent">qualified</span>" <span class="scTag">attributeFormDefault</span>="<span class="scContent">unqualified</span>"&gt;<div class="scContent" style="margin-left: 1.5em">...</div>&lt;/<span class="scTag">xsd:schema</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('schema_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaDefinitions">Global Definitions</a>
+    </h2>
+    <h3>Simple Type: <a name="type_BinaryObjectMimeCodeContentType" class="name">BinaryObjectMimeCodeContentType</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:normalizedString</span> &lt; <strong>BinaryObjectMimeCodeContentType</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>BinaryObjectMimeCodeContentType</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: normalizedString</li>
+          </ul>
+          <ul>
+            <li>
+              <em>value</em> comes from list: {'application/CSTAdata+xml'|'application/EDI-Consent'|'application/EDI-X12'|'application/EDIFACT'|'application/activemessage'|'application/andrew-inset'|'application/applefile'|'application/atomicmail'|'application/batch-SMTP'|'application/beep+xml'|'application/cals-1840'|'application/cnrp+xml'|'application/commonground'|'application/cpl+xml'|'application/csta+xml'|'application/cybercash'|'application/dca-rft'|'application/dec-dx'|'application/dialog-info+xml'|'application/dicom'|'application/dns'|'application/dvcs'|'application/epp+xml'|'application/eshop'|'application/fits'|'application/font-tdpfr'|'application/http'|'application/hyperstudio'|'application/iges'|'application/im-iscomposing+xml'|'application/index'|'application/index.cmd'|'application/index.obj'|'application/index.response'|'application/index.vnd'|'application/iotp'|'application/ipp'|'application/isup'|'application/kpml-request+xml'|'application/kpml-response+xml'|'application/mac-binhex40'|'application/macwriteii'|'application/marc'|'application/mathematica'|'application/mbox'|'application/mikey'|'application/mpeg4-generic'|'application/msword'|'application/news-message-id'|'application/news-transmission'|'application/ocsp-request'|'application/ocsp-response'|'application/octet-stream'|'application/oda'|'application/ogg'|'application/parityfec'|'application/pdf'|'application/pgp-encrypted'|'application/pgp-keys'|'application/pgp-signature'|'application/pidf+xml'|'application/pkcs10'|'application/pkcs7-mime'|'application/pkcs7-signature'|'application/pkix-cert'|'application/pkix-crl'|'application/pkix-pkipath'|'application/pkixcmp'|'application/postscript'|'application/prs.alvestrand.titrax-sheet'|'application/prs.cww'|'application/prs.nprend'|'application/prs.plucker'|'application/qsig'|'application/rdf+xml'|'application/reginfo+xml'|'application/remote-printing'|'application/resource-lists+xml'|'application/riscos'|'application/rls-services+xml'|'application/rtf'|'application/samlassertion+xml'|'application/samlmetadata+xml'|'application/sbml+xml'|'application/sdp'|'application/set-payment'|'application/set-payment-initiation'|'application/set-registration'|'application/set-registration-initiation'|'application/sgml'|'application/sgml-open-catalog'|'application/shf+xml'|'application/sieve'|'application/simple-filter+xml'|'application/simple-message-summary'|'application/slate'|'application/soap+xml'|'application/spirits-event+xml'|'application/timestamp-query'|'application/timestamp-reply'|'application/tve-trigger'|'application/vemmi'|'application/vnd.3M.Post-it-Notes'|'application/vnd.3gpp.pic-bw-large'|'application/vnd.3gpp.pic-bw-small'|'application/vnd.3gpp.pic-bw-var'|'application/vnd.3gpp.sms'|'application/vnd.FloGraphIt'|'application/vnd.Kinar'|'application/vnd.Mobius.DAF'|'application/vnd.Mobius.DIS'|'application/vnd.Mobius.MBK'|'application/vnd.Mobius.MQY'|'application/vnd.Mobius.MSL'|'application/vnd.Mobius.PLC'|'application/vnd.Mobius.TXF'|'application/vnd.Quark.QuarkXPress'|'application/vnd.RenLearn.rlprint'|'application/vnd.accpac.simply.aso'|'application/vnd.accpac.simply.imp'|'application/vnd.acucobol'|'application/vnd.acucorp'|'application/vnd.adobe.xfdf'|'application/vnd.aether.imp'|'application/vnd.amiga.ami'|'application/vnd.anser-web-certificate-issue-initiation'|'application/vnd.anser-web-funds-transfer-initiation'|'application/vnd.audiograph'|'application/vnd.blueice.multipass'|'application/vnd.bmi'|'application/vnd.businessobjects'|'application/vnd.canon-cpdl'|'application/vnd.canon-lips'|'application/vnd.cinderella'|'application/vnd.claymore'|'application/vnd.commerce-battelle'|'application/vnd.commonspace'|'application/vnd.contact.cmsg'|'application/vnd.cosmocaller'|'application/vnd.criticaltools.wbs+xml'|'application/vnd.ctc-posml'|'application/vnd.cups-postscript'|'application/vnd.cups-raster'|'application/vnd.cups-raw'|'application/vnd.curl'|'application/vnd.cybank'|'application/vnd.data-vision.rdz'|'application/vnd.dna'|'application/vnd.dpgraph'|'application/vnd.dreamfactory'|'application/vnd.dxr'|'application/vnd.ecdis-update'|'application/vnd.ecowin.chart'|'application/vnd.ecowin.filerequest'|'application/vnd.ecowin.fileupdate'|'application/vnd.ecowin.series'|'application/vnd.ecowin.seriesrequest'|'application/vnd.ecowin.seriesupdate'|'application/vnd.enliven'|'application/vnd.epson.esf'|'application/vnd.epson.msf'|'application/vnd.epson.quickanime'|'application/vnd.epson.salt'|'application/vnd.epson.ssf'|'application/vnd.ericsson.quickcall'|'application/vnd.eudora.data'|'application/vnd.fdf'|'application/vnd.ffsns'|'application/vnd.fints'|'application/vnd.framemaker'|'application/vnd.fsc.weblaunch'|'application/vnd.fujitsu.oasys'|'application/vnd.fujitsu.oasys2'|'application/vnd.fujitsu.oasys3'|'application/vnd.fujitsu.oasysgp'|'application/vnd.fujitsu.oasysprs'|'application/vnd.fujixerox.ddd'|'application/vnd.fujixerox.docuworks'|'application/vnd.fujixerox.docuworks.binder'|'application/vnd.fut-misnet'|'application/vnd.genomatix.tuxedo'|'application/vnd.grafeq'|'application/vnd.groove-account'|'application/vnd.groove-help'|'application/vnd.groove-identity-message'|'application/vnd.groove-injector'|'application/vnd.groove-tool-message'|'application/vnd.groove-tool-template'|'application/vnd.groove-vcard'|'application/vnd.hbci'|'application/vnd.hcl-bireports'|'application/vnd.hhe.lesson-player'|'application/vnd.hp-HPGL'|'application/vnd.hp-PCL'|'application/vnd.hp-PCLXL'|'application/vnd.hp-hpid'|'application/vnd.hp-hps'|'application/vnd.httphone'|'application/vnd.hzn-3d-crossword'|'application/vnd.ibm.MiniPay'|'application/vnd.ibm.afplinedata'|'application/vnd.ibm.electronic-media'|'application/vnd.ibm.modcap'|'application/vnd.ibm.rights-management'|'application/vnd.ibm.secure-container'|'application/vnd.informix-visionary'|'application/vnd.intercon.formnet'|'application/vnd.intertrust.digibox'|'application/vnd.intertrust.nncp'|'application/vnd.intu.qbo'|'application/vnd.intu.qfx'|'application/vnd.ipunplugged.rcprofile'|'application/vnd.irepository.package+xml'|'application/vnd.is-xpr'|'application/vnd.japannet-directory-service'|'application/vnd.japannet-jpnstore-wakeup'|'application/vnd.japannet-payment-wakeup'|'application/vnd.japannet-registration'|'application/vnd.japannet-registration-wakeup'|'application/vnd.japannet-setstore-wakeup'|'application/vnd.japannet-verification'|'application/vnd.japannet-verification-wakeup'|'application/vnd.jisp'|'application/vnd.kde.karbon'|'application/vnd.kde.kchart'|'application/vnd.kde.kformula'|'application/vnd.kde.kivio'|'application/vnd.kde.kontour'|'application/vnd.kde.kpresenter'|'application/vnd.kde.kspread'|'application/vnd.kde.kword'|'application/vnd.kenameaapp'|'application/vnd.kidspiration'|'application/vnd.koan'|'application/vnd.liberty-request+xml'|'application/vnd.llamagraphics.life-balance.desktop'|'application/vnd.llamagraphics.life-balance.exchange+xml'|'application/vnd.lotus-1-2-3'|'application/vnd.lotus-approach'|'application/vnd.lotus-freelance'|'application/vnd.lotus-notes'|'application/vnd.lotus-organizer'|'application/vnd.lotus-screencam'|'application/vnd.lotus-wordpro'|'application/vnd.mcd'|'application/vnd.mediastation.cdkey'|'application/vnd.meridian-slingshot'|'application/vnd.mfmp'|'application/vnd.micrografx.flo'|'application/vnd.micrografx.igx'|'application/vnd.mif'|'application/vnd.minisoft-hp3000-save'|'application/vnd.mitsubishi.misty-guard.trustweb'|'application/vnd.mophun.application'|'application/vnd.mophun.certificate'|'application/vnd.motorola.flexsuite'|'application/vnd.motorola.flexsuite.adsi'|'application/vnd.motorola.flexsuite.fis'|'application/vnd.motorola.flexsuite.gotap'|'application/vnd.motorola.flexsuite.kmr'|'application/vnd.motorola.flexsuite.ttc'|'application/vnd.motorola.flexsuite.wem'|'application/vnd.mozilla.xul+xml'|'application/vnd.ms-artgalry'|'application/vnd.ms-asf'|'application/vnd.ms-excel'|'application/vnd.ms-lrm'|'application/vnd.ms-powerpoint'|'application/vnd.ms-project'|'application/vnd.ms-tnef'|'application/vnd.ms-works'|'application/vnd.ms-wpl'|'application/vnd.mseq'|'application/vnd.msign'|'application/vnd.music-niff'|'application/vnd.musician'|'application/vnd.nervana'|'application/vnd.netfpx'|'application/vnd.noblenet-directory'|'application/vnd.noblenet-sealer'|'application/vnd.noblenet-web'|'application/vnd.nokia.landmark+wbxml'|'application/vnd.nokia.landmark+xml'|'application/vnd.nokia.landmarkcollection+xml'|'application/vnd.nokia.radio-preset'|'application/vnd.nokia.radio-presets'|'application/vnd.novadigm.EDM'|'application/vnd.novadigm.EDX'|'application/vnd.novadigm.EXT'|'application/vnd.obn'|'application/vnd.omads-email+xml'|'application/vnd.omads-file+xml'|'application/vnd.omads-folder+xml'|'application/vnd.osa.netdeploy'|'application/vnd.palm'|'application/vnd.paos.xml'|'application/vnd.pg.format'|'application/vnd.pg.osasli'|'application/vnd.picsel'|'application/vnd.powerbuilder6'|'application/vnd.powerbuilder6-s'|'application/vnd.powerbuilder7'|'application/vnd.powerbuilder7-s'|'application/vnd.powerbuilder75'|'application/vnd.powerbuilder75-s'|'application/vnd.previewsystems.box'|'application/vnd.publishare-delta-tree'|'application/vnd.pvi.ptid1'|'application/vnd.pwg-multiplexed'|'application/vnd.pwg-xhtml-print+xml'|'application/vnd.rapid'|'application/vnd.s3sms'|'application/vnd.sealed.doc'|'application/vnd.sealed.eml'|'application/vnd.sealed.mht'|'application/vnd.sealed.net'|'application/vnd.sealed.ppt'|'application/vnd.sealed.xls'|'application/vnd.sealedmedia.softseal.html'|'application/vnd.sealedmedia.softseal.pdf'|'application/vnd.seemail'|'application/vnd.shana.informed.formdata'|'application/vnd.shana.informed.formtemplate'|'application/vnd.shana.informed.interchange'|'application/vnd.shana.informed.package'|'application/vnd.smaf'|'application/vnd.sss-cod'|'application/vnd.sss-dtf'|'application/vnd.sss-ntf'|'application/vnd.street-stream'|'application/vnd.sus-calendar'|'application/vnd.svd'|'application/vnd.swiftview-ics'|'application/vnd.syncml.+xml'|'application/vnd.syncml.ds.notification'|'application/vnd.triscape.mxs'|'application/vnd.trueapp'|'application/vnd.truedoc'|'application/vnd.ufdl'|'application/vnd.uiq.theme'|'application/vnd.uplanet.alert'|'application/vnd.uplanet.alert-wbxml'|'application/vnd.uplanet.bearer-choice'|'application/vnd.uplanet.bearer-choice-wbxml'|'application/vnd.uplanet.cacheop'|'application/vnd.uplanet.cacheop-wbxml'|'application/vnd.uplanet.channel'|'application/vnd.uplanet.channel-wbxml'|'application/vnd.uplanet.list'|'application/vnd.uplanet.list-wbxml'|'application/vnd.uplanet.listcmd'|'application/vnd.uplanet.listcmd-wbxml'|'application/vnd.uplanet.signal'|'application/vnd.vcx'|'application/vnd.vectorworks'|'application/vnd.vidsoft.vidconference'|'application/vnd.visio'|'application/vnd.visionary'|'application/vnd.vividence.scriptfile'|'application/vnd.vsf'|'application/vnd.wap.sic'|'application/vnd.wap.slc'|'application/vnd.wap.wbxml'|'application/vnd.wap.wmlc'|'application/vnd.wap.wmlscriptc'|'application/vnd.webturbo'|'application/vnd.wordperfect'|'application/vnd.wqd'|'application/vnd.wrq-hp3000-labelled'|'application/vnd.wt.stf'|'application/vnd.wv.csp+wbxml'|'application/vnd.wv.csp+xml'|'application/vnd.wv.ssp+xml'|'application/vnd.xara'|'application/vnd.xfdl'|'application/vnd.yamaha.hv-dic'|'application/vnd.yamaha.hv-script'|'application/vnd.yamaha.hv-voice'|'application/vnd.yamaha.smaf-audio'|'application/vnd.yamaha.smaf-phrase'|'application/vnd.yellowriver-custom-menu'|'application/watcherinfo+xml'|'application/whoispp-query'|'application/whoispp-response'|'application/wita'|'application/wordperfect5.1'|'application/x400-bp'|'application/xhtml+xml'|'application/xml'|'application/xml-dtd'|'application/xml-external-parsed-entity'|'application/xmpp+xml'|'application/xop+xml'|'application/zip'|'audio/32kadpcm'|'audio/3gpp'|'audio/AMR'|'audio/AMR-WB'|'audio/BV16'|'audio/BV32'|'audio/CN'|'audio/DAT12'|'audio/DVI4'|'audio/EVRC'|'audio/EVRC-QCP'|'audio/EVRC0'|'audio/G.722.1'|'audio/G722'|'audio/G723'|'audio/G726-16'|'audio/G726-24'|'audio/G726-32'|'audio/G726-40'|'audio/G728'|'audio/G729'|'audio/G729D'|'audio/G729E'|'audio/GSM'|'audio/GSM-EFR'|'audio/L16'|'audio/L20'|'audio/L24'|'audio/L8'|'audio/LPC'|'audio/MP4A-LATM'|'audio/MPA'|'audio/PCMA'|'audio/PCMU'|'audio/QCELP'|'audio/RED'|'audio/SMV'|'audio/SMV-QCP'|'audio/SMV0'|'audio/VDVI'|'audio/basic'|'audio/clearmode'|'audio/dsr-es201108'|'audio/dsr-es202050'|'audio/dsr-es202211'|'audio/dsr-es202212'|'audio/iLBC'|'audio/mpa-robust'|'audio/mpeg'|'audio/mpeg4-generic'|'audio/parityfec'|'audio/prs.sid'|'audio/telephone-event'|'audio/tone'|'audio/vnd.3gpp.iufp'|'audio/vnd.audiokoz'|'audio/vnd.cisco.nse'|'audio/vnd.cns.anp1'|'audio/vnd.cns.inf1'|'audio/vnd.digital-winds'|'audio/vnd.everad.plj'|'audio/vnd.lucent.voice'|'audio/vnd.nokia.mobile-xmf'|'audio/vnd.nortel.vbk'|'audio/vnd.nuera.ecelp4800'|'audio/vnd.nuera.ecelp7470'|'audio/vnd.nuera.ecelp9600'|'audio/vnd.octel.sbc'|'audio/vnd.qcelp'|'audio/vnd.rhetorex.32kadpcm'|'audio/vnd.sealedmedia.softseal.mpeg'|'audio/vnd.vmx.cvsd'|'image/cgm'|'image/fits'|'image/g3fax'|'image/gif'|'image/ief'|'image/jp2'|'image/jpeg'|'image/jpm'|'image/jpx'|'image/naplps'|'image/png'|'image/prs.btif'|'image/prs.pti'|'image/t38'|'image/tiff'|'image/tiff-fx'|'image/vnd.cns.inf2'|'image/vnd.djvu'|'image/vnd.dwg'|'image/vnd.dxf'|'image/vnd.fastbidsheet'|'image/vnd.fpx'|'image/vnd.fst'|'image/vnd.fujixerox.edmics-mmr'|'image/vnd.fujixerox.edmics-rlc'|'image/vnd.globalgraphics.pgb'|'image/vnd.microsoft.icon'|'image/vnd.mix'|'image/vnd.ms-modi'|'image/vnd.net-fpx'|'image/vnd.sealed.png'|'image/vnd.sealedmedia.softseal.gif'|'image/vnd.sealedmedia.softseal.jpg'|'image/vnd.svf'|'image/vnd.wap.wbmp'|'image/vnd.xiff'|'message/CPIM'|'message/delivery-status'|'message/disposition-notification'|'message/external-body'|'message/http'|'message/news'|'message/partial'|'message/rfc822'|'message/s-http'|'message/sip'|'message/sipfrag'|'message/tracking-status'|'model/iges'|'model/mesh'|'model/vnd.dwf'|'model/vnd.flatland.3dml'|'model/vnd.gdl'|'model/vnd.gs-gdl'|'model/vnd.gtw'|'model/vnd.mts'|'model/vnd.parasolid.transmit.binary'|'model/vnd.parasolid.transmit.text'|'model/vnd.vtu'|'model/vrml'|'multipart/alternative'|'multipart/appledouble'|'multipart/byteranges'|'multipart/digest'|'multipart/encrypted'|'multipart/form-data'|'multipart/header-set'|'multipart/mixed'|'multipart/parallel'|'multipart/related'|'multipart/report'|'multipart/signed'|'multipart/voice-message'|'text/RED'|'text/calendar'|'text/css'|'text/csv'|'text/directory'|'text/dns'|'text/enriched'|'text/html'|'text/parityfec'|'text/plain'|'text/prs.fallenstein.rst'|'text/prs.lines.tag'|'text/rfc822-headers'|'text/richtext'|'text/rtf'|'text/sgml'|'text/t140'|'text/tab-separated-values'|'text/troff'|'text/uri-list'|'text/vnd.DMClientScript'|'text/vnd.IPTC.NITF'|'text/vnd.IPTC.NewsML'|'text/vnd.abc'|'text/vnd.curl'|'text/vnd.esmertec.theme-descriptor'|'text/vnd.fly'|'text/vnd.fmi.flexstor'|'text/vnd.in3d.3dml'|'text/vnd.in3d.spot'|'text/vnd.latex-z'|'text/vnd.motorola.reflex'|'text/vnd.ms-mediapackage'|'text/vnd.net2phone.commcenter.command'|'text/vnd.sun.j2me.app-descriptor'|'text/vnd.wap.si'|'text/vnd.wap.sl'|'text/vnd.wap.wml'|'text/vnd.wap.wmlscript'|'text/xml'|'text/xml-external-parsed-entity'|'video/3gpp'|'video/BMPEG'|'video/BT656'|'video/CelB'|'video/DV'|'video/H261'|'video/H263'|'video/H263-1998'|'video/H263-2000'|'video/H264'|'video/JPEG'|'video/MJ2'|'video/MP1S'|'video/MP2P'|'video/MP2T'|'video/MP4V-ES'|'video/MPV'|'video/SMPTE292M'|'video/mpeg'|'video/mpeg4-generic'|'video/nv'|'video/parityfec'|'video/pointer'|'video/quicktime'|'video/raw'|'video/vnd.fvt'|'video/vnd.motorola.video'|'video/vnd.motorola.videop'|'video/vnd.mpegurl'|'video/vnd.nokia.interleaved-multimedia'|'video/vnd.objectvideo'|'video/vnd.sealed.mpeg1'|'video/vnd.sealed.mpeg4'|'video/vnd.sealed.swf'|'video/vnd.sealedmedia.softseal.mov'|'video/vnd.vivo'}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_BinaryObjectMimeCodeContentType_scbox_button" class="control" onclick="switchState('type_BinaryObjectMimeCodeContentType_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_BinaryObjectMimeCodeContentType_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:simpleType</span> <span class="scTag">name</span>="<span class="scContent">BinaryObjectMimeCodeContentType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:normalizedString</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/CSTAdata+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/EDI-Consent</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/EDI-X12</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/EDIFACT</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/activemessage</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/andrew-inset</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/applefile</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/atomicmail</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/batch-SMTP</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/beep+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/cals-1840</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/cnrp+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/commonground</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/cpl+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/csta+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/cybercash</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/dca-rft</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/dec-dx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/dialog-info+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/dicom</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/dns</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/dvcs</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/epp+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/eshop</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/fits</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/font-tdpfr</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/http</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/hyperstudio</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/iges</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/im-iscomposing+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/index</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/index.cmd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/index.obj</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/index.response</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/index.vnd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/iotp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/ipp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/isup</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/kpml-request+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/kpml-response+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/mac-binhex40</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/macwriteii</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/marc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/mathematica</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/mbox</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/mikey</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/mpeg4-generic</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/msword</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/news-message-id</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/news-transmission</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/ocsp-request</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/ocsp-response</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/octet-stream</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/oda</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/ogg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/parityfec</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pdf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pgp-encrypted</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pgp-keys</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pgp-signature</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pidf+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pkcs10</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pkcs7-mime</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pkcs7-signature</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pkix-cert</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pkix-crl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pkix-pkipath</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/pkixcmp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/postscript</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/prs.alvestrand.titrax-sheet</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/prs.cww</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/prs.nprend</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/prs.plucker</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/qsig</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/rdf+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/reginfo+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/remote-printing</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/resource-lists+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/riscos</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/rls-services+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/rtf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/samlassertion+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/samlmetadata+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/sbml+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/sdp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/set-payment</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/set-payment-initiation</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/set-registration</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/set-registration-initiation</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/sgml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/sgml-open-catalog</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/shf+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/sieve</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/simple-filter+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/simple-message-summary</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/slate</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/soap+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/spirits-event+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/timestamp-query</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/timestamp-reply</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/tve-trigger</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vemmi</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.3M.Post-it-Notes</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.3gpp.pic-bw-large</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.3gpp.pic-bw-small</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.3gpp.pic-bw-var</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.3gpp.sms</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.FloGraphIt</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Kinar</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Mobius.DAF</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Mobius.DIS</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Mobius.MBK</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Mobius.MQY</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Mobius.MSL</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Mobius.PLC</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Mobius.TXF</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.Quark.QuarkXPress</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.RenLearn.rlprint</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.accpac.simply.aso</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.accpac.simply.imp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.acucobol</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.acucorp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.adobe.xfdf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.aether.imp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.amiga.ami</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.anser-web-certificate-issue-initiation</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.anser-web-funds-transfer-initiation</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.audiograph</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.blueice.multipass</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.bmi</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.businessobjects</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.canon-cpdl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.canon-lips</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.cinderella</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.claymore</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.commerce-battelle</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.commonspace</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.contact.cmsg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.cosmocaller</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.criticaltools.wbs+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ctc-posml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.cups-postscript</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.cups-raster</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.cups-raw</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.curl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.cybank</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.data-vision.rdz</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.dna</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.dpgraph</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.dreamfactory</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.dxr</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ecdis-update</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ecowin.chart</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ecowin.filerequest</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ecowin.fileupdate</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ecowin.series</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ecowin.seriesrequest</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ecowin.seriesupdate</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.enliven</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.epson.esf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.epson.msf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.epson.quickanime</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.epson.salt</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.epson.ssf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ericsson.quickcall</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.eudora.data</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fdf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ffsns</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fints</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.framemaker</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fsc.weblaunch</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujitsu.oasys</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujitsu.oasys2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujitsu.oasys3</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujitsu.oasysgp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujitsu.oasysprs</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujixerox.ddd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujixerox.docuworks</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fujixerox.docuworks.binder</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.fut-misnet</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.genomatix.tuxedo</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.grafeq</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.groove-account</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.groove-help</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.groove-identity-message</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.groove-injector</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.groove-tool-message</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.groove-tool-template</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.groove-vcard</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hbci</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hcl-bireports</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hhe.lesson-player</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hp-HPGL</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hp-PCL</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hp-PCLXL</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hp-hpid</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hp-hps</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.httphone</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.hzn-3d-crossword</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ibm.MiniPay</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ibm.afplinedata</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ibm.electronic-media</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ibm.modcap</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ibm.rights-management</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ibm.secure-container</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.informix-visionary</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.intercon.formnet</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.intertrust.digibox</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.intertrust.nncp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.intu.qbo</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.intu.qfx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ipunplugged.rcprofile</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.irepository.package+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.is-xpr</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-directory-service</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-jpnstore-wakeup</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-payment-wakeup</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-registration</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-registration-wakeup</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-setstore-wakeup</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-verification</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.japannet-verification-wakeup</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.jisp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.karbon</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.kchart</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.kformula</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.kivio</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.kontour</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.kpresenter</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.kspread</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kde.kword</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kenameaapp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.kidspiration</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.koan</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.liberty-request+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.llamagraphics.life-balance.desktop</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.llamagraphics.life-balance.exchange+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.lotus-1-2-3</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.lotus-approach</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.lotus-freelance</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.lotus-notes</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.lotus-organizer</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.lotus-screencam</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.lotus-wordpro</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mcd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mediastation.cdkey</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.meridian-slingshot</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mfmp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.micrografx.flo</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.micrografx.igx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mif</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.minisoft-hp3000-save</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mitsubishi.misty-guard.trustweb</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mophun.application</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mophun.certificate</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.motorola.flexsuite</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.motorola.flexsuite.adsi</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.motorola.flexsuite.fis</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.motorola.flexsuite.gotap</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.motorola.flexsuite.kmr</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.motorola.flexsuite.ttc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.motorola.flexsuite.wem</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mozilla.xul+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-artgalry</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-asf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-excel</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-lrm</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-powerpoint</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-project</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-tnef</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-works</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ms-wpl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.mseq</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.msign</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.music-niff</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.musician</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.nervana</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.netfpx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.noblenet-directory</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.noblenet-sealer</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.noblenet-web</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.nokia.landmark+wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.nokia.landmark+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.nokia.landmarkcollection+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.nokia.radio-preset</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.nokia.radio-presets</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.novadigm.EDM</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.novadigm.EDX</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.novadigm.EXT</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.obn</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.omads-email+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.omads-file+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.omads-folder+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.osa.netdeploy</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.palm</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.paos.xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.pg.format</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.pg.osasli</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.picsel</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.powerbuilder6</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.powerbuilder6-s</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.powerbuilder7</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.powerbuilder7-s</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.powerbuilder75</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.powerbuilder75-s</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.previewsystems.box</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.publishare-delta-tree</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.pvi.ptid1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.pwg-multiplexed</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.pwg-xhtml-print+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.rapid</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.s3sms</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealed.doc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealed.eml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealed.mht</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealed.net</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealed.ppt</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealed.xls</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealedmedia.softseal.html</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sealedmedia.softseal.pdf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.seemail</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.shana.informed.formdata</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.shana.informed.formtemplate</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.shana.informed.interchange</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.shana.informed.package</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.smaf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sss-cod</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sss-dtf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sss-ntf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.street-stream</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.sus-calendar</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.svd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.swiftview-ics</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.syncml.+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.syncml.ds.notification</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.triscape.mxs</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.trueapp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.truedoc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.ufdl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uiq.theme</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.alert</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.alert-wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.bearer-choice</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.bearer-choice-wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.cacheop</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.cacheop-wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.channel</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.channel-wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.list</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.list-wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.listcmd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.listcmd-wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.uplanet.signal</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.vcx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.vectorworks</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.vidsoft.vidconference</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.visio</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.visionary</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.vividence.scriptfile</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.vsf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wap.sic</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wap.slc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wap.wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wap.wmlc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wap.wmlscriptc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.webturbo</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wordperfect</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wqd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wrq-hp3000-labelled</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wt.stf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wv.csp+wbxml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wv.csp+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.wv.ssp+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.xara</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.xfdl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.yamaha.hv-dic</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.yamaha.hv-script</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.yamaha.hv-voice</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.yamaha.smaf-audio</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.yamaha.smaf-phrase</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/vnd.yellowriver-custom-menu</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/watcherinfo+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/whoispp-query</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/whoispp-response</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/wita</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/wordperfect5.1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/x400-bp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/xhtml+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/xml-dtd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/xml-external-parsed-entity</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/xmpp+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/xop+xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">application/zip</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/32kadpcm</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/3gpp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/AMR</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/AMR-WB</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/BV16</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/BV32</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/CN</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/DAT12</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/DVI4</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/EVRC</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/EVRC-QCP</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/EVRC0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G.722.1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G722</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G723</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G726-16</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G726-24</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G726-32</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G726-40</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G728</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G729</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G729D</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/G729E</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/GSM</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/GSM-EFR</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/L16</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/L20</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/L24</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/L8</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/LPC</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/MP4A-LATM</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/MPA</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/PCMA</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/PCMU</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/QCELP</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/RED</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/SMV</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/SMV-QCP</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/SMV0</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/VDVI</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/basic</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/clearmode</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/dsr-es201108</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/dsr-es202050</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/dsr-es202211</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/dsr-es202212</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/iLBC</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/mpa-robust</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/mpeg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/mpeg4-generic</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/parityfec</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/prs.sid</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/telephone-event</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/tone</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.3gpp.iufp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.audiokoz</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.cisco.nse</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.cns.anp1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.cns.inf1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.digital-winds</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.everad.plj</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.lucent.voice</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.nokia.mobile-xmf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.nortel.vbk</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.nuera.ecelp4800</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.nuera.ecelp7470</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.nuera.ecelp9600</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.octel.sbc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.qcelp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.rhetorex.32kadpcm</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.sealedmedia.softseal.mpeg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">audio/vnd.vmx.cvsd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/cgm</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/fits</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/g3fax</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/gif</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/ief</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/jp2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/jpeg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/jpm</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/jpx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/naplps</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/png</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/prs.btif</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/prs.pti</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/t38</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/tiff</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/tiff-fx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.cns.inf2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.djvu</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.dwg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.dxf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.fastbidsheet</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.fpx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.fst</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.fujixerox.edmics-mmr</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.fujixerox.edmics-rlc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.globalgraphics.pgb</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.microsoft.icon</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.mix</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.ms-modi</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.net-fpx</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.sealed.png</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.sealedmedia.softseal.gif</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.sealedmedia.softseal.jpg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.svf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.wap.wbmp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">image/vnd.xiff</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/CPIM</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/delivery-status</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/disposition-notification</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/external-body</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/http</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/news</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/partial</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/rfc822</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/s-http</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/sip</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/sipfrag</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">message/tracking-status</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/iges</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/mesh</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.dwf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.flatland.3dml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.gdl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.gs-gdl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.gtw</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.mts</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.parasolid.transmit.binary</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.parasolid.transmit.text</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vnd.vtu</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">model/vrml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/alternative</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/appledouble</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/byteranges</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/digest</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/encrypted</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/form-data</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/header-set</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/mixed</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/parallel</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/related</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/report</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/signed</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">multipart/voice-message</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/RED</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/calendar</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/css</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/csv</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/directory</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/dns</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/enriched</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/html</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/parityfec</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/plain</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/prs.fallenstein.rst</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/prs.lines.tag</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/rfc822-headers</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/richtext</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/rtf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/sgml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/t140</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/tab-separated-values</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/troff</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/uri-list</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.DMClientScript</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.IPTC.NITF</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.IPTC.NewsML</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.abc</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.curl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.esmertec.theme-descriptor</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.fly</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.fmi.flexstor</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.in3d.3dml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.in3d.spot</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.latex-z</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.motorola.reflex</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.ms-mediapackage</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.net2phone.commcenter.command</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.sun.j2me.app-descriptor</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.wap.si</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.wap.sl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.wap.wml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/vnd.wap.wmlscript</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/xml</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">text/xml-external-parsed-entity</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/3gpp</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/BMPEG</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/BT656</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/CelB</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/DV</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/H261</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/H263</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/H263-1998</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/H263-2000</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/H264</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/JPEG</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/MJ2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/MP1S</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/MP2P</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/MP2T</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/MP4V-ES</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/MPV</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/SMPTE292M</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/mpeg</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/mpeg4-generic</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/nv</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/parityfec</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/pointer</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/quicktime</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/raw</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.fvt</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.motorola.video</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.motorola.videop</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.mpegurl</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.nokia.interleaved-multimedia</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.objectvideo</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.sealed.mpeg1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.sealed.mpeg4</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.sealed.swf</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.sealedmedia.softseal.mov</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:enumeration</span> <span class="scTag">value</span>="<span class="scContent">video/vnd.vivo</span>"/&gt;</div>&lt;/<span class="scTag">xsd:restriction</span>&gt;</div>&lt;/<span class="scTag">xsd:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_BinaryObjectMimeCodeContentType_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <div id="legend">
+      <h2>
+        <a name="Legend">Legend</a>
+      </h2>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">Complex Type:</h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Type</div>
+      </div>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">
+          <span class="name">AusAddress</span>
+        </h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Name</div>
+      </div>
+      <table class="hierarchy" style="clear : both">
+        <tr>
+          <th>Super-types:</th>
+          <td>
+            <span class="type" style="color: #0000FF; text-decoration:underline;">Address</span> &lt; <span class="current">AusAddress</span> (by extension)</td>
+        </tr>
+        <tr>
+          <th>Sub-types:</th>
+          <td>
+            <ul>
+              <li>
+                <span class="type" style="color: #0000FF; text-decoration:underline;">QLDAddress</span> (by restriction)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div class="hint">If this schema component is a type definition, its type hierarchy is shown in a gray-bordered box.</div>
+      <table class="properties">
+        <tr>
+          <th>Name</th>
+          <td>AusAddress</td>
+        </tr>
+        <tr>
+          <th>
+            <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+          </th>
+          <td>no</td>
+        </tr>
+      </table>
+      <div class="hint">The table above displays the properties of this schema component.</div>
+      <div class="sample box">
+        <div>
+          <span class="caption">XML Instance Representation</span>
+        </div>
+        <div class="contents">
+          <span style="margin-left: 0em">&lt;...</span>
+          <span class="newFields">
+            <span> country="<span class="fixed">Australia</span>"</span>
+          </span>&gt; <br /><span style="margin-left: 1.5em" class="inherited">&lt;unitNo&gt; <span class="type">string</span> &lt;/unitNo&gt; <span class="occurs">[0..1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;houseNo&gt; <span class="type">string</span> &lt;/houseNo&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;street&gt; <span class="type">string</span> &lt;/street&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a><span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;city&gt; <span class="type">string</span> &lt;/city&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;town&gt; <span class="type">string</span> &lt;/town&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">End Choice</span><br /><span class="newFields"><span style="margin-left: 1.5em">&lt;state&gt; <span class="type" style="text-decoration:underline;">AusStates</span> &lt;/state&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em">&lt;postcode&gt; <span class="constraint">string &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;</span> &lt;/postcode&gt; <span class="occurs">[1]</span><a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Post code must be a four-digit number.'); viewDocumentation('Element', 'postcode', docArray);">?</a></span><br /></span><span style="margin-left: 0em">&lt;/...&gt;</span><br /></div>
+      </div>
+      <div class="hint">
+        <p>The XML Instance Representation table above shows the schema component's content as an XML instance.</p>
+        <ul>
+          <li>The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].</li>
+          <li>Model group information are shown in gray, e.g. Start Choice ... End Choice.</li>
+          <li>For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in <span style="font-weight: bold">bold</span>.</li>
+          <li>If an element/attribute has a fixed value, the fixed value is shown in green, e.g. country="Australia".</li>
+          <li>Otherwise, the type of the element/attribute is displayed.
+               <ul><li>If the element/attribute's type is in the schema, a link is provided to it.</li><li>For local simple type definitions, the constraints are displayed in angle brackets, e.g. &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;.</li></ul></li>
+          <li>If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked, e.g. &lt;postcode&gt;.</li>
+        </ul>
+      </div>
+      <div class="schemaComponent box">
+        <div>
+          <span class="caption">Schema Component Representation</span>
+        </div>
+        <div class="contents">
+          <span style="margin-left: 0em">&lt;<span class="scTag">complexType</span><span class="scTag">name</span>="<span class="scContent">AusAddress</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;<span class="scTag">extension</span><span class="scTag">base</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">Address</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">state</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">AusStates</span></span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">postcode</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;<span class="scTag">restriction</span><span class="scTag">base</span>="<span class="scContent"><span class="type">string</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 10.5em">&lt;<span class="scTag">pattern</span><span class="scTag">value</span>="<span class="scContent">[1-9][0-9]{3}</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;/<span class="scTag">restriction</span>&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;/<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;/<span class="scTag">element</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;/<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">attribute</span><span class="scTag">name</span>="<span class="scContent">country</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type">string</span></span>" <span class="scTag">fixed</span>="<span class="scContent">Australia</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;/<span class="scTag">extension</span>&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;/<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 0em">&lt;/<span class="scTag">complexType</span>&gt;</span>
+          <br />
+        </div>
+      </div>
+      <div class="hint">The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)</div>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <div id="glossary">
+      <h2>
+        <a name="Glossary">Glossary</a>
+      </h2>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Abstract">Abstract</a> </span>(Applies to complex type definitions and element declarations). An abstract element or complex type cannot used to validate an element instance. If there is a reference to an abstract element, only element declarations that can substitute the abstract element can be used to validate the instance. For references to abstract type definitions, only derived types can be used.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_All">All Model Group</a> </span>Child elements can be provided <em>in any order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-all" href="http://www.w3.org/TR/xmlschema-1/#element-all">http://www.w3.org/TR/xmlschema-1/#element-all</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Choice">Choice Model Group</a> </span>
+        <em>Only one</em> from the list of child elements and model groups can be provided in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-choice" href="http://www.w3.org/TR/xmlschema-1/#element-choice">http://www.w3.org/TR/xmlschema-1/#element-choice</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_CollapseWS">Collapse Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32). Then, collapse contiguous sequences of space characters into single space character, and remove leading and trailing space characters.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ElemBlock">Disallowed Substitutions</a> </span>(Applies to element declarations). If <em>substitution</em> is specified, then <a title="Look up 'substitution group' in glossary" href="#term_SubGroup">substitution group</a> members cannot be used in place of the given element declaration to validate element instances. If <em>derivation methods</em>, e.g. extension, restriction, are specified, then the given element declaration will not validate element instances that have types derived from the element declaration's type using the specified derivation methods. Normally, element instances can override their declaration's type by specifying an <code>xsi:type</code> attribute.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Key">Key Constraint</a> </span>Like <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>, but additionally requires that the specified value(s) must be provided. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_KeyRef">Key Reference Constraint</a> </span>Ensures that the specified value(s) must match value(s) from a <a title="Look up 'Key Constraint' in glossary" href="#term_Key">Key Constraint</a> or <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ModelGroup">Model Group</a> </span>Groups together element content, specifying the order in which the element content can occur and the number of times the group of element content may be repeated. See: <a title="http://www.w3.org/TR/xmlschema-1/#Model_Groups" href="http://www.w3.org/TR/xmlschema-1/#Model_Groups">http://www.w3.org/TR/xmlschema-1/#Model_Groups</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Nillable">Nillable</a> </span>(Applies to element declarations). If an element declaration is nillable, instances can use the <code>xsi:nil</code> attribute. The <code>xsi:nil</code> attribute is the boolean attribute, <em>nil</em>, from the <em>http://www.w3.org/2001/XMLSchema-instance</em> namespace. If an element instance has an <code>xsi:nil</code> attribute set to true, it can be left empty, even though its element declaration may have required content.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Notation">Notation</a> </span>A notation is used to identify the format of a piece of data. Values of elements and attributes that are of type, NOTATION, must come from the names of declared notations. See: <a title="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations" href="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations">http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_PreserveWS">Preserve Whitespace Policy</a> </span>Preserve whitespaces exactly as they appear in instances.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TypeFinal">Prohibited Derivations</a> </span>(Applies to type definitions). Derivation methods that cannot be used to create sub-types from a given type definition.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TypeBlock">Prohibited Substitutions</a> </span>(Applies to complex type definitions). Prevents sub-types that have been derived using the specified derivation methods from validating element instances in place of the given type definition.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ReplaceWS">Replace Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32).</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Sequence">Sequence Model Group</a> </span>Child elements and model groups must be provided <em>in the specified order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-sequence" href="http://www.w3.org/TR/xmlschema-1/#element-sequence">http://www.w3.org/TR/xmlschema-1/#element-sequence</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_SubGroup">Substitution Group</a> </span>Elements that are <em>members</em> of a substitution group can be used wherever the <em>head</em> element of the substitution group is referenced.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ElemFinal">Substitution Group Exclusions</a> </span>(Applies to element declarations). Prohibits element declarations from nominating themselves as being able to substitute a given element declaration, if they have types that are derived from the original element's type using the specified derivation methods.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TargetNS">Target Namespace</a> </span>The target namespace identifies the namespace that components in this schema belongs to. If no target namespace is provided, then the schema components do not belong to any namespace.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Unique">Uniqueness Constraint</a> </span>Ensures uniqueness of an element/attribute value, or a combination of values, within a specified scope. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <p class="footer">Generated by <a href="http://xml.fiforms.org/xs3p/">xs3p</a> (<a href="http://titanium.dstc.edu.au/xml/xs3p">old link</a>)
+               . Last modified: <script type="text/javascript">
+<!--
+document.write(document.lastModified);
+// -->
+</script></p>
+  </body>
+</html>

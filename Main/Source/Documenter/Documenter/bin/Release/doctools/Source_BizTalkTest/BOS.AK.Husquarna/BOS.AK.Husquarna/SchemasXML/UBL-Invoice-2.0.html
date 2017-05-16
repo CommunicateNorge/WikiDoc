@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>XML Schema Documentation</title>
+    <meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1" />
+    <style type="text/css">
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* More-configurable styles */
+
+/******** General ********/
+
+/* Document body */
+body {
+   color: Black;
+   background-color: White;
+   font-family: Arial, sans-serif;
+   font-size: 10pt;
+}
+/* Horizontal rules */
+hr {
+   color: black;
+}
+/* Document title */
+h1 {
+   font-size: 18pt;
+   letter-spacing: 2px;
+   border-bottom: 1px #ccc solid;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+/* Main section headers */
+h2 {
+   font-size: 14pt;
+   letter-spacing: 1px;
+}
+/* Sub-section headers */
+h3, h3 a, h3 span {
+   font-size: 12pt;
+   font-weight: bold;
+   color: black;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties th, table.properties th a {
+   color: black;
+   background-color: #F99; /* Pink */
+}
+table.properties td {
+   background-color: #eee; /* Gray */
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   color: #963; /* Orange-brown */
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   border: 2px solid #999;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+   background-color: #ccc;
+}
+table.namespaces td {
+   background-color: #eee;
+}
+/* Target namespace of the schema */
+span.targetNS {
+   color: #06C;
+   font-weight: bold;
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+   color: #F93; /* Orange */
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   border: 2px solid #999; /* Gray */
+}
+
+/* XML Instance Representation table */
+div.sample div.contents {
+   border: 2px dashed black;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent div.contents {
+   border: 2px black solid;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   color: #036; /* Blue */
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Printer-version styles */
+
+@media print {
+
+/* Ensures that controls are hidden when printing */
+div#printerControls {
+   visibility: hidden;
+}
+div#globalControls {
+   visibility: hidden;
+}
+#legend {
+   display: none;
+}
+#legendTOC {
+   display: none;
+}
+#glossary {
+   display: none;
+}
+#glossaryTOC {
+   display: none;
+}
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Base styles */
+
+/******** General ********/
+
+/* Unordered lists */
+ul {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+/* Tables */
+table {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+table th, table td {
+   font-size: 10pt;
+   vertical-align: top;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+table th {
+   font-weight: bold;
+   text-align: left;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties {
+   width: 90%;
+}
+table.properties th {
+   width: 30%;
+}
+/* Boxes that can make its content appear and disappear*/
+div.box {
+   margin: 1em;
+}
+   /* Box caption */
+div.box span.caption {
+   font-weight: bold;
+}
+   /* Button to open and close the box */
+div.box input.control {
+   width: 1.4em;
+   height: 1.4em;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 11pt;
+}
+   /* Box contents */
+div.box div.contents {
+   margin-top: 3px;
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   white-space: nowrap;
+   font-weight: bold;
+   padding: 5px;
+   margin: 5px;
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   padding: 10px;
+   margin: 5px;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+}
+table.namespaces td {
+}
+/* Target namespace of the schema */
+span.targetNS {
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   width: 90%;
+}
+table.hierarchy th {
+   font-weight: normal;
+   font-style: italic;
+   width: 20%;
+}
+table.hierarchy th, table.hierarchy td {
+   padding: 5px;
+}
+
+/* XML Instance Representation table */
+div.sample {
+   width: 90%;
+}
+div.sample div.contents {
+   padding: 5px;
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+}
+   /* Normal elements and attributes */
+div.sample div.contents, div.sample div.contents a {
+   color: black;
+}
+   /* Group Headers */
+div.sample div.contents .group, div.sample div.contents .group a {
+   color: #999; /* Light gray */
+}
+   /* Type Information */
+div.sample div.contents .type, div.sample div.contents .type a {
+   color: #999; /* Light gray */
+}
+   /* Occurrence Information */
+div.sample div.contents .occurs, div.sample div.contents .occurs a {
+   color: #999; /* Light gray */
+}
+   /* Fixed values */
+div.sample div.contents .fixed {
+   color: #063; /* Green */
+   font-weight: bold;
+}
+   /* Simple type constraints */
+div.sample div.contents .constraint, div.sample div.contents .constraint a {
+   color: #999; /* Light gray */
+}
+   /* Elements and attributes inherited from base type */
+div.sample div.contents .inherited, div.sample div.contents .inherited a {
+   color: #666; /* Dark gray */
+}
+   /* Elements and attributes added to or changed from base type */
+div.sample div.contents .newFields {
+   font-weight: bold;
+}
+   /* Other type of information */
+div.sample div.contents .other, div.sample div.contents .other a {
+   color: #369; /* Blue */
+   font-style: italic;
+}
+   /* Link to open up window displaying documentation */
+div.sample div.contents a.documentation {
+   text-decoration: none;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-weight: bold;
+   font-size: 11pt;
+   background-color: #FFD;
+   color: #069;
+}
+   /* Invert colors when hovering over link to open up window 
+      displaying documentation */
+div.sample div.contents a.documentation:hover {
+   color: #FFD;
+   background-color: #069;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent {
+   width: 90%;
+}
+div.schemaComponent div.contents {
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+   padding: 5px;
+}
+   /* Syntax characters */
+div.schemaComponent div.contents {
+   color: #00f; /* blue */
+}
+   /* Element and attribute tags */
+div.schemaComponent div.contents .scTag {
+   color: #933; /* maroon */
+}
+   /* Element and attribute content */
+div.schemaComponent div.contents .scContent, div.schemaComponent div.contents .scContent a {
+   color: black;
+   font-weight: bold;
+}
+   /* Comments */
+div.schemaComponent div.contents .comment {
+   color: #999; /* Light gray */
+}
+
+/******** Legend Section ********/
+
+div#legend table, div#legend div {
+   margin-bottom: 3px;
+}
+div#legend div.hint {
+   color: #999; /* Light gray */
+   width: 90%;
+   margin-left: 1em;
+   margin-bottom: 2em;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   font-weight: bold;
+}
+
+
+/******** Footer ********/
+
+.footer {
+   font-size: 8pt;
+}
+</style>
+    <script type="text/javascript">
+<!--
+/* IDs of XML Instance Representation boxes */
+var xiBoxes = new Array('element_Invoice_xibox', 'type_InvoiceType_xibox');
+/* IDs of Schema Component Representation boxes */
+var scBoxes = new Array('schema_scbox', 'element_Invoice_scbox', 'type_InvoiceType_scbox');
+
+/**
+ * Can get the ID of the button controlling
+ * a collapseable box by concatenating
+ * this string onto the ID of the box itself.
+ */
+var B_SFIX = "_button";
+
+/**
+ * Counter of documentation windows
+ * Used to give each window a unique name
+ */
+var windowCount = 0;
+
+/**
+ * Returns an element in the current HTML document.
+ * 
+ * @param elementID Identifier of HTML element
+ * @return               HTML element object
+ */
+function getElementObject(elementID) {
+    var elemObj = null;
+    if (document.getElementById) {
+        elemObj = document.getElementById(elementID);
+    }
+    return elemObj;
+}             
+
+/**
+ * Closes a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function closeBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="none";
+
+     // Change text of button 
+     if (boxObj.style.display=="none") {
+        buttonObj.value=" + ";
+     }
+  }
+}
+
+/**
+ * Opens a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function openBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="block";
+
+     // Change text of button
+     if (boxObj.style.display=="block") {
+        buttonObj.value=" - ";
+     }
+  }
+}
+
+/**
+ * Sets the state of a collapseable box.
+ * 
+ * @param boxID Identifier of box
+ * @param open If true, box is "opened",
+ *             Otherwise, box is "closed".
+ */
+function setState(boxID, open) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (open) {
+     openBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  } else {
+     closeBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  }
+}
+
+/**
+ * Switches the state of a collapseable box, e.g.
+ * if it's opened, it'll be closed, and vice versa.
+ * 
+ * @param boxID Identifier of box
+ */
+function switchState(boxID) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (boxObj.style.display=="none") {
+     // Box is closed, so open it
+     openBox(boxObj, buttonObj);
+  } else if (boxObj.style.display=="block") {
+     // Box is opened, so close it
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Closes all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function collapseAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Open all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function expandAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     openBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Makes all the control buttons of boxes appear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function viewControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "inline";
+        }
+    }
+}
+
+/**
+ * Makes all the control buttons of boxes disappear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function hideControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "none";
+        }
+    }
+}
+
+/**
+ * Sets the page for either printing mode
+ * or viewing mode. In printing mode, the page
+ * is made to be more readable when printing it out.
+ * In viewing mode, the page is more browsable.
+ *
+ * @param isPrinterVersion If true, display in
+ *                                 printing mode; otherwise, 
+ *                                 in viewing mode
+ */
+function displayMode(isPrinterVersion) {
+    var obj;
+    if (isPrinterVersion) {
+        // Hide global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "hidden";
+        }
+        // Hide Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        // Hide Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Expand all Schema Component Representation tables
+        expandAll(scBoxes);
+
+        // Hide Control buttons
+        hideControlButtons(xiBoxes);
+        hideControlButtons(scBoxes);
+    } else {
+        // View global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "visible";
+        }
+        // View Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        // View Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Collapse all Schema Component Representation tables
+        collapseAll(scBoxes);
+
+        // View Control buttons
+        viewControlButtons(xiBoxes);
+        viewControlButtons(scBoxes);
+    }
+}
+
+/**
+ * Opens up a window displaying the documentation
+ * of a schema component in the XML Instance
+ * Representation table.
+ * 
+ * @param compDesc      Description of schema component 
+ * @param compName      Name of schema component 
+ * @param docTextArray Array containing the paragraphs 
+ *                           of the new document
+ */
+function viewDocumentation(compDesc, compName, docTextArray) {
+  var width = 400;
+  var height = 200;
+  var locX = 100;
+  var locY = 200;
+
+  /* Generate content */
+  var actualText = "<html>";
+  actualText += "<head><title>";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": " + compName;
+  }
+  actualText += "</title></head>";
+  actualText += "<body bgcolor=\"#FFFFEE\">";
+  // Title
+  actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; letter-spacing:1px;\">";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": <span style=\"color:#006699\">" + compName + "</span>";
+  }
+  actualText += "</p>";
+  // Documentation
+  var idx;
+  for (idx = 0; idx < docTextArray.length; idx++) {
+     actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 10pt;\">" + docTextArray[idx] + "</p>";
+  }
+  // Link to close window
+  actualText += "<a href=\"javascript:void(0)\" onclick=\"window.close();\" style=\"font-family: Arial, sans-serif; font-size: 8pt;\">Close</a>";
+  actualText += "</body></html>";
+
+  /* Display window */
+  windowCount++;
+  var docWindow = window.open("", "documentation"+windowCount, "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable,alwaysRaised,dependent,titlebar=no,width="+width+",height="+height+",screenX="+locX+",left="+locX+",screenY="+locY+",top="+locY);
+  docWindow.document.write(actualText);
+}
+
+// -->
+</script>
+  </head>
+  <body>
+    <h1>
+      <a name="top">XML Schema Documentation</a>
+    </h1>
+    <div style="float: right;">
+      <div id="printerControls" style="display:none;">
+        <input type="checkbox" onclick="displayMode(this.checked)" />Printer-friendly Version</div>
+      <script type="text/javascript">
+<!--
+
+var pc = getElementObject("printerControls");
+if (pc != null) {
+   pc.style.display="block";
+}
+               
+// -->
+</script>
+      <div id="globalControls" style="display:none">
+        <strong>XML Instance Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(xiBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(xiBoxes)">Collapse All</a> ]</span>
+        <br />
+        <br />
+        <strong>Schema Component Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(scBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(scBoxes)">Collapse All</a> ]</span>
+      </div>
+      <script type="text/javascript">
+<!--
+
+var gc = getElementObject("globalControls");
+if (gc != null) {
+   gc.style.display="block";
+}
+               
+// -->
+</script>
+    </div>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li>
+        <a href="#SchemaProperties">Schema Document Properties</a>
+      </li>
+      <li>
+        <a href="#SchemaDeclarations">Global Declarations</a>
+        <ul>
+          <li>
+            <a href="#element_Invoice">Element: <strong>Invoice</strong></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#SchemaDefinitions">Global Definitions</a>
+        <ul>
+          <li>
+            <a href="#type_InvoiceType">Complex Type: <strong>InvoiceType</strong></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="legendTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Legend">Legend</a>
+      </li>
+    </ul>
+    <ul id="glossaryTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Glossary">Glossary</a>
+      </li>
+    </ul>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaProperties">Schema Document Properties</a>
+    </h2>
+    <table class="properties">
+      <tr>
+        <th>
+          <a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+        </th>
+        <td>
+          <span class="targetNS">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Version</th>
+        <td>2.0</td>
+      </tr>
+      <tr>
+        <th>Element and Attribute Namespaces</th>
+        <td>
+          <ul>
+            <li>Global element and attribute declarations belong to this schema's target namespace.</li>
+            <li>By default, local element declarations belong to this schema's target namespace.</li>
+            <li>By default, local attribute declarations have no namespace.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Schema Composition</th>
+        <td>
+          <ul>
+            <li>This schema imports schema(s) from the following namespace(s):<ul><li><em>urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2</em> (at .\UnqualifiedDataTypeSchemaModule-2.0.xsd)</li><li><em>urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</em> (at .\UBL-CommonExtensionComponents-2.0.xsd)</li><li><em>urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</em> (at .\UBL-CommonBasicComponents-2.0.xsd)</li><li><em>urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</em> (at .\UBL-CommonAggregateComponents-2.0.xsd)</li><li><em>urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2</em> (at .\UBL-QualifiedDatatypes-2.0.xsd)</li></ul></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Application Data</th>
+        <td>
+      <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:references&gt; <div style="margin-left: 1.5em">
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:un:unece:uncefact:codelist:specification:5639:1988"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:un:unece:uncefact:codelist:specification:66411:2001"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:un:unece:uncefact:codelist:specification:54217:2001"/&gt;</code>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:reference targetNamespace="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"/&gt;</code>
+      </div>&lt;/<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:references&gt;</code>
+      <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:imports&gt; <div style="margin-left: 1.5em">
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:namespace prefix="ns5" uri="https://BOS.AK.Husquarna.PropertySchema" location=".\PropertySchema.xsd"/&gt;</code>
+      </div>&lt;/<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:imports&gt;</code>
+    </td>
+      </tr>
+    </table>
+    <h3>Declared Namespaces</h3>
+    <table class="namespaces">
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_">Default namespace</a>
+        </td>
+        <td>
+          <span class="targetNS">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xml">xml</a>
+        </td>
+        <td>http://www.w3.org/XML/1998/namespace</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ns4">ns4</a>
+        </td>
+        <td>urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ns2">ns2</a>
+        </td>
+        <td>urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ns5">ns5</a>
+        </td>
+        <td>https://BOS.AK.Husquarna.PropertySchema</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_b">b</a>
+        </td>
+        <td>http://schemas.microsoft.com/BizTalk/2003</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ns1">ns1</a>
+        </td>
+        <td>urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ns0">ns0</a>
+        </td>
+        <td>urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ns3">ns3</a>
+        </td>
+        <td>urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_ccts">ccts</a>
+        </td>
+        <td>urn:un:unece:uncefact:documentation:2</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xsd">xsd</a>
+        </td>
+        <td>http://www.w3.org/2001/XMLSchema</td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="schema_scbox_button" class="control" onclick="switchState('schema_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="schema_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:schema</span> <span class="scTag">attributeFormDefault</span>="<span class="scContent">unqualified</span>" <span class="scTag">elementFormDefault</span>="<span class="scContent">qualified</span>" <span class="scTag">targetNamespace</span>="<span class="scContent">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</span>" <span class="scTag">version</span>="<span class="scContent">2.0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:import</span> <span class="scTag">schemaLocation</span>="<span class="scContent">.\UnqualifiedDataTypeSchemaModule-2.0.xsd</span>" <span class="scTag">namespace</span>="<span class="scContent">urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:import</span> <span class="scTag">schemaLocation</span>="<span class="scContent">.\UBL-CommonExtensionComponents-2.0.xsd</span>" <span class="scTag">namespace</span>="<span class="scContent">urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:import</span> <span class="scTag">schemaLocation</span>="<span class="scContent">.\UBL-CommonBasicComponents-2.0.xsd</span>" <span class="scTag">namespace</span>="<span class="scContent">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:import</span> <span class="scTag">schemaLocation</span>="<span class="scContent">.\UBL-CommonAggregateComponents-2.0.xsd</span>" <span class="scTag">namespace</span>="<span class="scContent">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:import</span> <span class="scTag">schemaLocation</span>="<span class="scContent">.\UBL-QualifiedDatatypes-2.0.xsd</span>" <span class="scTag">namespace</span>="<span class="scContent">urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2</span>"/&gt;</div><div class="scContent" style="margin-left: 1.5em">...</div>&lt;/<span class="scTag">xsd:schema</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('schema_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaDeclarations">Global Declarations</a>
+    </h2>
+    <h3>Element: <a name="element_Invoice" class="name">Invoice</a></h3>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>Invoice</td>
+      </tr>
+      <tr>
+        <th>Type</th>
+        <td>
+          <span class="type">
+            <a title="Jump to &quot;InvoiceType&quot; type definition." href="#type_InvoiceType">InvoiceType</a>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>Documentation</th>
+        <td>This element MUST be conveyed as the root element in any instance document based on this Schema expression</td>
+      </tr>
+      <tr>
+        <th>Application Data</th>
+        <td>
+        <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:properties&gt; <div style="margin-left: 1.5em">
+          <code>&lt;<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:property name="ns5:URI" xpath="/*[local-name()='Invoice' and namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:Invoice-2']/*[local-name()='AdditionalDocumentReference' and namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2']/*[local-name()='Attachment' and namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2']/*[local-name()='ExternalReference' and namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2']/*[local-name()='URI' and namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2']"/&gt;</code>
+        </div>&lt;/<a href="#ns_b" title="Find out namespace of 'b' prefix">b</a>:properties&gt;</code>
+      </td>
+      </tr>
+    </table>
+    <div class="sample box">
+      <div>
+        <input type="button" id="element_Invoice_xibox_button" class="control" onclick="switchState('element_Invoice_xibox'); return false;" style="display: none" /> <span class="caption">XML Instance Representation</span></div>
+      <div id="element_Invoice_xibox" class="contents">
+        <div style="margin-left: 0em">&lt;Invoice&gt; <br /><div style="margin-left: 1.5em">&lt;<a href="#ns_ns3" title="Find out namespace of 'ns3' prefix">ns3</a>:<a title="&quot;UBLExtensions&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLExtensions&quot; element declaration could not be found.');">UBLExtensions</a>&gt; ... &lt;/<a href="#ns_ns3" title="Find out namespace of 'ns3' prefix">ns3</a>:<a title="&quot;UBLExtensions&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLExtensions&quot; element declaration could not be found.');">UBLExtensions</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('A container for all extensions present in the document.'); viewDocumentation('Element', 'UBLExtensions', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UBLVersionID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLVersionID&quot; element declaration could not be found.');">UBLVersionID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UBLVersionID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLVersionID&quot; element declaration could not be found.');">UBLVersionID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. UBL Version Identifier. Identifier The earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance. 0..1 Invoice UBL Version Identifier Identifier Identifier. Type 2.0.5'); viewDocumentation('Element', 'UBLVersionID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CustomizationID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CustomizationID&quot; element declaration could not be found.');">CustomizationID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CustomizationID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CustomizationID&quot; element declaration could not be found.');">CustomizationID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Customization Identifier. Identifier Identifies a user-defined customization of UBL for a specific use. 0..1 Invoice Customization Identifier Identifier Identifier. Type NES'); viewDocumentation('Element', 'CustomizationID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ProfileID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ProfileID&quot; element declaration could not be found.');">ProfileID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ProfileID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ProfileID&quot; element declaration could not be found.');">ProfileID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Profile Identifier. Identifier Identifies a user-defined profile of the customization of UBL being used. 0..1 Invoice Profile Identifier Identifier Identifier. Type BasicProcurementProcess'); viewDocumentation('Element', 'ProfileID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ID&quot; element declaration could not be found.');">ID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ID&quot; element declaration could not be found.');">ID</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Identifier An identifier for the Invoice assigned by the Creditor. 1 Invoice Identifier Identifier Identifier. Type Invoice Number'); viewDocumentation('Element', 'ID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CopyIndicator&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CopyIndicator&quot; element declaration could not be found.');">CopyIndicator</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CopyIndicator&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CopyIndicator&quot; element declaration could not be found.');">CopyIndicator</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Copy_ Indicator. Indicator Indicates whether a document is a copy (true) or not (false). 0..1 Invoice Copy Indicator Indicator Indicator. Type'); viewDocumentation('Element', 'CopyIndicator', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UUID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UUID&quot; element declaration could not be found.');">UUID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UUID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UUID&quot; element declaration could not be found.');">UUID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. UUID. Identifier A universally unique identifier for an instance of this ABIE. 0..1 Invoice UUID Identifier Identifier. Type'); viewDocumentation('Element', 'UUID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueDate&quot; element declaration could not be found.');">IssueDate</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueDate&quot; element declaration could not be found.');">IssueDate</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Issue Date. Date The date assigned by the Creditor on which the Invoice was issued. 1 Invoice Issue Date Date Date. Type Invoice Date'); viewDocumentation('Element', 'IssueDate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueTime&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueTime&quot; element declaration could not be found.');">IssueTime</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueTime&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueTime&quot; element declaration could not be found.');">IssueTime</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Issue Time. Time The time assigned by the Creditor at which the Invoice was issued. 0..1 Invoice Issue Time Time Time. Type'); viewDocumentation('Element', 'IssueTime', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;InvoiceTypeCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceTypeCode&quot; element declaration could not be found.');">InvoiceTypeCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;InvoiceTypeCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceTypeCode&quot; element declaration could not be found.');">InvoiceTypeCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Invoice Type Code. Code Code specifying the type of the Invoice. 0..1 Invoice Invoice Type Code Code Code. Type'); viewDocumentation('Element', 'InvoiceTypeCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;Note&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Note&quot; element declaration could not be found.');">Note</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;Note&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Note&quot; element declaration could not be found.');">Note</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Note. Text Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure. 0..n Invoice Note Text Text. Type'); viewDocumentation('Element', 'Note', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxPointDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxPointDate&quot; element declaration could not be found.');">TaxPointDate</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxPointDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxPointDate&quot; element declaration could not be found.');">TaxPointDate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Tax Point Date. Date The date of the Invoice, used to indicate the point at which tax becomes applicable. 0..1 Invoice Tax Point Date Date Date. Type'); viewDocumentation('Element', 'TaxPointDate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;DocumentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DocumentCurrencyCode&quot; element declaration could not be found.');">DocumentCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;DocumentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DocumentCurrencyCode&quot; element declaration could not be found.');">DocumentCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Document_ Currency Code. Code The currency in which the Document is presented. This may be the same currency as the pricing or as the tax. 0..1 Invoice Document Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'DocumentCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxCurrencyCode&quot; element declaration could not be found.');">TaxCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxCurrencyCode&quot; element declaration could not be found.');">TaxCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Tax_ Currency Code. Code The currency used for tax amounts in the Invoice. 0..1 Invoice Tax Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'TaxCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PricingCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingCurrencyCode&quot; element declaration could not be found.');">PricingCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PricingCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingCurrencyCode&quot; element declaration could not be found.');">PricingCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Pricing_ Currency Code. Code The currency used for prices in the Invoice. 0..1 Invoice Pricing Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'PricingCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCurrencyCode&quot; element declaration could not be found.');">PaymentCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCurrencyCode&quot; element declaration could not be found.');">PaymentCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Payment_ Currency Code. Code The currency used for payment in the Invoice. 0..1 Invoice Payment Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'PaymentCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found.');">PaymentAlternativeCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found.');">PaymentAlternativeCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Payment Alternative_ Currency Code. Code The alternative currency used for payment in the Invoice. 0..1 Invoice Payment Alternative Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'PaymentAlternativeCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCostCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCostCode&quot; element declaration could not be found.');">AccountingCostCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCostCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCostCode&quot; element declaration could not be found.');">AccountingCostCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Accounting Cost Code. Code The Buyer\'s accounting code applied to the Invoice as a whole. 0..1 Invoice Accounting Cost Code Code Code. Type'); viewDocumentation('Element', 'AccountingCostCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCost&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCost&quot; element declaration could not be found.');">AccountingCost</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCost&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCost&quot; element declaration could not be found.');">AccountingCost</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Accounting Cost. Text The Buyer\'s accounting code applied to the Invoice as a whole, expressed as text. 0..1 Invoice Accounting Cost Text Text. Type'); viewDocumentation('Element', 'AccountingCost', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;LineCountNumeric&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LineCountNumeric&quot; element declaration could not be found.');">LineCountNumeric</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;LineCountNumeric&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LineCountNumeric&quot; element declaration could not be found.');">LineCountNumeric</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Line Count. Numeric The number of lines in the document. 0..1 Invoice Line Count Numeric Numeric. Type'); viewDocumentation('Element', 'LineCountNumeric', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoicePeriod&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoicePeriod&quot; element declaration could not be found.');">InvoicePeriod</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoicePeriod&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoicePeriod&quot; element declaration could not be found.');">InvoicePeriod</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Invoice_ Period. Period An association to period(s) to which the Invoice applies. 0..n Invoice Invoice Period Period'); viewDocumentation('Element', 'InvoicePeriod', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OrderReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderReference&quot; element declaration could not be found.');">OrderReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OrderReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderReference&quot; element declaration could not be found.');">OrderReference</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Order Reference An association to Order Reference. 0..1 Invoice Order Reference Order Reference'); viewDocumentation('Element', 'OrderReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BillingReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BillingReference&quot; element declaration could not be found.');">BillingReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BillingReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BillingReference&quot; element declaration could not be found.');">BillingReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Billing Reference An association to Billing Reference. 0..n Invoice Billing Reference Billing Reference'); viewDocumentation('Element', 'BillingReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DespatchDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DespatchDocumentReference&quot; element declaration could not be found.');">DespatchDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DespatchDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DespatchDocumentReference&quot; element declaration could not be found.');">DespatchDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Despatch_ Document Reference. Document Reference An associative reference to Despatch Advice. 0..n Invoice Despatch Document Reference Document Reference'); viewDocumentation('Element', 'DespatchDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ReceiptDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ReceiptDocumentReference&quot; element declaration could not be found.');">ReceiptDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ReceiptDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ReceiptDocumentReference&quot; element declaration could not be found.');">ReceiptDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Receipt_ Document Reference. Document Reference An associative reference to Receipt Advice. 0..n Invoice Receipt Document Reference Document Reference'); viewDocumentation('Element', 'ReceiptDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OriginatorDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginatorDocumentReference&quot; element declaration could not be found.');">OriginatorDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OriginatorDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginatorDocumentReference&quot; element declaration could not be found.');">OriginatorDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Originator_ Document Reference. Document Reference An associative reference to Originator Document. 0..n Invoice Originator Document Reference Document Reference'); viewDocumentation('Element', 'OriginatorDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ContractDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContractDocumentReference&quot; element declaration could not be found.');">ContractDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ContractDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContractDocumentReference&quot; element declaration could not be found.');">ContractDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Contract_ Document Reference. Document Reference An associative reference to Contract. 0..n Invoice Contract Document Reference Document Reference'); viewDocumentation('Element', 'ContractDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AdditionalDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AdditionalDocumentReference&quot; element declaration could not be found.');">AdditionalDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AdditionalDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AdditionalDocumentReference&quot; element declaration could not be found.');">AdditionalDocumentReference</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Additional_ Document Reference. Document Reference An associative reference to Additional Document. 0..n Invoice Additional Document Reference Document Reference'); viewDocumentation('Element', 'AdditionalDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Signature&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Signature&quot; element declaration could not be found.');">Signature</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Signature&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Signature&quot; element declaration could not be found.');">Signature</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Signature An association to Signature. 0..n Invoice Signature Signature'); viewDocumentation('Element', 'Signature', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingSupplierParty&quot; element declaration could not be found.');">AccountingSupplierParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingSupplierParty&quot; element declaration could not be found.');">AccountingSupplierParty</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Accounting_ Supplier Party. Supplier Party An association to the Accounting Supplier Party. 1 Invoice Accounting Supplier Party Supplier Party'); viewDocumentation('Element', 'AccountingSupplierParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCustomerParty&quot; element declaration could not be found.');">AccountingCustomerParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCustomerParty&quot; element declaration could not be found.');">AccountingCustomerParty</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Accounting_ Customer Party. Customer Party An association to the Accounting Customer Party. 1 Invoice Accounting Customer Party Customer Party'); viewDocumentation('Element', 'AccountingCustomerParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PayeeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PayeeParty&quot; element declaration could not be found.');">PayeeParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PayeeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PayeeParty&quot; element declaration could not be found.');">PayeeParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payee_ Party. Party An association to the Payee. 0..1 Invoice Payee Party Party'); viewDocumentation('Element', 'PayeeParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BuyerCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BuyerCustomerParty&quot; element declaration could not be found.');">BuyerCustomerParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BuyerCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BuyerCustomerParty&quot; element declaration could not be found.');">BuyerCustomerParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Buyer_ Customer Party. Customer Party An association to the Buyer. 0..1 Invoice Buyer Customer Party Customer Party'); viewDocumentation('Element', 'BuyerCustomerParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;SellerSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SellerSupplierParty&quot; element declaration could not be found.');">SellerSupplierParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;SellerSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SellerSupplierParty&quot; element declaration could not be found.');">SellerSupplierParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Seller_ Supplier Party. Supplier Party An association to the Seller. 0..1 Invoice Seller Supplier Party Supplier Party'); viewDocumentation('Element', 'SellerSupplierParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxRepresentativeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxRepresentativeParty&quot; element declaration could not be found.');">TaxRepresentativeParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxRepresentativeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxRepresentativeParty&quot; element declaration could not be found.');">TaxRepresentativeParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Tax Representative_ Party. Party An association to the Tax Representative. 0..1 Invoice Tax Representative Party Party'); viewDocumentation('Element', 'TaxRepresentativeParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Delivery&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Delivery&quot; element declaration could not be found.');">Delivery</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Delivery&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Delivery&quot; element declaration could not be found.');">Delivery</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Delivery An association to Delivery. 0..n Invoice Delivery Delivery'); viewDocumentation('Element', 'Delivery', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DeliveryTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DeliveryTerms&quot; element declaration could not be found.');">DeliveryTerms</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DeliveryTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DeliveryTerms&quot; element declaration could not be found.');">DeliveryTerms</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Delivery Terms An association to Delivery Terms. 0..1 Invoice Delivery Terms Delivery Terms'); viewDocumentation('Element', 'DeliveryTerms', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentMeans&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentMeans&quot; element declaration could not be found.');">PaymentMeans</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentMeans&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentMeans&quot; element declaration could not be found.');">PaymentMeans</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment Means An association to Payment Means. 0..n Invoice Payment Means Payment Means'); viewDocumentation('Element', 'PaymentMeans', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentTerms&quot; element declaration could not be found.');">PaymentTerms</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentTerms&quot; element declaration could not be found.');">PaymentTerms</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment Terms An association to Payment Terms. 0..n Invoice Payment Terms Payment Terms'); viewDocumentation('Element', 'PaymentTerms', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PrepaidPayment&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PrepaidPayment&quot; element declaration could not be found.');">PrepaidPayment</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PrepaidPayment&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PrepaidPayment&quot; element declaration could not be found.');">PrepaidPayment</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Prepaid_ Payment. Payment An association to prepaid payment(s). 0..n Invoice Prepaid Payment Payment'); viewDocumentation('Element', 'PrepaidPayment', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AllowanceCharge&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceCharge&quot; element declaration could not be found.');">AllowanceCharge</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AllowanceCharge&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceCharge&quot; element declaration could not be found.');">AllowanceCharge</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Allowance Charge An association to Allowances and Charges that apply to the Invoice as a whole. 0..n Invoice Allowance Charge Allowance Charge'); viewDocumentation('Element', 'AllowanceCharge', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxExchangeRate&quot; element declaration could not be found.');">TaxExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxExchangeRate&quot; element declaration could not be found.');">TaxExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Tax_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Tax Currency. 0..1 Invoice Tax Exchange Rate Exchange Rate'); viewDocumentation('Element', 'TaxExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PricingExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingExchangeRate&quot; element declaration could not be found.');">PricingExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PricingExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingExchangeRate&quot; element declaration could not be found.');">PricingExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Pricing_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Pricing Currency. 0..1 Invoice Pricing Exchange Rate Exchange Rate'); viewDocumentation('Element', 'PricingExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentExchangeRate&quot; element declaration could not be found.');">PaymentExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentExchangeRate&quot; element declaration could not be found.');">PaymentExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Payment Currency. 0..1 Invoice Payment Exchange Rate Exchange Rate'); viewDocumentation('Element', 'PaymentExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found.');">PaymentAlternativeExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found.');">PaymentAlternativeExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment Alternative_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Payment Alternative Currency. 0..1 Invoice Payment Alternative Exchange Rate Exchange Rate'); viewDocumentation('Element', 'PaymentAlternativeExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxTotal&quot; element declaration could not be found.');">TaxTotal</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxTotal&quot; element declaration could not be found.');">TaxTotal</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Tax Total An association to tax total for specific tax types/rates. 0..n Invoice Tax Total Tax Total'); viewDocumentation('Element', 'TaxTotal', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;LegalMonetaryTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LegalMonetaryTotal&quot; element declaration could not be found.');">LegalMonetaryTotal</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;LegalMonetaryTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LegalMonetaryTotal&quot; element declaration could not be found.');">LegalMonetaryTotal</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Legal_ Monetary Total. Monetary Total An association to the total amount payable on the Invoice, including Allowances, Charges, and Taxes. 1 Invoice Legal Monetary Total Monetary Total'); viewDocumentation('Element', 'LegalMonetaryTotal', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoiceLine&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceLine&quot; element declaration could not be found.');">InvoiceLine</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoiceLine&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceLine&quot; element declaration could not be found.');">InvoiceLine</a>&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Invoice Line An association to one or more Invoice Lines. 1..n Invoice Invoice Line Invoice Line'); viewDocumentation('Element', 'InvoiceLine', docArray);">?</a></div>&lt;/Invoice&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('element_Invoice_xibox', true);
+// -->
+</script>
+    </div>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="element_Invoice_scbox_button" class="control" onclick="switchState('element_Invoice_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="element_Invoice_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">name</span>="<span class="scContent">Invoice</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="Jump to &quot;InvoiceType&quot; type definition." href="#type_InvoiceType">InvoiceType</a></span></span>"/&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('element_Invoice_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaDefinitions">Global Definitions</a>
+    </h2>
+    <h3>Complex Type: <a name="type_InvoiceType" class="name">InvoiceType</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>InvoiceType</td>
+      </tr>
+      <tr>
+        <th>
+          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+        </th>
+        <td>no</td>
+      </tr>
+      <tr>
+        <th>Documentation</th>
+        <td>
+        &lt;<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:Component&gt; 
+          &lt;<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:ComponentType&gt; ABIE&lt;/<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:ComponentType&gt;
+          &lt;<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:DictionaryEntryName&gt; Invoice. Details&lt;/<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:DictionaryEntryName&gt;
+          &lt;<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:Definition&gt; The document used to request payment.&lt;/<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:Definition&gt;
+          &lt;<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:ObjectClass&gt; Invoice&lt;/<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:ObjectClass&gt;
+        &lt;/<a href="#ns_ccts" title="Find out namespace of 'ccts' prefix">ccts</a>:Component&gt;
+      </td>
+      </tr>
+    </table>
+    <div class="sample box">
+      <div>
+        <input type="button" id="type_InvoiceType_xibox_button" class="control" onclick="switchState('type_InvoiceType_xibox'); return false;" style="display: none" /> <span class="caption">XML Instance Representation</span></div>
+      <div id="type_InvoiceType_xibox" class="contents">
+        <div style="margin-left: 0em">&lt;...&gt; <br /><div style="margin-left: 1.5em">&lt;<a href="#ns_ns3" title="Find out namespace of 'ns3' prefix">ns3</a>:<a title="&quot;UBLExtensions&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLExtensions&quot; element declaration could not be found.');">UBLExtensions</a>&gt; ... &lt;/<a href="#ns_ns3" title="Find out namespace of 'ns3' prefix">ns3</a>:<a title="&quot;UBLExtensions&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLExtensions&quot; element declaration could not be found.');">UBLExtensions</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('A container for all extensions present in the document.'); viewDocumentation('Element', 'UBLExtensions', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UBLVersionID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLVersionID&quot; element declaration could not be found.');">UBLVersionID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UBLVersionID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLVersionID&quot; element declaration could not be found.');">UBLVersionID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. UBL Version Identifier. Identifier The earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance. 0..1 Invoice UBL Version Identifier Identifier Identifier. Type 2.0.5'); viewDocumentation('Element', 'UBLVersionID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CustomizationID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CustomizationID&quot; element declaration could not be found.');">CustomizationID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CustomizationID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CustomizationID&quot; element declaration could not be found.');">CustomizationID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Customization Identifier. Identifier Identifies a user-defined customization of UBL for a specific use. 0..1 Invoice Customization Identifier Identifier Identifier. Type NES'); viewDocumentation('Element', 'CustomizationID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ProfileID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ProfileID&quot; element declaration could not be found.');">ProfileID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ProfileID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ProfileID&quot; element declaration could not be found.');">ProfileID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Profile Identifier. Identifier Identifies a user-defined profile of the customization of UBL being used. 0..1 Invoice Profile Identifier Identifier Identifier. Type BasicProcurementProcess'); viewDocumentation('Element', 'ProfileID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ID&quot; element declaration could not be found.');">ID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ID&quot; element declaration could not be found.');">ID</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Identifier An identifier for the Invoice assigned by the Creditor. 1 Invoice Identifier Identifier Identifier. Type Invoice Number'); viewDocumentation('Element', 'ID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CopyIndicator&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CopyIndicator&quot; element declaration could not be found.');">CopyIndicator</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CopyIndicator&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CopyIndicator&quot; element declaration could not be found.');">CopyIndicator</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Copy_ Indicator. Indicator Indicates whether a document is a copy (true) or not (false). 0..1 Invoice Copy Indicator Indicator Indicator. Type'); viewDocumentation('Element', 'CopyIndicator', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UUID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UUID&quot; element declaration could not be found.');">UUID</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UUID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UUID&quot; element declaration could not be found.');">UUID</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. UUID. Identifier A universally unique identifier for an instance of this ABIE. 0..1 Invoice UUID Identifier Identifier. Type'); viewDocumentation('Element', 'UUID', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueDate&quot; element declaration could not be found.');">IssueDate</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueDate&quot; element declaration could not be found.');">IssueDate</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Issue Date. Date The date assigned by the Creditor on which the Invoice was issued. 1 Invoice Issue Date Date Date. Type Invoice Date'); viewDocumentation('Element', 'IssueDate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueTime&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueTime&quot; element declaration could not be found.');">IssueTime</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueTime&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueTime&quot; element declaration could not be found.');">IssueTime</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Issue Time. Time The time assigned by the Creditor at which the Invoice was issued. 0..1 Invoice Issue Time Time Time. Type'); viewDocumentation('Element', 'IssueTime', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;InvoiceTypeCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceTypeCode&quot; element declaration could not be found.');">InvoiceTypeCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;InvoiceTypeCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceTypeCode&quot; element declaration could not be found.');">InvoiceTypeCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Invoice Type Code. Code Code specifying the type of the Invoice. 0..1 Invoice Invoice Type Code Code Code. Type'); viewDocumentation('Element', 'InvoiceTypeCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;Note&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Note&quot; element declaration could not be found.');">Note</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;Note&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Note&quot; element declaration could not be found.');">Note</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Note. Text Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure. 0..n Invoice Note Text Text. Type'); viewDocumentation('Element', 'Note', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxPointDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxPointDate&quot; element declaration could not be found.');">TaxPointDate</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxPointDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxPointDate&quot; element declaration could not be found.');">TaxPointDate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Tax Point Date. Date The date of the Invoice, used to indicate the point at which tax becomes applicable. 0..1 Invoice Tax Point Date Date Date. Type'); viewDocumentation('Element', 'TaxPointDate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;DocumentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DocumentCurrencyCode&quot; element declaration could not be found.');">DocumentCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;DocumentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DocumentCurrencyCode&quot; element declaration could not be found.');">DocumentCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Document_ Currency Code. Code The currency in which the Document is presented. This may be the same currency as the pricing or as the tax. 0..1 Invoice Document Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'DocumentCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxCurrencyCode&quot; element declaration could not be found.');">TaxCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxCurrencyCode&quot; element declaration could not be found.');">TaxCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Tax_ Currency Code. Code The currency used for tax amounts in the Invoice. 0..1 Invoice Tax Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'TaxCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PricingCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingCurrencyCode&quot; element declaration could not be found.');">PricingCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PricingCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingCurrencyCode&quot; element declaration could not be found.');">PricingCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Pricing_ Currency Code. Code The currency used for prices in the Invoice. 0..1 Invoice Pricing Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'PricingCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCurrencyCode&quot; element declaration could not be found.');">PaymentCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCurrencyCode&quot; element declaration could not be found.');">PaymentCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Payment_ Currency Code. Code The currency used for payment in the Invoice. 0..1 Invoice Payment Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'PaymentCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found.');">PaymentAlternativeCurrencyCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found.');">PaymentAlternativeCurrencyCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Payment Alternative_ Currency Code. Code The alternative currency used for payment in the Invoice. 0..1 Invoice Payment Alternative Currency Code Code Currency_ Code. Type'); viewDocumentation('Element', 'PaymentAlternativeCurrencyCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCostCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCostCode&quot; element declaration could not be found.');">AccountingCostCode</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCostCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCostCode&quot; element declaration could not be found.');">AccountingCostCode</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Accounting Cost Code. Code The Buyer\'s accounting code applied to the Invoice as a whole. 0..1 Invoice Accounting Cost Code Code Code. Type'); viewDocumentation('Element', 'AccountingCostCode', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCost&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCost&quot; element declaration could not be found.');">AccountingCost</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCost&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCost&quot; element declaration could not be found.');">AccountingCost</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Accounting Cost. Text The Buyer\'s accounting code applied to the Invoice as a whole, expressed as text. 0..1 Invoice Accounting Cost Text Text. Type'); viewDocumentation('Element', 'AccountingCost', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;LineCountNumeric&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LineCountNumeric&quot; element declaration could not be found.');">LineCountNumeric</a>&gt; ... &lt;/<a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;LineCountNumeric&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LineCountNumeric&quot; element declaration could not be found.');">LineCountNumeric</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('BBIE Invoice. Line Count. Numeric The number of lines in the document. 0..1 Invoice Line Count Numeric Numeric. Type'); viewDocumentation('Element', 'LineCountNumeric', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoicePeriod&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoicePeriod&quot; element declaration could not be found.');">InvoicePeriod</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoicePeriod&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoicePeriod&quot; element declaration could not be found.');">InvoicePeriod</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Invoice_ Period. Period An association to period(s) to which the Invoice applies. 0..n Invoice Invoice Period Period'); viewDocumentation('Element', 'InvoicePeriod', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OrderReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderReference&quot; element declaration could not be found.');">OrderReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OrderReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderReference&quot; element declaration could not be found.');">OrderReference</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Order Reference An association to Order Reference. 0..1 Invoice Order Reference Order Reference'); viewDocumentation('Element', 'OrderReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BillingReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BillingReference&quot; element declaration could not be found.');">BillingReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BillingReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BillingReference&quot; element declaration could not be found.');">BillingReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Billing Reference An association to Billing Reference. 0..n Invoice Billing Reference Billing Reference'); viewDocumentation('Element', 'BillingReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DespatchDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DespatchDocumentReference&quot; element declaration could not be found.');">DespatchDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DespatchDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DespatchDocumentReference&quot; element declaration could not be found.');">DespatchDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Despatch_ Document Reference. Document Reference An associative reference to Despatch Advice. 0..n Invoice Despatch Document Reference Document Reference'); viewDocumentation('Element', 'DespatchDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ReceiptDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ReceiptDocumentReference&quot; element declaration could not be found.');">ReceiptDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ReceiptDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ReceiptDocumentReference&quot; element declaration could not be found.');">ReceiptDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Receipt_ Document Reference. Document Reference An associative reference to Receipt Advice. 0..n Invoice Receipt Document Reference Document Reference'); viewDocumentation('Element', 'ReceiptDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OriginatorDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginatorDocumentReference&quot; element declaration could not be found.');">OriginatorDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OriginatorDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginatorDocumentReference&quot; element declaration could not be found.');">OriginatorDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Originator_ Document Reference. Document Reference An associative reference to Originator Document. 0..n Invoice Originator Document Reference Document Reference'); viewDocumentation('Element', 'OriginatorDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ContractDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContractDocumentReference&quot; element declaration could not be found.');">ContractDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ContractDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContractDocumentReference&quot; element declaration could not be found.');">ContractDocumentReference</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Contract_ Document Reference. Document Reference An associative reference to Contract. 0..n Invoice Contract Document Reference Document Reference'); viewDocumentation('Element', 'ContractDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AdditionalDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AdditionalDocumentReference&quot; element declaration could not be found.');">AdditionalDocumentReference</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AdditionalDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AdditionalDocumentReference&quot; element declaration could not be found.');">AdditionalDocumentReference</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Additional_ Document Reference. Document Reference An associative reference to Additional Document. 0..n Invoice Additional Document Reference Document Reference'); viewDocumentation('Element', 'AdditionalDocumentReference', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Signature&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Signature&quot; element declaration could not be found.');">Signature</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Signature&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Signature&quot; element declaration could not be found.');">Signature</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Signature An association to Signature. 0..n Invoice Signature Signature'); viewDocumentation('Element', 'Signature', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingSupplierParty&quot; element declaration could not be found.');">AccountingSupplierParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingSupplierParty&quot; element declaration could not be found.');">AccountingSupplierParty</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Accounting_ Supplier Party. Supplier Party An association to the Accounting Supplier Party. 1 Invoice Accounting Supplier Party Supplier Party'); viewDocumentation('Element', 'AccountingSupplierParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCustomerParty&quot; element declaration could not be found.');">AccountingCustomerParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCustomerParty&quot; element declaration could not be found.');">AccountingCustomerParty</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Accounting_ Customer Party. Customer Party An association to the Accounting Customer Party. 1 Invoice Accounting Customer Party Customer Party'); viewDocumentation('Element', 'AccountingCustomerParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PayeeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PayeeParty&quot; element declaration could not be found.');">PayeeParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PayeeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PayeeParty&quot; element declaration could not be found.');">PayeeParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payee_ Party. Party An association to the Payee. 0..1 Invoice Payee Party Party'); viewDocumentation('Element', 'PayeeParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BuyerCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BuyerCustomerParty&quot; element declaration could not be found.');">BuyerCustomerParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BuyerCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BuyerCustomerParty&quot; element declaration could not be found.');">BuyerCustomerParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Buyer_ Customer Party. Customer Party An association to the Buyer. 0..1 Invoice Buyer Customer Party Customer Party'); viewDocumentation('Element', 'BuyerCustomerParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;SellerSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SellerSupplierParty&quot; element declaration could not be found.');">SellerSupplierParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;SellerSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SellerSupplierParty&quot; element declaration could not be found.');">SellerSupplierParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Seller_ Supplier Party. Supplier Party An association to the Seller. 0..1 Invoice Seller Supplier Party Supplier Party'); viewDocumentation('Element', 'SellerSupplierParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxRepresentativeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxRepresentativeParty&quot; element declaration could not be found.');">TaxRepresentativeParty</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxRepresentativeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxRepresentativeParty&quot; element declaration could not be found.');">TaxRepresentativeParty</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Tax Representative_ Party. Party An association to the Tax Representative. 0..1 Invoice Tax Representative Party Party'); viewDocumentation('Element', 'TaxRepresentativeParty', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Delivery&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Delivery&quot; element declaration could not be found.');">Delivery</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Delivery&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Delivery&quot; element declaration could not be found.');">Delivery</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Delivery An association to Delivery. 0..n Invoice Delivery Delivery'); viewDocumentation('Element', 'Delivery', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DeliveryTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DeliveryTerms&quot; element declaration could not be found.');">DeliveryTerms</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DeliveryTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DeliveryTerms&quot; element declaration could not be found.');">DeliveryTerms</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Delivery Terms An association to Delivery Terms. 0..1 Invoice Delivery Terms Delivery Terms'); viewDocumentation('Element', 'DeliveryTerms', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentMeans&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentMeans&quot; element declaration could not be found.');">PaymentMeans</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentMeans&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentMeans&quot; element declaration could not be found.');">PaymentMeans</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment Means An association to Payment Means. 0..n Invoice Payment Means Payment Means'); viewDocumentation('Element', 'PaymentMeans', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentTerms&quot; element declaration could not be found.');">PaymentTerms</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentTerms&quot; element declaration could not be found.');">PaymentTerms</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment Terms An association to Payment Terms. 0..n Invoice Payment Terms Payment Terms'); viewDocumentation('Element', 'PaymentTerms', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PrepaidPayment&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PrepaidPayment&quot; element declaration could not be found.');">PrepaidPayment</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PrepaidPayment&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PrepaidPayment&quot; element declaration could not be found.');">PrepaidPayment</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Prepaid_ Payment. Payment An association to prepaid payment(s). 0..n Invoice Prepaid Payment Payment'); viewDocumentation('Element', 'PrepaidPayment', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AllowanceCharge&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceCharge&quot; element declaration could not be found.');">AllowanceCharge</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AllowanceCharge&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceCharge&quot; element declaration could not be found.');">AllowanceCharge</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Allowance Charge An association to Allowances and Charges that apply to the Invoice as a whole. 0..n Invoice Allowance Charge Allowance Charge'); viewDocumentation('Element', 'AllowanceCharge', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxExchangeRate&quot; element declaration could not be found.');">TaxExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxExchangeRate&quot; element declaration could not be found.');">TaxExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Tax_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Tax Currency. 0..1 Invoice Tax Exchange Rate Exchange Rate'); viewDocumentation('Element', 'TaxExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PricingExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingExchangeRate&quot; element declaration could not be found.');">PricingExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PricingExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingExchangeRate&quot; element declaration could not be found.');">PricingExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Pricing_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Pricing Currency. 0..1 Invoice Pricing Exchange Rate Exchange Rate'); viewDocumentation('Element', 'PricingExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentExchangeRate&quot; element declaration could not be found.');">PaymentExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentExchangeRate&quot; element declaration could not be found.');">PaymentExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Payment Currency. 0..1 Invoice Payment Exchange Rate Exchange Rate'); viewDocumentation('Element', 'PaymentExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found.');">PaymentAlternativeExchangeRate</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found.');">PaymentAlternativeExchangeRate</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Payment Alternative_ Exchange Rate. Exchange Rate An association to Exchange Rate between the Document Currency and the Payment Alternative Currency. 0..1 Invoice Payment Alternative Exchange Rate Exchange Rate'); viewDocumentation('Element', 'PaymentAlternativeExchangeRate', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxTotal&quot; element declaration could not be found.');">TaxTotal</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxTotal&quot; element declaration could not be found.');">TaxTotal</a>&gt; <span class="occurs">[0..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Tax Total An association to tax total for specific tax types/rates. 0..n Invoice Tax Total Tax Total'); viewDocumentation('Element', 'TaxTotal', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;LegalMonetaryTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LegalMonetaryTotal&quot; element declaration could not be found.');">LegalMonetaryTotal</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;LegalMonetaryTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LegalMonetaryTotal&quot; element declaration could not be found.');">LegalMonetaryTotal</a>&gt; <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Legal_ Monetary Total. Monetary Total An association to the total amount payable on the Invoice, including Allowances, Charges, and Taxes. 1 Invoice Legal Monetary Total Monetary Total'); viewDocumentation('Element', 'LegalMonetaryTotal', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoiceLine&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceLine&quot; element declaration could not be found.');">InvoiceLine</a>&gt; ... &lt;/<a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoiceLine&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceLine&quot; element declaration could not be found.');">InvoiceLine</a>&gt; <span class="occurs">[1..*]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('ASBIE Invoice. Invoice Line An association to one or more Invoice Lines. 1..n Invoice Invoice Line Invoice Line'); viewDocumentation('Element', 'InvoiceLine', docArray);">?</a></div>&lt;/...&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_InvoiceType_xibox', true);
+// -->
+</script>
+    </div>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_InvoiceType_scbox_button" class="control" onclick="switchState('type_InvoiceType_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_InvoiceType_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> <span class="scTag">name</span>="<span class="scContent">InvoiceType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns3" title="Find out namespace of 'ns3' prefix">ns3</a>:<a title="&quot;UBLExtensions&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLExtensions&quot; element declaration could not be found.');">UBLExtensions</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UBLVersionID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UBLVersionID&quot; element declaration could not be found.');">UBLVersionID</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CustomizationID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CustomizationID&quot; element declaration could not be found.');">CustomizationID</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ProfileID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ProfileID&quot; element declaration could not be found.');">ProfileID</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;ID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ID&quot; element declaration could not be found.');">ID</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;CopyIndicator&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;CopyIndicator&quot; element declaration could not be found.');">CopyIndicator</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;UUID&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;UUID&quot; element declaration could not be found.');">UUID</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueDate&quot; element declaration could not be found.');">IssueDate</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;IssueTime&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;IssueTime&quot; element declaration could not be found.');">IssueTime</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;InvoiceTypeCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceTypeCode&quot; element declaration could not be found.');">InvoiceTypeCode</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;Note&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Note&quot; element declaration could not be found.');">Note</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxPointDate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxPointDate&quot; element declaration could not be found.');">TaxPointDate</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;DocumentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DocumentCurrencyCode&quot; element declaration could not be found.');">DocumentCurrencyCode</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;TaxCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxCurrencyCode&quot; element declaration could not be found.');">TaxCurrencyCode</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PricingCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingCurrencyCode&quot; element declaration could not be found.');">PricingCurrencyCode</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentCurrencyCode&quot; element declaration could not be found.');">PaymentCurrencyCode</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeCurrencyCode&quot; element declaration could not be found.');">PaymentAlternativeCurrencyCode</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCostCode&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCostCode&quot; element declaration could not be found.');">AccountingCostCode</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;AccountingCost&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCost&quot; element declaration could not be found.');">AccountingCost</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns1" title="Find out namespace of 'ns1' prefix">ns1</a>:<a title="&quot;LineCountNumeric&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LineCountNumeric&quot; element declaration could not be found.');">LineCountNumeric</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoicePeriod&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoicePeriod&quot; element declaration could not be found.');">InvoicePeriod</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OrderReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OrderReference&quot; element declaration could not be found.');">OrderReference</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BillingReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BillingReference&quot; element declaration could not be found.');">BillingReference</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DespatchDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DespatchDocumentReference&quot; element declaration could not be found.');">DespatchDocumentReference</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ReceiptDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ReceiptDocumentReference&quot; element declaration could not be found.');">ReceiptDocumentReference</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;OriginatorDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;OriginatorDocumentReference&quot; element declaration could not be found.');">OriginatorDocumentReference</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;ContractDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ContractDocumentReference&quot; element declaration could not be found.');">ContractDocumentReference</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AdditionalDocumentReference&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AdditionalDocumentReference&quot; element declaration could not be found.');">AdditionalDocumentReference</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Signature&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Signature&quot; element declaration could not be found.');">Signature</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingSupplierParty&quot; element declaration could not be found.');">AccountingSupplierParty</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AccountingCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AccountingCustomerParty&quot; element declaration could not be found.');">AccountingCustomerParty</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PayeeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PayeeParty&quot; element declaration could not be found.');">PayeeParty</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;BuyerCustomerParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;BuyerCustomerParty&quot; element declaration could not be found.');">BuyerCustomerParty</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;SellerSupplierParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;SellerSupplierParty&quot; element declaration could not be found.');">SellerSupplierParty</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxRepresentativeParty&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxRepresentativeParty&quot; element declaration could not be found.');">TaxRepresentativeParty</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;Delivery&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Delivery&quot; element declaration could not be found.');">Delivery</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;DeliveryTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;DeliveryTerms&quot; element declaration could not be found.');">DeliveryTerms</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentMeans&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentMeans&quot; element declaration could not be found.');">PaymentMeans</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentTerms&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentTerms&quot; element declaration could not be found.');">PaymentTerms</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PrepaidPayment&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PrepaidPayment&quot; element declaration could not be found.');">PrepaidPayment</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;AllowanceCharge&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;AllowanceCharge&quot; element declaration could not be found.');">AllowanceCharge</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxExchangeRate&quot; element declaration could not be found.');">TaxExchangeRate</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PricingExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PricingExchangeRate&quot; element declaration could not be found.');">PricingExchangeRate</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentExchangeRate&quot; element declaration could not be found.');">PaymentExchangeRate</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;PaymentAlternativeExchangeRate&quot; element declaration could not be found.');">PaymentAlternativeExchangeRate</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;TaxTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;TaxTotal&quot; element declaration could not be found.');">TaxTotal</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;LegalMonetaryTotal&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;LegalMonetaryTotal&quot; element declaration could not be found.');">LegalMonetaryTotal</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> <span class="scTag">ref</span>="<span class="scContent"><a href="#ns_ns0" title="Find out namespace of 'ns0' prefix">ns0</a>:<a title="&quot;InvoiceLine&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;InvoiceLine&quot; element declaration could not be found.');">InvoiceLine</a></span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_InvoiceType_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <div id="legend">
+      <h2>
+        <a name="Legend">Legend</a>
+      </h2>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">Complex Type:</h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Type</div>
+      </div>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">
+          <span class="name">AusAddress</span>
+        </h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Name</div>
+      </div>
+      <table class="hierarchy" style="clear : both">
+        <tr>
+          <th>Super-types:</th>
+          <td>
+            <span class="type" style="color: #0000FF; text-decoration:underline;">Address</span> &lt; <span class="current">AusAddress</span> (by extension)</td>
+        </tr>
+        <tr>
+          <th>Sub-types:</th>
+          <td>
+            <ul>
+              <li>
+                <span class="type" style="color: #0000FF; text-decoration:underline;">QLDAddress</span> (by restriction)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div class="hint">If this schema component is a type definition, its type hierarchy is shown in a gray-bordered box.</div>
+      <table class="properties">
+        <tr>
+          <th>Name</th>
+          <td>AusAddress</td>
+        </tr>
+        <tr>
+          <th>
+            <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+          </th>
+          <td>no</td>
+        </tr>
+      </table>
+      <div class="hint">The table above displays the properties of this schema component.</div>
+      <div class="sample box">
+        <div>
+          <span class="caption">XML Instance Representation</span>
+        </div>
+        <div class="contents">
+          <span style="margin-left: 0em">&lt;...</span>
+          <span class="newFields">
+            <span> country="<span class="fixed">Australia</span>"</span>
+          </span>&gt; <br /><span style="margin-left: 1.5em" class="inherited">&lt;unitNo&gt; <span class="type">string</span> &lt;/unitNo&gt; <span class="occurs">[0..1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;houseNo&gt; <span class="type">string</span> &lt;/houseNo&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;street&gt; <span class="type">string</span> &lt;/street&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a><span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;city&gt; <span class="type">string</span> &lt;/city&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;town&gt; <span class="type">string</span> &lt;/town&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">End Choice</span><br /><span class="newFields"><span style="margin-left: 1.5em">&lt;state&gt; <span class="type" style="text-decoration:underline;">AusStates</span> &lt;/state&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em">&lt;postcode&gt; <span class="constraint">string &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;</span> &lt;/postcode&gt; <span class="occurs">[1]</span><a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Post code must be a four-digit number.'); viewDocumentation('Element', 'postcode', docArray);">?</a></span><br /></span><span style="margin-left: 0em">&lt;/...&gt;</span><br /></div>
+      </div>
+      <div class="hint">
+        <p>The XML Instance Representation table above shows the schema component's content as an XML instance.</p>
+        <ul>
+          <li>The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].</li>
+          <li>Model group information are shown in gray, e.g. Start Choice ... End Choice.</li>
+          <li>For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in <span style="font-weight: bold">bold</span>.</li>
+          <li>If an element/attribute has a fixed value, the fixed value is shown in green, e.g. country="Australia".</li>
+          <li>Otherwise, the type of the element/attribute is displayed.
+               <ul><li>If the element/attribute's type is in the schema, a link is provided to it.</li><li>For local simple type definitions, the constraints are displayed in angle brackets, e.g. &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;.</li></ul></li>
+          <li>If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked, e.g. &lt;postcode&gt;.</li>
+        </ul>
+      </div>
+      <div class="schemaComponent box">
+        <div>
+          <span class="caption">Schema Component Representation</span>
+        </div>
+        <div class="contents">
+          <span style="margin-left: 0em">&lt;<span class="scTag">complexType</span><span class="scTag">name</span>="<span class="scContent">AusAddress</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;<span class="scTag">extension</span><span class="scTag">base</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">Address</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">state</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">AusStates</span></span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">postcode</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;<span class="scTag">restriction</span><span class="scTag">base</span>="<span class="scContent"><span class="type">string</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 10.5em">&lt;<span class="scTag">pattern</span><span class="scTag">value</span>="<span class="scContent">[1-9][0-9]{3}</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;/<span class="scTag">restriction</span>&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;/<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;/<span class="scTag">element</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;/<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">attribute</span><span class="scTag">name</span>="<span class="scContent">country</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type">string</span></span>" <span class="scTag">fixed</span>="<span class="scContent">Australia</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;/<span class="scTag">extension</span>&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;/<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 0em">&lt;/<span class="scTag">complexType</span>&gt;</span>
+          <br />
+        </div>
+      </div>
+      <div class="hint">The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)</div>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <div id="glossary">
+      <h2>
+        <a name="Glossary">Glossary</a>
+      </h2>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Abstract">Abstract</a> </span>(Applies to complex type definitions and element declarations). An abstract element or complex type cannot used to validate an element instance. If there is a reference to an abstract element, only element declarations that can substitute the abstract element can be used to validate the instance. For references to abstract type definitions, only derived types can be used.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_All">All Model Group</a> </span>Child elements can be provided <em>in any order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-all" href="http://www.w3.org/TR/xmlschema-1/#element-all">http://www.w3.org/TR/xmlschema-1/#element-all</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Choice">Choice Model Group</a> </span>
+        <em>Only one</em> from the list of child elements and model groups can be provided in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-choice" href="http://www.w3.org/TR/xmlschema-1/#element-choice">http://www.w3.org/TR/xmlschema-1/#element-choice</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_CollapseWS">Collapse Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32). Then, collapse contiguous sequences of space characters into single space character, and remove leading and trailing space characters.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ElemBlock">Disallowed Substitutions</a> </span>(Applies to element declarations). If <em>substitution</em> is specified, then <a title="Look up 'substitution group' in glossary" href="#term_SubGroup">substitution group</a> members cannot be used in place of the given element declaration to validate element instances. If <em>derivation methods</em>, e.g. extension, restriction, are specified, then the given element declaration will not validate element instances that have types derived from the element declaration's type using the specified derivation methods. Normally, element instances can override their declaration's type by specifying an <code>xsi:type</code> attribute.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Key">Key Constraint</a> </span>Like <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>, but additionally requires that the specified value(s) must be provided. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_KeyRef">Key Reference Constraint</a> </span>Ensures that the specified value(s) must match value(s) from a <a title="Look up 'Key Constraint' in glossary" href="#term_Key">Key Constraint</a> or <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ModelGroup">Model Group</a> </span>Groups together element content, specifying the order in which the element content can occur and the number of times the group of element content may be repeated. See: <a title="http://www.w3.org/TR/xmlschema-1/#Model_Groups" href="http://www.w3.org/TR/xmlschema-1/#Model_Groups">http://www.w3.org/TR/xmlschema-1/#Model_Groups</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Nillable">Nillable</a> </span>(Applies to element declarations). If an element declaration is nillable, instances can use the <code>xsi:nil</code> attribute. The <code>xsi:nil</code> attribute is the boolean attribute, <em>nil</em>, from the <em>http://www.w3.org/2001/XMLSchema-instance</em> namespace. If an element instance has an <code>xsi:nil</code> attribute set to true, it can be left empty, even though its element declaration may have required content.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Notation">Notation</a> </span>A notation is used to identify the format of a piece of data. Values of elements and attributes that are of type, NOTATION, must come from the names of declared notations. See: <a title="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations" href="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations">http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_PreserveWS">Preserve Whitespace Policy</a> </span>Preserve whitespaces exactly as they appear in instances.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TypeFinal">Prohibited Derivations</a> </span>(Applies to type definitions). Derivation methods that cannot be used to create sub-types from a given type definition.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TypeBlock">Prohibited Substitutions</a> </span>(Applies to complex type definitions). Prevents sub-types that have been derived using the specified derivation methods from validating element instances in place of the given type definition.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ReplaceWS">Replace Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32).</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Sequence">Sequence Model Group</a> </span>Child elements and model groups must be provided <em>in the specified order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-sequence" href="http://www.w3.org/TR/xmlschema-1/#element-sequence">http://www.w3.org/TR/xmlschema-1/#element-sequence</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_SubGroup">Substitution Group</a> </span>Elements that are <em>members</em> of a substitution group can be used wherever the <em>head</em> element of the substitution group is referenced.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ElemFinal">Substitution Group Exclusions</a> </span>(Applies to element declarations). Prohibits element declarations from nominating themselves as being able to substitute a given element declaration, if they have types that are derived from the original element's type using the specified derivation methods.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TargetNS">Target Namespace</a> </span>The target namespace identifies the namespace that components in this schema belongs to. If no target namespace is provided, then the schema components do not belong to any namespace.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Unique">Uniqueness Constraint</a> </span>Ensures uniqueness of an element/attribute value, or a combination of values, within a specified scope. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <p class="footer">Generated by <a href="http://xml.fiforms.org/xs3p/">xs3p</a> (<a href="http://titanium.dstc.edu.au/xml/xs3p">old link</a>)
+               . Last modified: <script type="text/javascript">
+<!--
+document.write(document.lastModified);
+// -->
+</script></p>
+  </body>
+</html>

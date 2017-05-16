@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>
+					Map To ..\Schemas\HAL_HMS_til_HFM_FF.xsd</title>
+<style type="text/css">
+					/*
+					Branding Colour palette.
+					Blue light				R:070 G:155 B:200	#469bc8
+					Blue dark				R:050 G:075 B:118	#324b76
+					Shade 1	(dark mauve)	R:129 G:158 B:187	#819ebb
+					Shade 2	(mauve)			R:174 G:200 B:216	#aec8d8
+					Shade 3	(light mauve)	R:215 G:231 B:239	#d7e7ef
+					Grey dark				R:070 G:070 B:070	#464646
+					Grey medium				R:165 G:165 B:165	#a5a5a5
+					Grey light				R:190 G:190 B:190	#bcbfbe
+					*/
+
+					body	{ font-family: Arial }
+					hr		{ border: 0; height: 2px; width: 100%; }
+					table	{ width: 100%; font-size: small; }
+					th		{ color: white;	background-color: #324b76; text-align: left;}
+					h1		{ color: #469bc8; font-family: Arial; }
+					h2		{ color: #324b76; font-family: Arial; }
+					h3		{ color: #464646; font-family: Arial; }
+
+					#pageTitle { color: #469bc8; font-size: 20px; font-weight: bold }
+
+					.titleArea { border-left: 5px solid #333366; padding-left: 5px }
+					.titleSchema { color: #324b76; font-size: 14px; font-weight: bold }
+					.linkTableAltRow { 	background-color: #ededed; }
+					.linkTableDiffNodeRow { background-color: #C8E2FF }
+					.linkTableCol { border-bottom: 1px solid black; background-color: #CCCC99 }
+					.functoidArea { font-family: Lucida Console, Courier New; font-size: 11px }
+					.functoidName { color: blue }
+					.functoidBracket { color: green; font-weight: bold }
+					.functoidScript { color: #003300 }
+					.paramComma { color: blue; font-weight: bold }
+					.internalLink { font-size: 10px }
+					.collapseref { font-size: 10px; cursor:pointer }
+				</style>
+</head>
+<body>
+<a name="top"></a>
+<div class="titleArea">
+<h1>BizTalk Map Documentation</h1>
+<table border="0">
+<tr class="titleSchema">
+<td>From Schema(s):</td>
+<td>..\Schemas\HAL_SM_Verksteddata_Source_FF.xsd</td>
+</tr>
+<tr class="titleSchema">
+<td>To Schema:</td>
+<td>..\Schemas\HAL_HMS_til_HFM_FF.xsd</td>
+</tr>
+</table>
+</div>
+<a href="#functoids" class="internalLink">Functoids</a>
+<a href="#constantvalues" class="internalLink">Constant Values</a>
+<hr />
+<h2>Direct Node-to-Node Links (No Functoids)</h2>
+<h3>Page 1: Page 1</h3>
+<p>
+<a id="pageDirect1Anchor" onclick="toggleCollapse('pageDirect1', 'pageDirect1Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageDirect1">
+<table>
+<tr>
+<th width="40%">From</th>
+<th width="40%">To</th>
+<th width="20%">Label</th>
+</tr>
+</table>
+</div>
+<hr />
+<a name="functoids"></a>
+<span style="font-size: 12px">^ </span>
+<a href="#top" class="internalLink">Top</a>
+<br />
+<br />
+<h2>Functoid Mappings</h2>
+<h3>Page 1: Page 1</h3>
+<p>
+<a id="pageFunctoids1Anchor" onclick="toggleCollapse('pageFunctoids1', 'pageFunctoids1Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageFunctoids1">
+<table>
+<tr>
+<th width="40%">Functoid Sequence</th>
+<th width="40%">Destination Node</th>
+<th width="20%">Labels</th>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />System.Collections.Hashtable XREF26_ENT = new System.Collections.Hashtable();
+System.Collections.Hashtable XREF26_ACC = new System.Collections.Hashtable();
+
+System.DateTime HmsDate;
+
+public void LoadXREFTable()
+{
+    string tableLoc;
+    string inputLine;
+    string keyval;
+    string returnval;
+    String[] s = null;
+    string delimStr = @"""";
+    char[] delimiter = delimStr.ToCharArray();
+
+    ReadDate();
+
+    string rulPath = Environment.GetEnvironmentVariable("BTS_TRANSLATERULPATH");
+
+    // Hard-coded filename Selskap_av
+    tableLoc = rulPath + "26_ENT.rul";
+
+    // Open the file and create a buffer into which data will be read
+    using (System.IO.FileStream filein1 = new System.IO.FileStream(tableLoc,
+                    System.IO.FileMode.Open, System.IO.FileAccess.Read))
+    {
+        using (System.IO.StreamReader reader1 = new System.IO.StreamReader(filein1,
+                        System.Text.Encoding.UTF7))
+        {
+            // Read untill the end of file is reached
+            while (reader1.Peek() != -1)
+            {
+                // Read the next line from the file
+                inputLine = reader1.ReadLine();
+                // check if this line contains transformation data
+                if (!inputLine.Contains("when"))
+                {
+                    continue;
+                }
+                inputLine = inputLine.Trim();
+                s = inputLine.Split(delimiter);
+
+                // Extract the key value from the left of the pipe
+                keyval = s[3];
+                // Extract the target value from the right of the pipe
+                returnval = s[5];
+                // Insert the key value and return value into the next position in the hash table
+               XREF26_ENT[keyval] = returnval;
+            }
+        }
+        // Close the file when the end of file is reached
+        filein1.Close();
+    }
+
+    tableLoc = rulPath + "26_ACC.rul";
+
+    using (System.IO.FileStream filein1 = new System.IO.FileStream(tableLoc,
+                    System.IO.FileMode.Open, System.IO.FileAccess.Read))
+    {
+        using (System.IO.StreamReader reader1 = new System.IO.StreamReader(filein1,
+                        System.Text.Encoding.UTF7))
+        {
+            while (reader1.Peek() != -1)
+            {
+                inputLine = reader1.ReadLine();
+                if (!inputLine.Contains("when"))
+                {
+                    continue;
+                }
+                inputLine = inputLine.Trim();
+                s = inputLine.Split(delimiter);
+
+                keyval = s[3];
+                returnval = s[5];
+               XREF26_ACC[keyval] = returnval;
+            }
+        }
+        filein1.Close();
+    }
+}
+
+public void ReadDate()
+{
+    // År og måned kan hentes fraD0FG240_Tilbud.csv dersom det er en mulighet. (..\DataFiles_Source\Filer fra IFS)
+    // 109;1060;200KORR;FELLES;;;;10277778.00;08;2011
+
+    String[] s = null;
+    string delimStr = @";";
+    char[] delimiter = delimStr.ToCharArray();
+
+
+    string dateString;
+    System.Globalization.CultureInfo culture;
+    System.Globalization.DateTimeStyles styles;
+    System.DateTime dateResult;
+    string dateFileLoc;
+
+    culture = System.Globalization.CultureInfo.CreateSpecificCulture("no-NO");
+    styles = System.Globalization.DateTimeStyles.AssumeLocal;
+    dateFileLoc = Environment.GetEnvironmentVariable("BTS_SOURCEFRAIFSPATH") + "D0FG240_tilbud.csv";
+
+    using (System.IO.TextReader tr = new System.IO.StreamReader(dateFileLoc))
+    {
+        dateString = tr.ReadLine();
+        s = dateString.Split(delimiter);
+        string sMM = s[s.Length - 2];
+        string sYYYY = s[s.Length - 1];
+        dateString = "01." + sMM + "." + sYYYY;
+
+        if (System.DateTime.TryParse(dateString, culture, styles, out dateResult))
+            HmsDate = dateResult;
+        else
+            HmsDate = System.DateTime.MinValue;
+    }
+}</span>
+</div>
+</td>
+<td>HyperionLoads/DataCollector</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidBracket">( </span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>HyperionLoads/DataCollector</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidBracket">( </span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>HyperionLoads/Header</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string myConvertToMMM()
+{
+	string retVal = null;
+	DateTime datetime = HmsDate;
+	retVal = datetime.ToString("MMM", System.Globalization.CultureInfo.CreateSpecificCulture("nb-NO"));
+	return retVal.ToUpper();
+}</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Month</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string myConvertToYear()
+{
+	string retVal = null;
+	DateTime datetime = HmsDate;
+	retVal = datetime.ToString("yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("nb-NO"));
+	return retVal;
+}</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Year</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string GetXREF26_ACC(string pField1, string pKontonavn)
+{
+    string ERPKTO = pField1 + pKontonavn;
+    
+    string keyVal = ERPKTO;
+    string retval = ERPKTO;
+
+    if (XREF26_ACC.ContainsKey(keyVal))
+        retval = XREF26_ACC[keyVal].ToString();
+
+    return retval;
+}</span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/HFMACC</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string myDealerCon(string pDealer, string pAvdeling)
+{
+    string retVal = string.Empty;
+    string keyVal = pDealer.Trim();
+
+    switch (keyVal)
+    {
+        case "015":
+        case "040": keyVal = "031"; break;
+        case "097": keyVal = "692"; break;
+        case "140": keyVal = "106"; break;
+        case "156": keyVal = "155"; break;
+        case "379": keyVal = "957"; break;
+        case "479": keyVal = "478"; break;
+        case "584": keyVal = "056"; break;
+        case "694": keyVal = "692"; break;
+        case "761":
+        case "762": keyVal = "773"; break;
+        case "764": keyVal = "759"; break;
+        case "765": keyVal = "796"; break;
+        case "933":
+        case "940": keyVal = "932"; break;
+        case "786":
+        case "730": keyVal = "739"; break;
+        case "146": keyVal = "106"; break;
+        default: keyVal = pDealer; break;
+    }
+
+    keyVal += pAvdeling.Trim();
+    retVal = keyVal;
+
+    if (XREF26_ENT.ContainsKey(keyVal))
+        retVal = XREF26_ENT[keyVal].ToString();
+
+    return retVal;
+}</span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Entity</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string myFixCust1(string pCust1)
+{
+    string retVal = string.Empty;
+    string keyVal = pCust1;
+
+    switch (keyVal.ToUpper())
+    {
+        case "MER": keyVal = "Alle_Mer"; break;
+        case "PEU": keyVal = "Alle_Peu"; break;
+        case "ANN": keyVal = "Alle_Frem"; break;
+        case "KIA": keyVal = "Alle_Kia"; break;
+        case "DAI": keyVal = "Alle_Dai"; break;
+        case "SMA": keyVal = "Alle_Sma"; break;
+        default: keyVal = "[NONE]"; break;
+    }
+
+    retVal = keyVal;
+    return retVal;
+}</span>
+<span class="functoidBracket">( </span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Cust1</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string myFixCust2(string pCust2)
+{
+    string retVal = string.Empty;
+    string keyVal = pCust2;
+
+    switch (keyVal.ToUpper())
+    {
+        case "INT": keyVal = "Intern"; break;
+        case "KUN": keyVal = "Kunde"; break;
+        case "PRO": keyVal = "Produkt"; break;
+        case "GAR": keyVal = "Garanti"; break;
+        case "KON": keyVal = "Ser_Kontr"; break;
+        default: keyVal = "[NONE]"; break;
+    }
+
+    retVal = keyVal;
+    return retVal;
+}</span>
+<span class="functoidBracket">( </span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Cust2</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string myConvValue(string sValue)
+{
+    bool canConvert;
+    Double dValue = 0;
+    IFormatProvider provider =
+      System.Globalization.CultureInfo.CreateSpecificCulture("no-NO");
+
+
+    string retVal = string.Format("Error Value {0}", sValue);
+    sValue = sValue.Replace(".", ",");
+
+    canConvert = Double.TryParse(sValue,
+      System.Globalization.NumberStyles.Currency, provider, out dValue);
+
+    if (canConvert)
+    {
+        retVal = String.Format("{0:0.00}", dValue);
+        retVal = retVal.Replace(",", ".");
+    }
+    return retVal;
+}</span>
+<span class="functoidBracket">( </span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Data</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item</td>
+<td></td>
+</tr>
+</table>
+</div>
+<hr />
+<a name="constantvalues"></a>
+<span style="font-size: 12px">^ </span>
+<a href="#top" class="internalLink">Top</a>
+<br />
+<br />
+<h2>Constant Values</h2>
+<p>
+<a id="constant1ValuesAnchor" onclick="toggleCollapse('constant1Values', 'constant1ValuesAnchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="constant1Values">
+<table>
+<tr>
+<th width="40%">Value</th>
+<th width="60%">Destination Node</th>
+</tr>
+<tr>
+<td>Virkelig</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Scenario</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>YTD</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/View</td>
+</tr>
+<tr>
+<td>NOK</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Value</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>[ICP None]</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/ICP</td>
+</tr>
+<tr>
+<td>[NONE]</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Cust3</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>[NONE]</td>
+<td>HyperionLoads/RecordsHFM/HFM_Item/Cust4</td>
+</tr>
+</table>
+</div>
+</body>
+<script type="text/javascript">
+				
+	function toggleCollapse(obj, objAnchor) {
+	var el = document.getElementById(obj);
+	var elAnchor = document.getElementById(objAnchor);
+	if ( el.style.display != "none" ) {
+	  el.style.display = 'none';
+	  elAnchor.innerHTML = 'Expand';
+	}
+	else {
+	  el.style.display = '';
+	  elAnchor.innerHTML = 'Collapse';
+	}
+	}
+	
+				</script>
+</html>

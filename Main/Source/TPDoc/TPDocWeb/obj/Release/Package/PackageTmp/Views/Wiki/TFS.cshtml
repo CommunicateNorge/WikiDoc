@@ -1,0 +1,77 @@
+﻿@model Dictionary<string, string>
+@using Wiki.Utilities;
+@{
+    string linkToThis = @"/Wiki/Page/" + @Model["Manual_Blob_Adr"].Remove(@Model["Manual_Blob_Adr"].Length - 7);
+    string[] breadCrumbs = Model["Auto_Blob_Adr"].SplitSimple("£");
+
+    string[] environments = null;
+    string primaryEnv = "";
+}
+
+@if (Model.ContainsKey("Environments"))
+{
+    environments = Model["Environments"].SplitSimple("|");
+    primaryEnv = Model["PrimaryEnvironment"];
+}
+
+
+<section id="allContent" class="content">
+    <p id="hiddenLinkText" hidden>@linkToThis</p>
+    <section id="manualContentPage">
+
+        @if (User.CanEdit(Model["Manual_Blob_Adr"]))
+        {
+            <span class="smallEditText">@Html.ActionLink("[Edit]", "Edit", new { id = Model["Manual_Blob_Adr"] })</span>
+            <span class="smallEditText">@Html.ActionLink("[History]", "History", new { id = Model["Manual_Blob_Adr"] })</span>
+        }
+        <span class="smallEditText"><a class="getLinkToThisPage">[Link]</a></span>
+        <div class="displayLinkToThisPage"></div>
+
+        <h2>@Model["pageID"].Replace('€', '.')</h2>
+
+        @if (@Model.ContainsKey("pageNav"))
+        {
+            <div class="pageNavDiv">
+                @Html.Raw(@Model["pageNav"])
+            </div>
+        }
+        <section class="manualContent">
+            @if (Model["Manual_Content"] != null)
+            {
+                @Html.Raw(Model["Manual_Content"])
+            }
+        </section>
+        @if (environments != null && primaryEnv != null)
+        {
+            <nav class="navbar navbar-default autoNavDivider">
+                <div class="container-fluid">
+                    <div class="navbar-header sectionDividerMenu">
+                        <p class="navbar-text">Auto-generated Content for Environment: </p>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                    <span id="environmentHeader">@primaryEnv</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    @foreach (var item in environments)
+                                    {
+                                        <li>Production</li>
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        }
+    </section>
+    <section id="generatedContentPage">
+        @Html.Raw(Model["autoContent"])
+    </section>
+</section>
+
+
+@section scripts
+{
+}

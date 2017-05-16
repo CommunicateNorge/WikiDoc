@@ -1,0 +1,241 @@
+<h2>Dokumentasjonsrammeverket</h2>
+
+<p>Dokumentasjonsrammeverket som generer denne siden er bygget i C#. Det bruker et konsollprogram for &aring; laste opp kode-dokumentasjon fra Biztalk-l&oslash;sninger til Azure storage Blob som genererer dokumentasjon for Maps, Schemas, Orchestrations, Send Ports, Recive Ports og vanlig C# kode.</p>
+
+<p>Rammeverket er laget for &aring; laste opp dokumentasjon over Biztalk-l&oslash;sninger og de fleste vanlige C# l&oslash;sninger og samle disse p&aring; et enkelt tilgjengelig sted i en WIki-side. For &aring; benytte seg av rammeverket m&aring; man hente Visual-Studio prosjektet fra kildekontroll og konfigurere fil-banene prosjektet skal benytte seg av. Deretter m&aring; man passe p&aring; at forskjellige komponentene</p>
+
+<h3>Installasjonsveiledning</h3>
+
+<p>Veiledningen finner du <a href="../Page/Manual£Service£Wiki£Guide">her</a>.</p>
+
+<h3>Forslag og bugs</h3>
+
+<p>Vi tar imot forslag til nye features og beskrivelser av bugs her: <a href="../Page/Manual£services£wiki£bugsandfeatures">Bugs &amp; Features</a></p>
+
+<p>Takk for ditt bidrag! :D</p>
+
+<h3>FAQ</h3>
+
+<p>FAQ finner du <a href="../Page/Manual£Service£Wiki£FAQ">her</a>.</p>
+
+<h3>Guidelines</h3>
+
+<p>Den visuelle veiledningen finner du under alle edit sider, og kan ekspanderes ved &aring; trykke p&aring; &quot;Guidelines&quot;-overskriften. For &aring; editere visuelle guidlines eller bare for &aring; se dem utenfor Edit siden kan du g&aring; <a href="../Page/Manual£Service£Wiki£Guidlines£Visual">hit</a>.</p>
+
+<p>Guidelines for hvordan informasjon skal legges opp og struktureres i Wikien finnes <a href="../Page/Manual£Service£Wiki£Guidelines">her</a>.</p>
+
+<h3>Changelog</h3>
+
+<table class="simpleTable">
+	<tbody>
+		<tr style="height: 13px;">
+			<th style="height: 13px;">Dato:</th>
+			<th style="height: 13px;">Versjonsnummer:</th>
+			<th style="height: 13px;">Milj&oslash;:</th>
+		</tr>
+		<tr style="height: 13px;">
+			<td style="height: 13px;">18.01.2016</td>
+			<td style="height: 13px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€0€0">Versjon 1.0.0</a></td>
+			<td style="height: 13px;">Produksjon</td>
+		</tr>
+		<tr style="height: 13px;">
+			<td style="height: 13px;">03.02.2016</td>
+			<td style="height: 13px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€0€1">Versjon 1.1.0</a></td>
+			<td style="height: 13px;">Produksjon</td>
+		</tr>
+		<tr style="height: 13px;">
+			<td style="height: 13px;">08.02.2016</td>
+			<td style="height: 13px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€1€1">Versjon 1.1.1</a></td>
+			<td style="height: 13px;">Produksjon</td>
+		</tr>
+		<tr style="height: 13px;">
+			<td style="height: 13px;">15.02.2016</td>
+			<td style="height: 13px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€0">Versjon 1.2.0</a></td>
+			<td style="height: 13px;">Produksjon</td>
+		</tr>
+		<tr style="height: 13px;">
+			<td style="height: 13px;">24.02.2016</td>
+			<td style="height: 13px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€1">Versjon 1.2.1</a></td>
+			<td style="height: 13px;">Produksjon</td>
+		</tr>
+		<tr style="height: 13px;">
+			<td style="height: 13px;">17.03.2016</td>
+			<td style="height: 13px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€2">Versjon 1.2.2</a></td>
+			<td style="height: 13px;">Produksjon</td>
+		</tr>
+		<tr style="height: 13px;">
+			<td style="height: 13px;">31.03.2016</td>
+			<td style="height: 13px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€3">Versjon 1.2.3</a></td>
+			<td style="height: 13px;">Produksjon</td>
+		</tr>
+		<tr style="height: 13.4261px;">
+			<td style="height: 13.4261px;">25.04.2016</td>
+			<td style="height: 13.4261px;"><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€4">Version 1.2.4</a></td>
+			<td style="height: 13.4261px;">Produksjon</td>
+		</tr>
+		<tr>
+			<td style="height: 13.4261px;">12.05.2016</td>
+			<td><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€5">Version 1.2.5</a></td>
+			<td style="height: 13.4261px;">Produksjon</td>
+		</tr>
+		<tr>
+			<td style="height: 13.4261px;">06.06.2016</td>
+			<td><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€6">Version 1.2.6</a></td>
+			<td style="height: 13.4261px;">Produksjon</td>
+		</tr>
+		<tr>
+			<td style="height: 13.4261px;">xx.xx.2016</td>
+			<td><a href="../Page/Manual£Service£Wiki£Changelog£Version£1€2€7">Version 1.2.7</a></td>
+			<td style="height: 13.4261px;">Dev</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Deployment</h3>
+
+<p>Deploymentprosedyre for Wiki&#39;en finnes <a href="../Page/Manual£Service£Wiki£Deployment">her</a>.</p>
+
+<h3 id="wikimaler"><a id="Maler" name="Maler"></a>Maler</h3>
+
+<p>Maler eller &quot;Templates&quot; er en st&oslash;ttefunksjon for dokumentasjonsportalen som gir brukerne en mal for hvordan en spesifikk type side skal utformes. Malen vises automatisk n&aring;r man trykker p&aring; [Edit] linken p&aring; en manuell side som ikke har noe innhold. En mal kan editeres ved &aring; bruke linkene under. St&oslash;ttede maler:</p>
+
+<table class="simpleTable">
+	<tbody>
+		<tr>
+			<th>Type side</th>
+			<th>Beskrivelse</th>
+			<th>Link</th>
+		</tr>
+		<tr>
+			<td>Biztalk Integrations</td>
+			<td>Template for all sites that use the &quot;Manual/Integration/&quot; prefix.</td>
+			<td><a href="../Page/Template£Integration">Template.Integration</a></td>
+		</tr>
+		<tr>
+			<td>Biztalk Orchestrations</td>
+			<td>Template for all sites that use the &quot;Manual/Orchestration/&quot; prefix.</td>
+			<td><a href="../Page/Template£Orchestration">Template.Orchestration</a></td>
+		</tr>
+		<tr>
+			<td>Services</td>
+			<td>Template for all sites that use the &quot;Manual/Service/&quot; prefix.</td>
+			<td><a href="../Page/Template£Service">Template.Service</a></td>
+		</tr>
+		<tr>
+			<td>Projects</td>
+			<td>Template for all sites that use the &quot;Manual/Project/&quot; prefix.</td>
+			<td><a href="../Page/Template£Project">Template.Project</a></td>
+		</tr>
+		<tr>
+			<td>External Services</td>
+			<td>Template for all sites that use the &quot;Manual/External/&quot; prefix.</td>
+			<td><a href="../Page/Template£External">Template.External</a></td>
+		</tr>
+		<tr>
+			<td>Generelle sider</td>
+			<td>Generell mal som vises p&aring; alle sider som ikke dekkes av andre kategorier.</td>
+			<td><a href="../Page/Template£General">Template.General</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><a id="Configuration" name="Configuration"></a>Konfigurasjon</h3>
+
+<p>Konfigurasjon av rammeverket gj&oslash;res i App.Config filen i CnasDocumenter prosjektet i Visual Studio f&oslash;r f&oslash;rste kj&oslash;ring og deploy. Her kan man endre flere typer innstillinger som i all hovedsak omhandler hvilke kildemapper den automatiske opplasteren skal bruke for &aring; lete etter kildefiler og n&oslash;klene rammeverket skal bruke for &aring; kommunisere med Azure Storage. Under ser man hvordan filen kan se ut:</p>
+
+<pre>
+<code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;configuration&gt;
+    &lt;startup&gt; 
+        &lt;supportedruntime version="v4.0" sku=".NETFramework,Version=v4.5"&gt;&lt;/supportedruntime&gt;
+    &lt;/startup&gt;
+  &lt;connectionstrings&gt;
+    &lt;add 
+          name="AzureBlobWikiDocsStorage" 
+          connectionstring="DefaultEndpointsProtocol=https;AccountName=docublob;AccountKey=4pgabE66qm8pWJXxV9FkYj9AVtqRanDw=="&gt;
+    &lt;/add&gt;
+  &lt;/connectionstrings&gt;
+  &lt;appsettings&gt;
+    &lt;add key="AzureBlobWikiDocsStorageContainer" value="docublob"&gt;&lt;/add&gt;
+    
+    &lt;add key="DocumentRootDir" value="C:\tfs\MartinWL\remadoc\Documentation\CnasDocumenter\doctools"&gt;&lt;/add&gt;
+    
+    &lt;add key="BizTalkRootDir1" value="C:\tfs\MartinWL\REMA1000Online\REMA1000\BizTalk\Main\Source"&gt;&lt;/add&gt;
+    &lt;add key="BizTalkRootDir1Name" value="BizTalk"&gt;&lt;/add&gt;
+    &lt;add key="CSharpRootDir1" value="C:\tfs\MartinWL\REMA1000\MDM\Main\Source"&gt;&lt;/add&gt;
+    &lt;add key="CSharpRootDir1Name" value="Services"&gt;&lt;/add&gt;
+    
+    
+    &lt;add key="sqldb1" value="Server=REITANCSDEV001;Database=MDM_Cache;integrated security=True;User Id=&lt;user&gt;;Password=&lt;pwd&gt;;"&gt;&lt;/add&gt;
+    &lt;add key="sqldb2" value="Server=REITANCSDEV001;Database=MDM_CodeAndRule;integrated security=True;User Id=&lt;user&gt;;Password=&lt;pwd&gt;;"&gt;&lt;/add&gt;
+    &lt;add key="sqldb3" value="Server=REITANCSDEV001;Database=MDM_Data;integrated security=True;User Id=&lt;user&gt;;Password=&lt;pwd&gt;;"&gt;&lt;/add&gt;
+  &lt;/appsettings&gt;
+&lt;/configuration&gt;</code></pre>
+
+<h4>Azure Storage</h4>
+
+<p><strong>Container</strong><br>
+Navnet p&aring; containeren til alle blober og tabeller i Azure storage skal legges inn i <em>AzureBlobWikiDocsStorageContainer</em> feltet under <em>value</em> parameteren.</p>
+
+<p><strong>Kredentialer</strong><br>
+Navnet og n&oslash;kkelen til bloben man vil bruke for lagring av dokumentasjons-filer setter man i <em>AzureBlobWikiDocsStorage</em>. Det er disse kredentialene som brukes av Azure Storage rammeverket for &aring; kommunisere med de relevante Blobene og tabellene.</p>
+
+<h4>Rot-mapper</h4>
+
+<p><strong>Biztalk Server Documenter</strong><br>
+Rot-mappen for BSD konfigureres i <em>DocumentRootDir</em> feltet og verdien for banen legges inn i <em>value</em> parameteren. Mappen man skal skrive inn her er mappen hvor .chm filen til BSD er lagret.</p>
+
+<p><strong>Biztalk kildekode</strong><br>
+Rot-mappene for Biztalk kildekode legges inn i felter som navngis <em>CSharpRootDir</em> med 1,2,3,4... som suffix og m&aring; etterf&oslash;lges med et felt kalt <em>CSharpRootDir1Name</em> hvor &quot;1&quot; erstattes med suffixet brukt i det foreg&aring;ende feltet. <em>Name</em> feltet denoterer hvilket navn som vil komme opp i menyen for all Biztalk kildekoden under denne kildemappen. Mappen man er ute etter her er toppmappen i kildekontrollen som har alle integrasjonenes l&oslash;sningsmapper under seg. Denne mappen er gjerne kalt <em>Source</em>. Har man flere rot-mapper vil dette se slik ut:</p>
+
+<pre>
+<code>&lt;add key="BizTalkRootDir1" value="C:\tfs\MartinWL\REMA1000Online\REMA1000\BizTalk\Main\Source"&gt;&lt;/add&gt;
+    &lt;add key="BizTalkRootDir1Name" value="BizTalk"&gt;&lt;/add&gt;
+&lt;add key="BizTalkRootDir2" value="C:\tfs\MartinWL\REMA1000Online\REMA1000\BizTalk\Main\Source"&gt;&lt;/add&gt;
+    &lt;add key="BizTalkRootDir2Name" value="BizTalk"&gt;&lt;/add&gt;
+&lt;add key="BizTalkRootDir3" value="C:\tfs\MartinWL\REMA1000Online\REMA1000\BizTalk\Main\Source"&gt;&lt;/add&gt;
+    &lt;add key="BizTalkRootDir3Name" value="BizTalk"&gt;&lt;/add&gt;
+</code></pre>
+
+<p><strong>C# kildekode</strong><br>
+Rot-mappene til C# kildekode skal konfigureres p&aring; samme m&aring;te som for Biztalk kildekode beskrevet over. Men denne gangen er man ute etter &oslash;verste mappe i kildekontrollen som inneholder alle l&oslash;sningene under seg. Denne mappen er gjerne kalt <em>Source</em></p>
+
+<p><strong>SQL Dokumentasjon</strong><br>
+Her er man ute etter &aring; lage en connection-string til databasen. Man kan gjerne bruke en egen bruker for rammeverket s&aring; lenge den har tilgang til &aring; lese databasen man vil koble til. Det er viktig at man lager en linje med nummerert suffix (1,2,3...) per database man vil dokumentere, selv om alle ligger p&aring; samme server. Verdiene man m&aring; legge til i hvert felt er servernavn, databasenavn, brukerID og passord for brukeren.</p>
+
+<h3>Tekniske detaljer per komponent</h3>
+
+<p>De forskjellige komponentene dokumenteres via f&oslash;lgende teknologier og st&oslash;tterammeverk:</p>
+
+<h4>Maps</h4>
+
+<p>Bruker en xslt motor med et xsl-stilark for &aring; parse selve <em>.btm</em> filene inn i et godt strukturert og lesbart format. per i dag fungerer ikke dokumentasjon av functoids. Dette skyldes i all hovedsak at xslt motoren ikke parser dataen i <em>.btm</em> filene riktig etter Biztalk 2010. Vi har ikke personlig testet xslt&#39;en p&aring; 2010 versjonen, men all informasjon tyder p&aring; at den skal virke der.</p>
+
+<h4>Schemas</h4>
+
+<p>Bruker et xsl stilark til endre utsende p&aring; <em>.xsd</em> filene. Css&#39;en blir embedded i selve <em>.xsd</em> filen og deretter endres filendelsen p&aring; xsd filen til <em>.html</em> I essens brukes dermed skjemaene i sin originale form med med et forholdsvis avansert stilark i html-form.</p>
+
+<h4>Orchestrations</h4>
+
+<p>For &aring; dokumentere orkestreringer m&aring; man benytte seg av <a href="https://biztalk2013documenter.codeplex.com/releases">Biztalk Server Documenter (BSD)</a>. Dette rammeverket lastes ned og installeres p&aring; serveren der Biztalk l&oslash;sningen kj&oslash;rer. N&aring;r programmet er ferdig med &aring; dokumentere Biztalk-instansene genereres det en .chm help fil. Denne m&aring;&uml; pakkes ut i <a href="http://www.7-zip.org/">7Zip</a> for &aring; f&aring; tilgang til de r&aring; HTML-Filene dokumentasjonsrammeverket bruker for &aring; generere Wiki-dokumentasjonen. Dette er bedre forklart i dokumentasjonsrammeverkets installasjons-veiledning <a href="#">her</a>.<br>
+BSD genererer ogs&aring; en del omkringliggende dokumentasjon for orkestreringer som ogs&aring; tolkes og lastes opp til orkestreringens autogenererte wiki-side. Dette inkluderer informasjon om hvilke integrasjoner som referer til denne orkestreringen, hvilke skjemaer orkestreringen bruker, hvilke porter den er assosiert med, osv.</p>
+
+<h4>Send Ports</h4>
+
+<p>BDF brukes for &aring; generere dokumentasjon p&aring; disse, se orkestreringer punktet p&aring; denne siden eller BDF dokumentasjons-siden <a href="https://biztalkdeployment.codeplex.com/">her</a> for mer informasjon.</p>
+
+<h4>Recieve Ports</h4>
+
+<p>Se punktet for Send Ports.</p>
+
+<h4>C# kode</h4>
+
+<p>Ren kode-dokumentasjon burde genereres ved hjelp av <a href="https://github.com/EWSoftware/SHFB/releases">SandCastle</a> for &aring; v&aelig;re kompatibelt med dokumentasjons-rammeverket. SandCastle installeres p&aring; maskinen man vil generere dokumentasjonene p&aring; og legges til som et prosjekt i hver l&oslash;sning man vil dokumentere. N&aring;r man legger til SandCastle prosjektet i en l&oslash;sning er auto-opplastningen rammeverket bruker basert p&aring; at man velger &aring; lage HTML-dokumentasjon og at prosjektet f&aring;r navn etter l&oslash;sningens navn + .doc (eksempel: MDM.Vivaldi.doc). Hvilken type dokumentasjon som genereres kan man velge i properties-vinduet p&aring; selve SandCastle-prosjektet. N&aring;r man bygger SandCastle prosjektet vil dokumentasjonen generes utifra hvilke prosjekter som er lagt til som referanser, det anbefales gjerne at man legger til alle prosjektene i l&oslash;sningen som har C# kode her, slik at man f&aring;r god dokumentasjon p&aring; all koden i prosjektet.</p>
+
+<p>N&aring;r SandCastle prosjektet er bygget og dokumentasjonen er generert vil rammeverket automatisk plukke opp alle html filene og laste disse opp sim en ekstern side p&aring; Wiki-serveren. En lenke til SandCastle dokumentasjonen blir deretter lagt under den relevante auto-genererte siden hvis det er et Biztalk-prosjekt som &quot;eier&quot; koden, hvis koden er stand-alone vil rammeverket legge inn en ny lenke i menyen under &quot;Services&quot; hvor det lages en auto-generert del med en lenke til kode-dokumentasjonen, samt en manuell side som gir utvikleren mulighet til &aring; legge til ekstra manuell dokumentasjon om &oslash;nskelig.</p>
+
+<p>Hvis man vil editere selve SandCastle dokumentasjonen kan man gj&oslash;re det til en viss grad i SandCastles egen editor som f&oslash;lger med SandCastle-rammeverket eller i selve prosjektet ved &aring; editere visse filer under &quot;Content&quot; mappen. Se guide <a href="https://www.simple-talk.com/dotnet/.net-tools/taming-sandcastle-a-.net-programmers-guide-to-documenting-your-code/">her</a> for men informasjon.</p>
+
+<h4>Databasetabeller</h4>
+
+<p>Tabellene i databasen dokumenteres med...</p>

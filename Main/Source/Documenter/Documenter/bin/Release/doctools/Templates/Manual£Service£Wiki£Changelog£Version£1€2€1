@@ -1,0 +1,27 @@
+<h3>Version 1.2.1</h3>
+
+<h4>Changed</h4>
+<p>5978 - Fixed manual pages rollback not working correctly</p>
+<p>5943 - Fixed Schema display for environments</p>
+<p>6084 - Moved [Edit main manu] and [New Page] links to search navbar</p>
+<p>6181 - Parameterized the ftp-location and added validation</p>
+<p>6180 - Robustified the documenter</p>
+<p>6179 - Renamed connection strings</p>
+<p>6234 - Search fixes and updated cache</p>
+<p>6231 - Changed default environment to production, made menu bar more anonymous</p>
+<p>6238 - Changed index page to use thumbnails</p>
+<p>6270 - Fixed table nor rendering correctly on long names</p>
+
+<h4>Added</h4>
+<p>5923	- Added template support on edit, you now get the template automatically when editing an appropriate page</p> 
+<p>5973 - Added NB text class</p>
+<p>6084 - Added responsive design for perfect redering down to 1000px in width</p>
+<p>6270 - Added help thumbnail to index</p>
+<p>6242 - Added functionality to edit index thumbnails</p>
+<p>6235 - Added sandcastle documentation project</p>
+<p>6206 - Added caching to latest blobs</p>
+<p>6203 - Added cookie authentication with OpenID</p>
+<p>6202 - Added new pages overview to Index</p>
+<p>6121 - Added edit functionality to Guidelines</p>
+<p>6114 - Added more comprehensive visual guidelines for edit</p>
+<h4>Removed</h4>

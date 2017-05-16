@@ -1,0 +1,11 @@
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Wiki.Models.dll
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Wiki.Models.pdb
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Newtonsoft.Json.dll
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\bin\Debug\Newtonsoft.Json.xml
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\obj\Debug\Wiki.Models.dll
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\obj\Debug\Wiki.Models.pdb
+C:\WikiDoc\Main\Source\TPDoc\Wiki.Models\obj\Debug\Wiki.Models.csprojResolveAssemblyReference.cache

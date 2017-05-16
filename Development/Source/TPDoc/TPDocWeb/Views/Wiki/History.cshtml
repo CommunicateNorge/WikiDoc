@@ -1,0 +1,55 @@
+﻿@model List<AzureStorage.Table.Models.AuditTrailModel>
+@using AzureStorage.Table.Models;
+@{
+    ViewBag.Title = "History";
+}
+
+<h2>History</h2>
+
+
+<table class="simpleTable">
+    <tr><th>Version</th><th>Modified</th><th>User</th><th>Size</th><th>Rollback</th></tr>
+
+    @{
+        int count = 0;
+    }
+
+    @foreach (AuditTrailModel audit in Model)
+    {
+        if (count++ == 0) // Highest version = Current version
+        {
+            <tr>
+                <td>@Html.ActionLink("Current Version", "Page", "Wiki", new { id = audit.Blob }, null)</td>
+                <td>@audit.Time.ToString()</td>
+                <td>@audit.User</td>
+                <td>@String.Format("{0:0.##}", (double)audit.LengthInBytes / 1024.0) Kb</td>
+                <td></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Version " + audit.Version, "Page", "Wiki", new { id = audit.Blob + "£Version" + audit.Version }, null)
+                </td>
+                <td>
+                    @audit.Time.ToString()
+                </td>
+                <td>
+                    @audit.User
+                </td>
+                <td>
+                    @String.Format("{0:0.##}", (double)audit.LengthInBytes/1024.0) Kb
+                </td>
+                <td>
+                    @Html.ActionLink("[Rollback]", "Rollback", "Wiki", new { id = audit.Blob + "£Version" + audit.Version }, null)
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+
+
+
+

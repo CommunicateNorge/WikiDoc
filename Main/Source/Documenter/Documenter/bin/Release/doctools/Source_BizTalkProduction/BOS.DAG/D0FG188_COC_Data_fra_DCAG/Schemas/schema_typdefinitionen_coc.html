@@ -1,0 +1,3904 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>XML Schema Documentation</title>
+    <meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1" />
+    <style type="text/css">
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* More-configurable styles */
+
+/******** General ********/
+
+/* Document body */
+body {
+   color: Black;
+   background-color: White;
+   font-family: Arial, sans-serif;
+   font-size: 10pt;
+}
+/* Horizontal rules */
+hr {
+   color: black;
+}
+/* Document title */
+h1 {
+   font-size: 18pt;
+   letter-spacing: 2px;
+   border-bottom: 1px #ccc solid;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+/* Main section headers */
+h2 {
+   font-size: 14pt;
+   letter-spacing: 1px;
+}
+/* Sub-section headers */
+h3, h3 a, h3 span {
+   font-size: 12pt;
+   font-weight: bold;
+   color: black;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties th, table.properties th a {
+   color: black;
+   background-color: #F99; /* Pink */
+}
+table.properties td {
+   background-color: #eee; /* Gray */
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   color: #963; /* Orange-brown */
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   border: 2px solid #999;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+   background-color: #ccc;
+}
+table.namespaces td {
+   background-color: #eee;
+}
+/* Target namespace of the schema */
+span.targetNS {
+   color: #06C;
+   font-weight: bold;
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+   color: #F93; /* Orange */
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   border: 2px solid #999; /* Gray */
+}
+
+/* XML Instance Representation table */
+div.sample div.contents {
+   border: 2px dashed black;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent div.contents {
+   border: 2px black solid;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   color: #036; /* Blue */
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Printer-version styles */
+
+@media print {
+
+/* Ensures that controls are hidden when printing */
+div#printerControls {
+   visibility: hidden;
+}
+div#globalControls {
+   visibility: hidden;
+}
+#legend {
+   display: none;
+}
+#legendTOC {
+   display: none;
+}
+#glossary {
+   display: none;
+}
+#glossaryTOC {
+   display: none;
+}
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Base styles */
+
+/******** General ********/
+
+/* Unordered lists */
+ul {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+/* Tables */
+table {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+table th, table td {
+   font-size: 10pt;
+   vertical-align: top;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+table th {
+   font-weight: bold;
+   text-align: left;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties {
+   width: 90%;
+}
+table.properties th {
+   width: 30%;
+}
+/* Boxes that can make its content appear and disappear*/
+div.box {
+   margin: 1em;
+}
+   /* Box caption */
+div.box span.caption {
+   font-weight: bold;
+}
+   /* Button to open and close the box */
+div.box input.control {
+   width: 1.4em;
+   height: 1.4em;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 11pt;
+}
+   /* Box contents */
+div.box div.contents {
+   margin-top: 3px;
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   white-space: nowrap;
+   font-weight: bold;
+   padding: 5px;
+   margin: 5px;
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   padding: 10px;
+   margin: 5px;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+}
+table.namespaces td {
+}
+/* Target namespace of the schema */
+span.targetNS {
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   width: 90%;
+}
+table.hierarchy th {
+   font-weight: normal;
+   font-style: italic;
+   width: 20%;
+}
+table.hierarchy th, table.hierarchy td {
+   padding: 5px;
+}
+
+/* XML Instance Representation table */
+div.sample {
+   width: 90%;
+}
+div.sample div.contents {
+   padding: 5px;
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+}
+   /* Normal elements and attributes */
+div.sample div.contents, div.sample div.contents a {
+   color: black;
+}
+   /* Group Headers */
+div.sample div.contents .group, div.sample div.contents .group a {
+   color: #999; /* Light gray */
+}
+   /* Type Information */
+div.sample div.contents .type, div.sample div.contents .type a {
+   color: #999; /* Light gray */
+}
+   /* Occurrence Information */
+div.sample div.contents .occurs, div.sample div.contents .occurs a {
+   color: #999; /* Light gray */
+}
+   /* Fixed values */
+div.sample div.contents .fixed {
+   color: #063; /* Green */
+   font-weight: bold;
+}
+   /* Simple type constraints */
+div.sample div.contents .constraint, div.sample div.contents .constraint a {
+   color: #999; /* Light gray */
+}
+   /* Elements and attributes inherited from base type */
+div.sample div.contents .inherited, div.sample div.contents .inherited a {
+   color: #666; /* Dark gray */
+}
+   /* Elements and attributes added to or changed from base type */
+div.sample div.contents .newFields {
+   font-weight: bold;
+}
+   /* Other type of information */
+div.sample div.contents .other, div.sample div.contents .other a {
+   color: #369; /* Blue */
+   font-style: italic;
+}
+   /* Link to open up window displaying documentation */
+div.sample div.contents a.documentation {
+   text-decoration: none;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-weight: bold;
+   font-size: 11pt;
+   background-color: #FFD;
+   color: #069;
+}
+   /* Invert colors when hovering over link to open up window 
+      displaying documentation */
+div.sample div.contents a.documentation:hover {
+   color: #FFD;
+   background-color: #069;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent {
+   width: 90%;
+}
+div.schemaComponent div.contents {
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+   padding: 5px;
+}
+   /* Syntax characters */
+div.schemaComponent div.contents {
+   color: #00f; /* blue */
+}
+   /* Element and attribute tags */
+div.schemaComponent div.contents .scTag {
+   color: #933; /* maroon */
+}
+   /* Element and attribute content */
+div.schemaComponent div.contents .scContent, div.schemaComponent div.contents .scContent a {
+   color: black;
+   font-weight: bold;
+}
+   /* Comments */
+div.schemaComponent div.contents .comment {
+   color: #999; /* Light gray */
+}
+
+/******** Legend Section ********/
+
+div#legend table, div#legend div {
+   margin-bottom: 3px;
+}
+div#legend div.hint {
+   color: #999; /* Light gray */
+   width: 90%;
+   margin-left: 1em;
+   margin-bottom: 2em;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   font-weight: bold;
+}
+
+
+/******** Footer ********/
+
+.footer {
+   font-size: 8pt;
+}
+</style>
+    <script type="text/javascript">
+<!--
+/* IDs of XML Instance Representation boxes */
+var xiBoxes = new Array('type_typ-AbgasRichtl_xibox', 'type_typ-Abgaswert_xibox', 'type_typ-AbgaswertFzkll_xibox', 'type_typ-AbgaswertPartikelzahl_xibox', 'type_typ-AbgaswertPartikelzahlExponent_xibox', 'type_typ-AbstFzFrontAnhvorMinMax_xibox', 'type_typ-AbsthVorfzHeckMinMax_xibox', 'type_typ-Achsabstand_xibox', 'type_typ-Achsen_xibox', 'type_typ-Anh_xibox', 'type_typ-AnhVorricht_xibox', 'type_typ-Anmerkungen_xibox', 'type_typ-Anschrift_xibox', 'type_typ-AnzAnordZyl_xibox', 'type_typ-BeiUmdreh_xibox', 'type_typ-Bereif_xibox', 'type_typ-BreiteMinMax_xibox', 'type_typ-CO2_xibox', 'type_typ-CodeAufbau_xibox', 'type_typ-CodeKraftstoff_xibox', 'type_typ-CodeTextbaustein_xibox', 'type_typ-DrehZStandGeraeusch_xibox', 'type_typ-Elektro_xibox', 'type_typ-Fabrikmarke_xibox', 'type_typ-Fahrzeugklasse_xibox', 'type_typ-FelgeAchse_xibox', 'type_typ-GenehmigungsDat_xibox', 'type_typ-GenehmigungsNr_xibox', 'type_typ-Handelsname_xibox', 'type_typ-HintererUehangMinMax_xibox', 'type_typ-HoechstGeschw_xibox', 'type_typ-HoeheMinMax_xibox', 'type_typ-Hubraum_xibox', 'type_typ-JN_xibox', 'type_typ-Kennwert_xibox', 'type_typ-LaengenMinMax_xibox', 'type_typ-Leistungsgewicht_xibox', 'type_typ-MassenMinMax_xibox', 'type_typ-MaxAchslasten_xibox', 'type_typ-GesamtMassen_xibox', 'type_typ-NennleistKW_xibox', 'type_typ-SattelMinMax_xibox', 'type_typ-Satznummer_xibox', 'type_typ-SitzeStehpl_xibox', 'type_typ-Schluessel_xibox', 'type_typ-SpurweiteMinMax_xibox', 'type_typ-StandFahrgeraeusch_xibox', 'type_typ-StandFahrgeraeuschGerundet_xibox', 'type_typ-Stuetzlast_xibox', 'type_typ-TxKraftstoff_xibox', 'type_typ-TxLage_xibox', 'type_typ-UebersetzVerh_xibox', 'type_typ-Variante_xibox', 'type_typ-Verbr_xibox', 'type_typ-Version_xibox', 'type_typ-VertMassen_AchsMinMax_xibox', 'type_typ-Zulanhlastungebr_xibox');
+/* IDs of Schema Component Representation boxes */
+var scBoxes = new Array('schema_scbox', 'type_typ-AbgasRichtl_scbox', 'type_typ-Abgaswert_scbox', 'type_typ-AbgaswertFzkll_scbox', 'type_typ-AbgaswertPartikelzahl_scbox', 'type_typ-AbgaswertPartikelzahlExponent_scbox', 'type_typ-AbstFzFrontAnhvorMinMax_scbox', 'type_typ-AbsthVorfzHeckMinMax_scbox', 'type_typ-Achsabstand_scbox', 'type_typ-Achsen_scbox', 'type_typ-Anh_scbox', 'type_typ-AnhVorricht_scbox', 'type_typ-Anmerkungen_scbox', 'type_typ-Anschrift_scbox', 'type_typ-AnzAnordZyl_scbox', 'type_typ-BeiUmdreh_scbox', 'type_typ-Bereif_scbox', 'type_typ-BreiteMinMax_scbox', 'type_typ-CO2_scbox', 'type_typ-CodeAufbau_scbox', 'type_typ-CodeKraftstoff_scbox', 'type_typ-CodeTextbaustein_scbox', 'type_typ-DrehZStandGeraeusch_scbox', 'type_typ-Elektro_scbox', 'type_typ-Fabrikmarke_scbox', 'type_typ-Fahrzeugklasse_scbox', 'type_typ-FelgeAchse_scbox', 'type_typ-GenehmigungsDat_scbox', 'type_typ-GenehmigungsNr_scbox', 'type_typ-Handelsname_scbox', 'type_typ-HintererUehangMinMax_scbox', 'type_typ-HoechstGeschw_scbox', 'type_typ-HoeheMinMax_scbox', 'type_typ-Hubraum_scbox', 'type_typ-JN_scbox', 'type_typ-Kennwert_scbox', 'type_typ-LaengenMinMax_scbox', 'type_typ-Leistungsgewicht_scbox', 'type_typ-MassenMinMax_scbox', 'type_typ-MaxAchslasten_scbox', 'type_typ-GesamtMassen_scbox', 'type_typ-NennleistKW_scbox', 'type_typ-SattelMinMax_scbox', 'type_typ-Satznummer_scbox', 'type_typ-SitzeStehpl_scbox', 'type_typ-Schluessel_scbox', 'type_typ-SpurweiteMinMax_scbox', 'type_typ-StandFahrgeraeusch_scbox', 'type_typ-StandFahrgeraeuschGerundet_scbox', 'type_typ-Stuetzlast_scbox', 'type_typ-TxKraftstoff_scbox', 'type_typ-TxLage_scbox', 'type_typ-UebersetzVerh_scbox', 'type_typ-Variante_scbox', 'type_typ-Verbr_scbox', 'type_typ-Version_scbox', 'type_typ-VertMassen_AchsMinMax_scbox', 'type_typ-Zulanhlastungebr_scbox');
+
+/**
+ * Can get the ID of the button controlling
+ * a collapseable box by concatenating
+ * this string onto the ID of the box itself.
+ */
+var B_SFIX = "_button";
+
+/**
+ * Counter of documentation windows
+ * Used to give each window a unique name
+ */
+var windowCount = 0;
+
+/**
+ * Returns an element in the current HTML document.
+ * 
+ * @param elementID Identifier of HTML element
+ * @return               HTML element object
+ */
+function getElementObject(elementID) {
+    var elemObj = null;
+    if (document.getElementById) {
+        elemObj = document.getElementById(elementID);
+    }
+    return elemObj;
+}             
+
+/**
+ * Closes a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function closeBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="none";
+
+     // Change text of button 
+     if (boxObj.style.display=="none") {
+        buttonObj.value=" + ";
+     }
+  }
+}
+
+/**
+ * Opens a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function openBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="block";
+
+     // Change text of button
+     if (boxObj.style.display=="block") {
+        buttonObj.value=" - ";
+     }
+  }
+}
+
+/**
+ * Sets the state of a collapseable box.
+ * 
+ * @param boxID Identifier of box
+ * @param open If true, box is "opened",
+ *             Otherwise, box is "closed".
+ */
+function setState(boxID, open) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (open) {
+     openBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  } else {
+     closeBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  }
+}
+
+/**
+ * Switches the state of a collapseable box, e.g.
+ * if it's opened, it'll be closed, and vice versa.
+ * 
+ * @param boxID Identifier of box
+ */
+function switchState(boxID) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (boxObj.style.display=="none") {
+     // Box is closed, so open it
+     openBox(boxObj, buttonObj);
+  } else if (boxObj.style.display=="block") {
+     // Box is opened, so close it
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Closes all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function collapseAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Open all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function expandAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     openBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Makes all the control buttons of boxes appear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function viewControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "inline";
+        }
+    }
+}
+
+/**
+ * Makes all the control buttons of boxes disappear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function hideControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "none";
+        }
+    }
+}
+
+/**
+ * Sets the page for either printing mode
+ * or viewing mode. In printing mode, the page
+ * is made to be more readable when printing it out.
+ * In viewing mode, the page is more browsable.
+ *
+ * @param isPrinterVersion If true, display in
+ *                                 printing mode; otherwise, 
+ *                                 in viewing mode
+ */
+function displayMode(isPrinterVersion) {
+    var obj;
+    if (isPrinterVersion) {
+        // Hide global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "hidden";
+        }
+        // Hide Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        // Hide Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Expand all Schema Component Representation tables
+        expandAll(scBoxes);
+
+        // Hide Control buttons
+        hideControlButtons(xiBoxes);
+        hideControlButtons(scBoxes);
+    } else {
+        // View global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "visible";
+        }
+        // View Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        // View Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Collapse all Schema Component Representation tables
+        collapseAll(scBoxes);
+
+        // View Control buttons
+        viewControlButtons(xiBoxes);
+        viewControlButtons(scBoxes);
+    }
+}
+
+/**
+ * Opens up a window displaying the documentation
+ * of a schema component in the XML Instance
+ * Representation table.
+ * 
+ * @param compDesc      Description of schema component 
+ * @param compName      Name of schema component 
+ * @param docTextArray Array containing the paragraphs 
+ *                           of the new document
+ */
+function viewDocumentation(compDesc, compName, docTextArray) {
+  var width = 400;
+  var height = 200;
+  var locX = 100;
+  var locY = 200;
+
+  /* Generate content */
+  var actualText = "<html>";
+  actualText += "<head><title>";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": " + compName;
+  }
+  actualText += "</title></head>";
+  actualText += "<body bgcolor=\"#FFFFEE\">";
+  // Title
+  actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; letter-spacing:1px;\">";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": <span style=\"color:#006699\">" + compName + "</span>";
+  }
+  actualText += "</p>";
+  // Documentation
+  var idx;
+  for (idx = 0; idx < docTextArray.length; idx++) {
+     actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 10pt;\">" + docTextArray[idx] + "</p>";
+  }
+  // Link to close window
+  actualText += "<a href=\"javascript:void(0)\" onclick=\"window.close();\" style=\"font-family: Arial, sans-serif; font-size: 8pt;\">Close</a>";
+  actualText += "</body></html>";
+
+  /* Display window */
+  windowCount++;
+  var docWindow = window.open("", "documentation"+windowCount, "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable,alwaysRaised,dependent,titlebar=no,width="+width+",height="+height+",screenX="+locX+",left="+locX+",screenY="+locY+",top="+locY);
+  docWindow.document.write(actualText);
+}
+
+// -->
+</script>
+  </head>
+  <body>
+    <h1>
+      <a name="top">XML Schema Documentation</a>
+    </h1>
+    <div style="float: right;">
+      <div id="printerControls" style="display:none;">
+        <input type="checkbox" onclick="displayMode(this.checked)" />Printer-friendly Version</div>
+      <script type="text/javascript">
+<!--
+
+var pc = getElementObject("printerControls");
+if (pc != null) {
+   pc.style.display="block";
+}
+               
+// -->
+</script>
+      <div id="globalControls" style="display:none">
+        <strong>XML Instance Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(xiBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(xiBoxes)">Collapse All</a> ]</span>
+        <br />
+        <br />
+        <strong>Schema Component Representation:</strong>
+        <br />
+        <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(scBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(scBoxes)">Collapse All</a> ]</span>
+      </div>
+      <script type="text/javascript">
+<!--
+
+var gc = getElementObject("globalControls");
+if (gc != null) {
+   gc.style.display="block";
+}
+               
+// -->
+</script>
+    </div>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li>
+        <a href="#SchemaProperties">Schema Document Properties</a>
+      </li>
+      <li>
+        <a href="#SchemaDefinitions">Global Definitions</a>
+        <ul>
+          <li>
+            <a href="#type_typ-AbgasRichtl">Simple Type: <strong>typ-AbgasRichtl</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Abgaswert">Simple Type: <strong>typ-Abgaswert</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-AbgaswertFzkll">Simple Type: <strong>typ-AbgaswertFzkll</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-AbgaswertPartikelzahl">Simple Type: <strong>typ-AbgaswertPartikelzahl</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-AbgaswertPartikelzahlExponent">Simple Type: <strong>typ-AbgaswertPartikelzahlExponent</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-AbstFzFrontAnhvorMinMax">Simple Type: <strong>typ-AbstFzFrontAnhvorMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-AbsthVorfzHeckMinMax">Simple Type: <strong>typ-AbsthVorfzHeckMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Achsabstand">Simple Type: <strong>typ-Achsabstand</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Achsen">Simple Type: <strong>typ-Achsen</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Anh">Simple Type: <strong>typ-Anh</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-AnhVorricht">Simple Type: <strong>typ-AnhVorricht</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Anmerkungen">Simple Type: <strong>typ-Anmerkungen</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Anschrift">Simple Type: <strong>typ-Anschrift</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-AnzAnordZyl">Simple Type: <strong>typ-AnzAnordZyl</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-BeiUmdreh">Simple Type: <strong>typ-BeiUmdreh</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Bereif">Simple Type: <strong>typ-Bereif</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-BreiteMinMax">Simple Type: <strong>typ-BreiteMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-CO2">Simple Type: <strong>typ-CO2</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-CodeAufbau">Simple Type: <strong>typ-CodeAufbau</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-CodeKraftstoff">Simple Type: <strong>typ-CodeKraftstoff</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-CodeTextbaustein">Simple Type: <strong>typ-CodeTextbaustein</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-DrehZStandGeraeusch">Simple Type: <strong>typ-DrehZStandGeraeusch</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Elektro">Simple Type: <strong>typ-Elektro</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Fabrikmarke">Simple Type: <strong>typ-Fabrikmarke</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Fahrzeugklasse">Simple Type: <strong>typ-Fahrzeugklasse</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-FelgeAchse">Simple Type: <strong>typ-FelgeAchse</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-GenehmigungsDat">Simple Type: <strong>typ-GenehmigungsDat</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-GenehmigungsNr">Simple Type: <strong>typ-GenehmigungsNr</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-GesamtMassen">Simple Type: <strong>typ-GesamtMassen</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Handelsname">Simple Type: <strong>typ-Handelsname</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-HintererUehangMinMax">Simple Type: <strong>typ-HintererUehangMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-HoechstGeschw">Simple Type: <strong>typ-HoechstGeschw</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-HoeheMinMax">Simple Type: <strong>typ-HoeheMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Hubraum">Simple Type: <strong>typ-Hubraum</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-JN">Simple Type: <strong>typ-JN</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Kennwert">Simple Type: <strong>typ-Kennwert</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-LaengenMinMax">Simple Type: <strong>typ-LaengenMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Leistungsgewicht">Simple Type: <strong>typ-Leistungsgewicht</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-MassenMinMax">Simple Type: <strong>typ-MassenMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-MaxAchslasten">Simple Type: <strong>typ-MaxAchslasten</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-NennleistKW">Simple Type: <strong>typ-NennleistKW</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-SattelMinMax">Simple Type: <strong>typ-SattelMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Satznummer">Simple Type: <strong>typ-Satznummer</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Schluessel">Simple Type: <strong>typ-Schluessel</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-SitzeStehpl">Simple Type: <strong>typ-SitzeStehpl</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-SpurweiteMinMax">Simple Type: <strong>typ-SpurweiteMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-StandFahrgeraeusch">Simple Type: <strong>typ-StandFahrgeraeusch</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-StandFahrgeraeuschGerundet">Simple Type: <strong>typ-StandFahrgeraeuschGerundet</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Stuetzlast">Simple Type: <strong>typ-Stuetzlast</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-TxKraftstoff">Simple Type: <strong>typ-TxKraftstoff</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-TxLage">Simple Type: <strong>typ-TxLage</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-UebersetzVerh">Simple Type: <strong>typ-UebersetzVerh</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Variante">Simple Type: <strong>typ-Variante</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Verbr">Simple Type: <strong>typ-Verbr</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Version">Simple Type: <strong>typ-Version</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-VertMassen_AchsMinMax">Simple Type: <strong>typ-VertMassen_AchsMinMax</strong></a>
+          </li>
+          <li>
+            <a href="#type_typ-Zulanhlastungebr">Simple Type: <strong>typ-Zulanhlastungebr</strong></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="legendTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Legend">Legend</a>
+      </li>
+    </ul>
+    <ul id="glossaryTOC" style="margin-top: 0em">
+      <li>
+        <a href="#Glossary">Glossary</a>
+      </li>
+    </ul>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaProperties">Schema Document Properties</a>
+    </h2>
+    <table class="properties">
+      <tr>
+        <th>
+          <a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+        </th>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th>Element and Attribute Namespaces</th>
+        <td>
+          <ul>
+            <li>Global element and attribute declarations belong to this schema's target namespace.</li>
+            <li>By default, local element declarations belong to this schema's target namespace.</li>
+            <li>By default, local attribute declarations have no namespace.</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <h3>Declared Namespaces</h3>
+    <table class="namespaces">
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xml">xml</a>
+        </td>
+        <td>http://www.w3.org/XML/1998/namespace</td>
+      </tr>
+      <tr>
+        <td>
+          <a name="ns_xs">xs</a>
+        </td>
+        <td>http://www.w3.org/2001/XMLSchema</td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="schema_scbox_button" class="control" onclick="switchState('schema_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="schema_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:schema</span> <span class="scTag">elementFormDefault</span>="<span class="scContent">qualified</span>" <span class="scTag">attributeFormDefault</span>="<span class="scContent">unqualified</span>"&gt;<div class="scContent" style="margin-left: 1.5em">...</div>&lt;/<span class="scTag">xs:schema</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('schema_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h2>
+      <a name="SchemaDefinitions">Global Definitions</a>
+    </h2>
+    <h3>Simple Type: <a name="type_typ-AbgasRichtl" class="name">typ-AbgasRichtl</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-AbgasRichtl</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AbgasRichtl</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 25</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AbgasRichtl_scbox_button" class="control" onclick="switchState('type_typ-AbgasRichtl_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AbgasRichtl_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AbgasRichtl</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">25</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AbgasRichtl_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Abgaswert" class="name">typ-Abgaswert</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Abgaswert</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Abgaswert</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (0|[1-9][0-9]*)\.[0-9]+|(0|[1-9][0-9]*)</li>
+            <li>
+              <em>length</em> &lt;= 8</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Abgaswert_scbox_button" class="control" onclick="switchState('type_typ-Abgaswert_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Abgaswert_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Abgaswert</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">8</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(0|[1-9][0-9]*)\.[0-9]+|(0|[1-9][0-9]*)</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Abgaswert_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-AbgaswertFzkll" class="name">typ-AbgaswertFzkll</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-AbgaswertFzkll</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AbgaswertFzkll</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (0|[1-9][0-9]*)\.[0-9]+|(0|[1-9][0-9]*)</li>
+            <li>
+              <em>length</em> &lt;= 6</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AbgaswertFzkll_scbox_button" class="control" onclick="switchState('type_typ-AbgaswertFzkll_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AbgaswertFzkll_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AbgaswertFzkll</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">6</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(0|[1-9][0-9]*)\.[0-9]+|(0|[1-9][0-9]*)</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AbgaswertFzkll_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-AbgaswertPartikelzahl" class="name">typ-AbgaswertPartikelzahl</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span> &lt; <strong>typ-AbgaswertPartikelzahl</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AbgaswertPartikelzahl</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: decimal</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = \d\.\d\d</li>
+            <li>
+              <em>value</em> &gt;= 0.01</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AbgaswertPartikelzahl_scbox_button" class="control" onclick="switchState('type_typ-AbgaswertPartikelzahl_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AbgaswertPartikelzahl_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AbgaswertPartikelzahl</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">0.01</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">\d\.\d\d</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AbgaswertPartikelzahl_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-AbgaswertPartikelzahlExponent" class="name">typ-AbgaswertPartikelzahlExponent</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-AbgaswertPartikelzahlExponent</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AbgaswertPartikelzahlExponent</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AbgaswertPartikelzahlExponent_scbox_button" class="control" onclick="switchState('type_typ-AbgaswertPartikelzahlExponent_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AbgaswertPartikelzahlExponent_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AbgaswertPartikelzahlExponent</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AbgaswertPartikelzahlExponent_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-AbstFzFrontAnhvorMinMax" class="name">typ-AbstFzFrontAnhvorMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-AbstFzFrontAnhvorMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AbstFzFrontAnhvorMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AbstFzFrontAnhvorMinMax_scbox_button" class="control" onclick="switchState('type_typ-AbstFzFrontAnhvorMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AbstFzFrontAnhvorMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AbstFzFrontAnhvorMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AbstFzFrontAnhvorMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-AbsthVorfzHeckMinMax" class="name">typ-AbsthVorfzHeckMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-AbsthVorfzHeckMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AbsthVorfzHeckMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AbsthVorfzHeckMinMax_scbox_button" class="control" onclick="switchState('type_typ-AbsthVorfzHeckMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AbsthVorfzHeckMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AbsthVorfzHeckMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AbsthVorfzHeckMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Achsabstand" class="name">typ-Achsabstand</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-Achsabstand</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Achsabstand</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Achsabstand_scbox_button" class="control" onclick="switchState('type_typ-Achsabstand_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Achsabstand_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Achsabstand</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Achsabstand_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Achsen" class="name">typ-Achsen</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-Achsen</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Achsen</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Achsen_scbox_button" class="control" onclick="switchState('type_typ-Achsen_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Achsen_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Achsen</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Achsen_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Anh" class="name">typ-Anh</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-Anh</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Anh</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Anh_scbox_button" class="control" onclick="switchState('type_typ-Anh_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Anh_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Anh</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Anh_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-AnhVorricht" class="name">typ-AnhVorricht</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-AnhVorricht</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AnhVorricht</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 30</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AnhVorricht_scbox_button" class="control" onclick="switchState('type_typ-AnhVorricht_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AnhVorricht_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AnhVorricht</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">30</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AnhVorricht_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Anmerkungen" class="name">typ-Anmerkungen</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Anmerkungen</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Anmerkungen</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 1000</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Anmerkungen_scbox_button" class="control" onclick="switchState('type_typ-Anmerkungen_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Anmerkungen_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Anmerkungen</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">1000</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Anmerkungen_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Anschrift" class="name">typ-Anschrift</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Anschrift</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Anschrift</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 100</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Anschrift_scbox_button" class="control" onclick="switchState('type_typ-Anschrift_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Anschrift_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Anschrift</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">100</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Anschrift_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-AnzAnordZyl" class="name">typ-AnzAnordZyl</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-AnzAnordZyl</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-AnzAnordZyl</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 23</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-AnzAnordZyl_scbox_button" class="control" onclick="switchState('type_typ-AnzAnordZyl_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-AnzAnordZyl_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-AnzAnordZyl</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">23</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-AnzAnordZyl_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-BeiUmdreh" class="name">typ-BeiUmdreh</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-BeiUmdreh</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-BeiUmdreh</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-BeiUmdreh_scbox_button" class="control" onclick="switchState('type_typ-BeiUmdreh_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-BeiUmdreh_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-BeiUmdreh</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-BeiUmdreh_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Bereif" class="name">typ-Bereif</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Bereif</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Bereif</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 25</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Bereif_scbox_button" class="control" onclick="switchState('type_typ-Bereif_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Bereif_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Bereif</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">25</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Bereif_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-BreiteMinMax" class="name">typ-BreiteMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-BreiteMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-BreiteMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 9999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-BreiteMinMax_scbox_button" class="control" onclick="switchState('type_typ-BreiteMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-BreiteMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-BreiteMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">9999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-BreiteMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-CO2" class="name">typ-CO2</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-CO2</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-CO2</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-CO2_scbox_button" class="control" onclick="switchState('type_typ-CO2_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-CO2_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-CO2</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-CO2_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-CodeAufbau" class="name">typ-CodeAufbau</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-CodeAufbau</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-CodeAufbau</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = ([{A-Z}-[ ]][A-Z]*)|[0-9]*</li>
+            <li>
+              <em>length</em> &lt;= 4</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-CodeAufbau_scbox_button" class="control" onclick="switchState('type_typ-CodeAufbau_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-CodeAufbau_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-CodeAufbau</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">4</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">([{A-Z}-[ ]][A-Z]*)|[0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-CodeAufbau_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-CodeKraftstoff" class="name">typ-CodeKraftstoff</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-CodeKraftstoff</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-CodeKraftstoff</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [0-9]{4}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-CodeKraftstoff_scbox_button" class="control" onclick="switchState('type_typ-CodeKraftstoff_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-CodeKraftstoff_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-CodeKraftstoff</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[0-9]{4}</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-CodeKraftstoff_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-CodeTextbaustein" class="name">typ-CodeTextbaustein</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-CodeTextbaustein</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-CodeTextbaustein</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [A-Z]\d</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-CodeTextbaustein_scbox_button" class="control" onclick="switchState('type_typ-CodeTextbaustein_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-CodeTextbaustein_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-CodeTextbaustein</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[A-Z]\d</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-CodeTextbaustein_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-DrehZStandGeraeusch" class="name">typ-DrehZStandGeraeusch</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-DrehZStandGeraeusch</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-DrehZStandGeraeusch</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-DrehZStandGeraeusch_scbox_button" class="control" onclick="switchState('type_typ-DrehZStandGeraeusch_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-DrehZStandGeraeusch_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-DrehZStandGeraeusch</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-DrehZStandGeraeusch_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Elektro" class="name">typ-Elektro</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Elektro</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Elektro</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (([0]\.[0-9]{0,3}[1-9]+[0-9]*)|([1-9][0-9]*)\.[0-9]+)|[1-9][0-9]*</li>
+            <li>
+              <em>length</em> &lt;= 6</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Elektro_scbox_button" class="control" onclick="switchState('type_typ-Elektro_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Elektro_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Elektro</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">6</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(([0]\.[0-9]{0,3}[1-9]+[0-9]*)|([1-9][0-9]*)\.[0-9]+)|[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Elektro_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Fabrikmarke" class="name">typ-Fabrikmarke</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Fabrikmarke</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Fabrikmarke</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 25</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Fabrikmarke_scbox_button" class="control" onclick="switchState('type_typ-Fabrikmarke_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Fabrikmarke_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Fabrikmarke</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">25</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Fabrikmarke_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Fahrzeugklasse" class="name">typ-Fahrzeugklasse</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Fahrzeugklasse</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Fahrzeugklasse</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &gt;= 2</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Fahrzeugklasse_scbox_button" class="control" onclick="switchState('type_typ-Fahrzeugklasse_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Fahrzeugklasse_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Fahrzeugklasse</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">4</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minLength</span> <span class="scTag">value</span>="<span class="scContent">2</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Fahrzeugklasse_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-FelgeAchse" class="name">typ-FelgeAchse</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-FelgeAchse</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-FelgeAchse</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 20</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-FelgeAchse_scbox_button" class="control" onclick="switchState('type_typ-FelgeAchse_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-FelgeAchse_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-FelgeAchse</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">20</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-FelgeAchse_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-GenehmigungsDat" class="name">typ-GenehmigungsDat</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:date</span> &lt; <strong>typ-GenehmigungsDat</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-GenehmigungsDat</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: date</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-GenehmigungsDat_scbox_button" class="control" onclick="switchState('type_typ-GenehmigungsDat_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-GenehmigungsDat_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-GenehmigungsDat</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:date</span></span>"/&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-GenehmigungsDat_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-GenehmigungsNr" class="name">typ-GenehmigungsNr</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-GenehmigungsNr</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-GenehmigungsNr</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 25</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-GenehmigungsNr_scbox_button" class="control" onclick="switchState('type_typ-GenehmigungsNr_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-GenehmigungsNr_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-GenehmigungsNr</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">25</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-GenehmigungsNr_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-GesamtMassen" class="name">typ-GesamtMassen</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-GesamtMassen</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-GesamtMassen</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 999999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-GesamtMassen_scbox_button" class="control" onclick="switchState('type_typ-GesamtMassen_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-GesamtMassen_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-GesamtMassen</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">999999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-GesamtMassen_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Handelsname" class="name">typ-Handelsname</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Handelsname</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Handelsname</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 25</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Handelsname_scbox_button" class="control" onclick="switchState('type_typ-Handelsname_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Handelsname_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Handelsname</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">25</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Handelsname_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-HintererUehangMinMax" class="name">typ-HintererUehangMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-HintererUehangMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-HintererUehangMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 9999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-HintererUehangMinMax_scbox_button" class="control" onclick="switchState('type_typ-HintererUehangMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-HintererUehangMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-HintererUehangMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">9999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-HintererUehangMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-HoechstGeschw" class="name">typ-HoechstGeschw</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-HoechstGeschw</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-HoechstGeschw</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-HoechstGeschw_scbox_button" class="control" onclick="switchState('type_typ-HoechstGeschw_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-HoechstGeschw_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-HoechstGeschw</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-HoechstGeschw_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-HoeheMinMax" class="name">typ-HoeheMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-HoeheMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-HoeheMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 9999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-HoeheMinMax_scbox_button" class="control" onclick="switchState('type_typ-HoeheMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-HoeheMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-HoeheMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">9999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-HoeheMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Hubraum" class="name">typ-Hubraum</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-Hubraum</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Hubraum</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Hubraum_scbox_button" class="control" onclick="switchState('type_typ-Hubraum_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Hubraum_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Hubraum</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Hubraum_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-JN" class="name">typ-JN</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:NMTOKEN</span> &lt; <strong>typ-JN</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-JN</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: NMTOKEN</li>
+          </ul>
+          <ul>
+            <li>
+              <em>value</em> comes from list: {'J'|'N'}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-JN_scbox_button" class="control" onclick="switchState('type_typ-JN_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-JN_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-JN</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:NMTOKEN</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:enumeration</span> <span class="scTag">value</span>="<span class="scContent">J</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:enumeration</span> <span class="scTag">value</span>="<span class="scContent">N</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-JN_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Kennwert" class="name">typ-Kennwert</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Kennwert</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Kennwert</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (([0]\.[0-9]{0,7}[1-9]+[0-9]*)|([1-9][0-9]*)\.[0-9]+)|[1-9][0-9]*</li>
+            <li>
+              <em>length</em> &lt;= 10</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Kennwert_scbox_button" class="control" onclick="switchState('type_typ-Kennwert_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Kennwert_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Kennwert</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">10</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(([0]\.[0-9]{0,7}[1-9]+[0-9]*)|([1-9][0-9]*)\.[0-9]+)|[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Kennwert_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-LaengenMinMax" class="name">typ-LaengenMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-LaengenMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-LaengenMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-LaengenMinMax_scbox_button" class="control" onclick="switchState('type_typ-LaengenMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-LaengenMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-LaengenMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-LaengenMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Leistungsgewicht" class="name">typ-Leistungsgewicht</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span> &lt; <strong>typ-Leistungsgewicht</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Leistungsgewicht</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: decimal</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (0|[1-9][0-9]*)\.\d\d</li>
+            <li>0.01 &lt;= <em>value</em> &lt;= 999.99</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Leistungsgewicht_scbox_button" class="control" onclick="switchState('type_typ-Leistungsgewicht_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Leistungsgewicht_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Leistungsgewicht</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">0.01</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">999.99</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(0|[1-9][0-9]*)\.\d\d</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Leistungsgewicht_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-MassenMinMax" class="name">typ-MassenMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-MassenMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-MassenMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-MassenMinMax_scbox_button" class="control" onclick="switchState('type_typ-MassenMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-MassenMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-MassenMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-MassenMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-MaxAchslasten" class="name">typ-MaxAchslasten</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-MaxAchslasten</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-MaxAchslasten</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-MaxAchslasten_scbox_button" class="control" onclick="switchState('type_typ-MaxAchslasten_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-MaxAchslasten_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-MaxAchslasten</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-MaxAchslasten_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-NennleistKW" class="name">typ-NennleistKW</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span> &lt; <strong>typ-NennleistKW</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-NennleistKW</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: decimal</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (0|[1-9][0-9]*)\.\d\d</li>
+            <li>0.01 &lt;= <em>value</em> &lt;= 9999.99</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-NennleistKW_scbox_button" class="control" onclick="switchState('type_typ-NennleistKW_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-NennleistKW_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-NennleistKW</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">0.01</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">9999.99</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(0|[1-9][0-9]*)\.\d\d</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-NennleistKW_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-SattelMinMax" class="name">typ-SattelMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-SattelMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-SattelMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-SattelMinMax_scbox_button" class="control" onclick="switchState('type_typ-SattelMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-SattelMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-SattelMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-SattelMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Satznummer" class="name">typ-Satznummer</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Satznummer</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Satznummer</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = \d{5}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Satznummer_scbox_button" class="control" onclick="switchState('type_typ-Satznummer_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Satznummer_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Satznummer</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">\d{5}</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Satznummer_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Schluessel" class="name">typ-Schluessel</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Schluessel</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Schluessel</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 10</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Schluessel_scbox_button" class="control" onclick="switchState('type_typ-Schluessel_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Schluessel_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Schluessel</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">10</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Schluessel_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-SitzeStehpl" class="name">typ-SitzeStehpl</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-SitzeStehpl</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-SitzeStehpl</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-SitzeStehpl_scbox_button" class="control" onclick="switchState('type_typ-SitzeStehpl_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-SitzeStehpl_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-SitzeStehpl</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-SitzeStehpl_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-SpurweiteMinMax" class="name">typ-SpurweiteMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-SpurweiteMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-SpurweiteMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-SpurweiteMinMax_scbox_button" class="control" onclick="switchState('type_typ-SpurweiteMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-SpurweiteMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-SpurweiteMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-SpurweiteMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-StandFahrgeraeusch" class="name">typ-StandFahrgeraeusch</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span> &lt; <strong>typ-StandFahrgeraeusch</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-StandFahrgeraeusch</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: decimal</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (0|[1-9][0-9]{0,2})\.\d\d</li>
+            <li>
+              <em>value</em> &gt;= 0.01</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-StandFahrgeraeusch_scbox_button" class="control" onclick="switchState('type_typ-StandFahrgeraeusch_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-StandFahrgeraeusch_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-StandFahrgeraeusch</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">0.01</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(0|[1-9][0-9]{0,2})\.\d\d</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-StandFahrgeraeusch_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-StandFahrgeraeuschGerundet" class="name">typ-StandFahrgeraeuschGerundet</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-StandFahrgeraeuschGerundet</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-StandFahrgeraeuschGerundet</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-StandFahrgeraeuschGerundet_scbox_button" class="control" onclick="switchState('type_typ-StandFahrgeraeuschGerundet_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-StandFahrgeraeuschGerundet_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-StandFahrgeraeuschGerundet</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-StandFahrgeraeuschGerundet_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Stuetzlast" class="name">typ-Stuetzlast</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-Stuetzlast</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Stuetzlast</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Stuetzlast_scbox_button" class="control" onclick="switchState('type_typ-Stuetzlast_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Stuetzlast_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Stuetzlast</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Stuetzlast_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-TxKraftstoff" class="name">typ-TxKraftstoff</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-TxKraftstoff</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-TxKraftstoff</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 20</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-TxKraftstoff_scbox_button" class="control" onclick="switchState('type_typ-TxKraftstoff_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-TxKraftstoff_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-TxKraftstoff</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">20</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-TxKraftstoff_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-TxLage" class="name">typ-TxLage</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-TxLage</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-TxLage</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 10</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-TxLage_scbox_button" class="control" onclick="switchState('type_typ-TxLage_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-TxLage_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-TxLage</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">10</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-TxLage_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-UebersetzVerh" class="name">typ-UebersetzVerh</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span> &lt; <strong>typ-UebersetzVerh</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-UebersetzVerh</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: decimal</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (0|[1-9][0-9]*)\.\d\d\d</li>
+            <li>0.001 &lt;= <em>value</em> &lt;= 99.999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-UebersetzVerh_scbox_button" class="control" onclick="switchState('type_typ-UebersetzVerh_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-UebersetzVerh_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-UebersetzVerh</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">0.001</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99.999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(0|[1-9][0-9]*)\.\d\d\d</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-UebersetzVerh_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Variante" class="name">typ-Variante</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Variante</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Variante</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 25</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Variante_scbox_button" class="control" onclick="switchState('type_typ-Variante_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Variante_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Variante</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">25</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Variante_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Verbr" class="name">typ-Verbr</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span> &lt; <strong>typ-Verbr</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Verbr</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: decimal</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = (0|[1-9][0-9]*)\.\d</li>
+            <li>0.1 &lt;= <em>value</em> &lt;= 99.9</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Verbr_scbox_button" class="control" onclick="switchState('type_typ-Verbr_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Verbr_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Verbr</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:decimal</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">0.1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99.9</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">(0|[1-9][0-9]*)\.\d</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Verbr_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Version" class="name">typ-Version</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt; <strong>typ-Version</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Version</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: string</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</li>
+            <li>
+              <em>length</em> &lt;= 35</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Version_scbox_button" class="control" onclick="switchState('type_typ-Version_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Version_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Version</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxLength</span> <span class="scTag">value</span>="<span class="scContent">35</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[\p{IsBasicLatin}\p{IsLatin-1Supplement}-[ \t\r\n]][\p{IsBasicLatin}\p{IsLatin-1Supplement}-[\t\r\n]]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Version_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-VertMassen_AchsMinMax" class="name">typ-VertMassen_AchsMinMax</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-VertMassen_AchsMinMax</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-VertMassen_AchsMinMax</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 99999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-VertMassen_AchsMinMax_scbox_button" class="control" onclick="switchState('type_typ-VertMassen_AchsMinMax_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-VertMassen_AchsMinMax_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-VertMassen_AchsMinMax</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">99999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-VertMassen_AchsMinMax_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <h3>Simple Type: <a name="type_typ-Zulanhlastungebr" class="name">typ-Zulanhlastungebr</a></h3>
+    <table class="hierarchy">
+      <tr>
+        <th>Super-types:</th>
+        <td>
+          <span class="type">
+            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span> &lt; <strong>typ-Zulanhlastungebr</strong> (by restriction)</td>
+      </tr>
+      <tr>
+        <th>Sub-types:</th>
+        <td>None</td>
+      </tr>
+    </table>
+    <table class="properties">
+      <tr>
+        <th>Name</th>
+        <td>typ-Zulanhlastungebr</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>
+          <ul>
+            <li>Base XSD Type: integer</li>
+          </ul>
+          <ul>
+            <li>
+              <em>pattern</em> = [1-9][0-9]*</li>
+            <li>1 &lt;= <em>value</em> &lt;= 9999</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <div class="schemaComponent box">
+      <div>
+        <input type="button" id="type_typ-Zulanhlastungebr_scbox_button" class="control" onclick="switchState('type_typ-Zulanhlastungebr_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span></div>
+      <div id="type_typ-Zulanhlastungebr_scbox" class="contents">
+        <div style="margin-left: 0em">&lt;<span class="scTag">xs:simpleType</span> <span class="scTag">name</span>="<span class="scContent">typ-Zulanhlastungebr</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> <span class="scTag">base</span>="<span class="scContent"><span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:integer</span></span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:minInclusive</span> <span class="scTag">value</span>="<span class="scContent">1</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:maxInclusive</span> <span class="scTag">value</span>="<span class="scContent">9999</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:pattern</span> <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]*</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>
+      </div>
+      <script type="text/javascript">
+<!--
+setState('type_typ-Zulanhlastungebr_scbox', false);
+// -->
+</script>
+    </div>
+    <div style="text-align: right; clear: both;">
+      <a href="#top">top</a>
+    </div>
+    <hr />
+    <div id="legend">
+      <h2>
+        <a name="Legend">Legend</a>
+      </h2>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">Complex Type:</h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Type</div>
+      </div>
+      <div style="float: left; width: 15em;">
+        <h3 style="margin-bottom: 0px;">
+          <span class="name">AusAddress</span>
+        </h3>
+        <div class="hint" style="margin-left: 0em;">Schema Component Name</div>
+      </div>
+      <table class="hierarchy" style="clear : both">
+        <tr>
+          <th>Super-types:</th>
+          <td>
+            <span class="type" style="color: #0000FF; text-decoration:underline;">Address</span> &lt; <span class="current">AusAddress</span> (by extension)</td>
+        </tr>
+        <tr>
+          <th>Sub-types:</th>
+          <td>
+            <ul>
+              <li>
+                <span class="type" style="color: #0000FF; text-decoration:underline;">QLDAddress</span> (by restriction)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div class="hint">If this schema component is a type definition, its type hierarchy is shown in a gray-bordered box.</div>
+      <table class="properties">
+        <tr>
+          <th>Name</th>
+          <td>AusAddress</td>
+        </tr>
+        <tr>
+          <th>
+            <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+          </th>
+          <td>no</td>
+        </tr>
+      </table>
+      <div class="hint">The table above displays the properties of this schema component.</div>
+      <div class="sample box">
+        <div>
+          <span class="caption">XML Instance Representation</span>
+        </div>
+        <div class="contents">
+          <span style="margin-left: 0em">&lt;...</span>
+          <span class="newFields">
+            <span> country="<span class="fixed">Australia</span>"</span>
+          </span>&gt; <br /><span style="margin-left: 1.5em" class="inherited">&lt;unitNo&gt; <span class="type">string</span> &lt;/unitNo&gt; <span class="occurs">[0..1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;houseNo&gt; <span class="type">string</span> &lt;/houseNo&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em" class="inherited">&lt;street&gt; <span class="type">string</span> &lt;/street&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a><span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;city&gt; <span class="type">string</span> &lt;/city&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 3em" class="inherited">&lt;town&gt; <span class="type">string</span> &lt;/town&gt; <span class="occurs">[1]</span></span><br /><span class="group" style="margin-left: 1.5em">End Choice</span><br /><span class="newFields"><span style="margin-left: 1.5em">&lt;state&gt; <span class="type" style="text-decoration:underline;">AusStates</span> &lt;/state&gt; <span class="occurs">[1]</span></span><br /><span style="margin-left: 1.5em">&lt;postcode&gt; <span class="constraint">string &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;</span> &lt;/postcode&gt; <span class="occurs">[1]</span><a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Post code must be a four-digit number.'); viewDocumentation('Element', 'postcode', docArray);">?</a></span><br /></span><span style="margin-left: 0em">&lt;/...&gt;</span><br /></div>
+      </div>
+      <div class="hint">
+        <p>The XML Instance Representation table above shows the schema component's content as an XML instance.</p>
+        <ul>
+          <li>The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].</li>
+          <li>Model group information are shown in gray, e.g. Start Choice ... End Choice.</li>
+          <li>For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in <span style="font-weight: bold">bold</span>.</li>
+          <li>If an element/attribute has a fixed value, the fixed value is shown in green, e.g. country="Australia".</li>
+          <li>Otherwise, the type of the element/attribute is displayed.
+               <ul><li>If the element/attribute's type is in the schema, a link is provided to it.</li><li>For local simple type definitions, the constraints are displayed in angle brackets, e.g. &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;.</li></ul></li>
+          <li>If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked, e.g. &lt;postcode&gt;.</li>
+        </ul>
+      </div>
+      <div class="schemaComponent box">
+        <div>
+          <span class="caption">Schema Component Representation</span>
+        </div>
+        <div class="contents">
+          <span style="margin-left: 0em">&lt;<span class="scTag">complexType</span><span class="scTag">name</span>="<span class="scContent">AusAddress</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;<span class="scTag">extension</span><span class="scTag">base</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">Address</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">state</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type" style="text-decoration:underline;">AusStates</span></span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;<span class="scTag">element</span><span class="scTag">name</span>="<span class="scContent">postcode</span>"&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;<span class="scTag">restriction</span><span class="scTag">base</span>="<span class="scContent"><span class="type">string</span></span>"&gt;</span>
+          <br />
+          <span style="margin-left: 10.5em">&lt;<span class="scTag">pattern</span><span class="scTag">value</span>="<span class="scContent">[1-9][0-9]{3}</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 9em">&lt;/<span class="scTag">restriction</span>&gt;</span>
+          <br />
+          <span style="margin-left: 7.5em">&lt;/<span class="scTag">simpleType</span>&gt;</span>
+          <br />
+          <span style="margin-left: 6em">&lt;/<span class="scTag">element</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;/<span class="scTag">sequence</span>&gt;</span>
+          <br />
+          <span style="margin-left: 4.5em">&lt;<span class="scTag">attribute</span><span class="scTag">name</span>="<span class="scContent">country</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type">string</span></span>" <span class="scTag">fixed</span>="<span class="scContent">Australia</span>"/&gt;</span>
+          <br />
+          <span style="margin-left: 3em">&lt;/<span class="scTag">extension</span>&gt;</span>
+          <br />
+          <span style="margin-left: 1.5em">&lt;/<span class="scTag">complexContent</span>&gt;</span>
+          <br />
+          <span style="margin-left: 0em">&lt;/<span class="scTag">complexType</span>&gt;</span>
+          <br />
+        </div>
+      </div>
+      <div class="hint">The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)</div>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <div id="glossary">
+      <h2>
+        <a name="Glossary">Glossary</a>
+      </h2>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Abstract">Abstract</a> </span>(Applies to complex type definitions and element declarations). An abstract element or complex type cannot used to validate an element instance. If there is a reference to an abstract element, only element declarations that can substitute the abstract element can be used to validate the instance. For references to abstract type definitions, only derived types can be used.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_All">All Model Group</a> </span>Child elements can be provided <em>in any order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-all" href="http://www.w3.org/TR/xmlschema-1/#element-all">http://www.w3.org/TR/xmlschema-1/#element-all</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Choice">Choice Model Group</a> </span>
+        <em>Only one</em> from the list of child elements and model groups can be provided in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-choice" href="http://www.w3.org/TR/xmlschema-1/#element-choice">http://www.w3.org/TR/xmlschema-1/#element-choice</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_CollapseWS">Collapse Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32). Then, collapse contiguous sequences of space characters into single space character, and remove leading and trailing space characters.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ElemBlock">Disallowed Substitutions</a> </span>(Applies to element declarations). If <em>substitution</em> is specified, then <a title="Look up 'substitution group' in glossary" href="#term_SubGroup">substitution group</a> members cannot be used in place of the given element declaration to validate element instances. If <em>derivation methods</em>, e.g. extension, restriction, are specified, then the given element declaration will not validate element instances that have types derived from the element declaration's type using the specified derivation methods. Normally, element instances can override their declaration's type by specifying an <code>xsi:type</code> attribute.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Key">Key Constraint</a> </span>Like <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>, but additionally requires that the specified value(s) must be provided. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_KeyRef">Key Reference Constraint</a> </span>Ensures that the specified value(s) must match value(s) from a <a title="Look up 'Key Constraint' in glossary" href="#term_Key">Key Constraint</a> or <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ModelGroup">Model Group</a> </span>Groups together element content, specifying the order in which the element content can occur and the number of times the group of element content may be repeated. See: <a title="http://www.w3.org/TR/xmlschema-1/#Model_Groups" href="http://www.w3.org/TR/xmlschema-1/#Model_Groups">http://www.w3.org/TR/xmlschema-1/#Model_Groups</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Nillable">Nillable</a> </span>(Applies to element declarations). If an element declaration is nillable, instances can use the <code>xsi:nil</code> attribute. The <code>xsi:nil</code> attribute is the boolean attribute, <em>nil</em>, from the <em>http://www.w3.org/2001/XMLSchema-instance</em> namespace. If an element instance has an <code>xsi:nil</code> attribute set to true, it can be left empty, even though its element declaration may have required content.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Notation">Notation</a> </span>A notation is used to identify the format of a piece of data. Values of elements and attributes that are of type, NOTATION, must come from the names of declared notations. See: <a title="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations" href="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations">http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_PreserveWS">Preserve Whitespace Policy</a> </span>Preserve whitespaces exactly as they appear in instances.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TypeFinal">Prohibited Derivations</a> </span>(Applies to type definitions). Derivation methods that cannot be used to create sub-types from a given type definition.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TypeBlock">Prohibited Substitutions</a> </span>(Applies to complex type definitions). Prevents sub-types that have been derived using the specified derivation methods from validating element instances in place of the given type definition.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ReplaceWS">Replace Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32).</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Sequence">Sequence Model Group</a> </span>Child elements and model groups must be provided <em>in the specified order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-sequence" href="http://www.w3.org/TR/xmlschema-1/#element-sequence">http://www.w3.org/TR/xmlschema-1/#element-sequence</a>.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_SubGroup">Substitution Group</a> </span>Elements that are <em>members</em> of a substitution group can be used wherever the <em>head</em> element of the substitution group is referenced.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_ElemFinal">Substitution Group Exclusions</a> </span>(Applies to element declarations). Prohibits element declarations from nominating themselves as being able to substitute a given element declaration, if they have types that are derived from the original element's type using the specified derivation methods.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_TargetNS">Target Namespace</a> </span>The target namespace identifies the namespace that components in this schema belongs to. If no target namespace is provided, then the schema components do not belong to any namespace.</p>
+      <p>
+        <span class="glossaryTerm">
+          <a name="term_Unique">Uniqueness Constraint</a> </span>Ensures uniqueness of an element/attribute value, or a combination of values, within a specified scope. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+      <div style="text-align: right; clear: both;">
+        <a href="#top">top</a>
+      </div>
+      <hr />
+    </div>
+    <p class="footer">Generated by <a href="http://xml.fiforms.org/xs3p/">xs3p</a> (<a href="http://titanium.dstc.edu.au/xml/xs3p">old link</a>)
+               . Last modified: <script type="text/javascript">
+<!--
+document.write(document.lastModified);
+// -->
+</script></p>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+#generatedContentPage html,
+#generatedContentPage body,
+#generatedContentPage div,
+#generatedContentPage span,
+#generatedContentPage applet,
+#generatedContentPage object,
+#generatedContentPage iframe,
+#generatedContentPage h1,
+#generatedContentPage h2,
+#generatedContentPage h3,
+#generatedContentPage h4,
+#generatedContentPage h5,
+#generatedContentPage h6,
+#generatedContentPage p,
+#generatedContentPage blockquote,
+#generatedContentPage pre,
+#generatedContentPage a,
+#generatedContentPage abbr,
+#generatedContentPage acronym,
+#generatedContentPage address,
+#generatedContentPage big,
+#generatedContentPage cite,
+#generatedContentPage code,
+#generatedContentPage del,
+#generatedContentPage dfn,
+#generatedContentPage em,
+#generatedContentPage img,
+#generatedContentPage ins,
+#generatedContentPage kbd,
+#generatedContentPage q,
+#generatedContentPage s,
+#generatedContentPage samp,
+#generatedContentPage small,
+#generatedContentPage strike,
+#generatedContentPage strong,
+#generatedContentPage sub,
+#generatedContentPage sup,
+#generatedContentPage tt,
+#generatedContentPage var,
+#generatedContentPage b,
+#generatedContentPage u,
+#generatedContentPage i,
+#generatedContentPage center,
+#generatedContentPage dl,
+#generatedContentPage dt,
+#generatedContentPage dd,
+#generatedContentPage ol,
+#generatedContentPage ul,
+#generatedContentPage li,
+#generatedContentPage fieldset,
+#generatedContentPage form,
+#generatedContentPage label,
+#generatedContentPage legend,
+#generatedContentPage table,
+#generatedContentPage caption,
+#generatedContentPage tbody,
+#generatedContentPage tfoot,
+#generatedContentPage thead,
+#generatedContentPage tr,
+#generatedContentPage th,
+#generatedContentPage td,
+#generatedContentPage article,
+#generatedContentPage aside,
+#generatedContentPage canvas,
+#generatedContentPage details,
+#generatedContentPage embed,
+#generatedContentPage figure,
+#generatedContentPage figcaption,
+#generatedContentPage footer,
+#generatedContentPage header,
+#generatedContentPage hgroup,
+#generatedContentPage menu,
+#generatedContentPage nav,
+#generatedContentPage output,
+#generatedContentPage ruby,
+#generatedContentPage section,
+#generatedContentPage summary,
+#generatedContentPage time,
+#generatedContentPage mark,
+#generatedContentPage audio,
+#generatedContentPage video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+#generatedContentPage /* HTML5 display-role reset for older browsers */
+#generatedContentPage article,
+#generatedContentPage aside,
+#generatedContentPage details,
+#generatedContentPage figcaption,
+#generatedContentPage figure,
+#generatedContentPage footer,
+#generatedContentPage header,
+#generatedContentPage hgroup,
+#generatedContentPage menu,
+#generatedContentPage nav,
+#generatedContentPage section {
+  display: block;
+}
+#generatedContentPage body {
+  line-height: 1;
+}
+#generatedContentPage ol,
+#generatedContentPage ul {
+  list-style: none;
+}
+#generatedContentPage blockquote,
+#generatedContentPage q {
+  quotes: none;
+}
+#generatedContentPage blockquote:before,
+#generatedContentPage blockquote:after,
+#generatedContentPage q:before,
+#generatedContentPage q:after {
+  content: '';
+  content: none;
+}
+#generatedContentPage table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

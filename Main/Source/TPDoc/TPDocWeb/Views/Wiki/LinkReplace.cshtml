@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "LinkReplace";
+}
+
+<h2>LinkReplacer</h2>
+<section class="linkReplaceDiv">
+    <span>Old ID: </span>
+    <input id="OldId" type="text" />
+    <span>New ID: </span>
+    <input id="NewId" type="text" />
+    <input type="button" class="btn btn-default" value="Replace" onclick="StartReplace.call(this)"/>
+</section>
+
+<section>
+    <textarea id="linkReplacerLogArea"></textarea>
+</section>
+
+@section scripts {
+    <script>
+
+        var pollingCount = 0;
+        var interval = null;
+
+        $(document).ready(function ()
+        {
+            interval = setInterval(GetLogs, 3000);
+        });
+
+        function GetLogs()
+        {
+            var url = "@Url.Action("GetLinkReplacerLog", "Wiki")";
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                async: true,
+                success: function (data) {
+                    if (data == "failure")
+                    {
+                        $("#linkReplacerLogArea").val("Operation failed. Check log for more information\n");
+                    }
+                    else if (data == "not found")
+                    {
+                        pollingCount++;
+                        if (pollingCount > 5)
+                        {
+                            clearInterval(interval);
+                            interval = setInterval(GetLogs, 15000);
+                        }
+
+                        $("#linkReplacerLogArea").val("Operation finished or not started\n");
+                   } 
+                    else
+                    {
+                        var content = decodeURIComponent(data).replace("/+/g", " ");
+                        $("#linkReplacerLogArea").val(content);
+                    }
+                }
+            });
+            return false;
+        }
+
+        function StartReplace()
+        {
+            var url = "@Url.Action("StartLinkReplace", "Wiki")";
+
+            $.ajax({
+                url: url + "/" + encodeURIComponent($('#OldId').val()) + "/" + encodeURIComponent($('#NewId').val()),
+                type: 'GET',
+                async: true
+            });
+            return false;
+        }
+    </script>
+}
+

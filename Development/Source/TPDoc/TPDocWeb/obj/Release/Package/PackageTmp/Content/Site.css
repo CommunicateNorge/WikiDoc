@@ -1,0 +1,669 @@
+﻿body {
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#linkReplacerLogArea
+{
+    margin-top:20px;
+    height:700px;
+    width: 1000px;
+}
+
+.linkReplaceDiv input[type=text]
+{
+    width: 300px;
+    margin-right: 10px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+body.wait *, body.wait
+{
+    cursor: progress !important;
+}
+
+
+.modalSelectList
+{
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) 
+{
+    .newPageModal
+    {
+        width: 700px;
+    }
+}
+
+#bannerLogo
+{
+    float:right;
+}
+
+.NBText
+{
+    font-weight: bold; 
+    display:inline-block;
+}
+
+.searchHit
+{
+    margin-bottom: 20px;
+}
+/*---------------------------------- Environment variables for link tree*/
+.projectInternalLinks li span
+{
+    display:inline-block;
+    font-weight: bold;
+    margin-left: 2.5px;
+    font-size: 0.8em;
+}
+
+.projectInternalLinks li
+{
+  width: 185px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbH3
+{
+    margin-top: 0 !important;
+}
+
+.indexThumb .input-group
+{
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1080px) 
+{
+    .breadcrumb
+    {
+       display:none !important;
+    }
+}
+
+.breadcrumb
+{
+    display: inline-block;
+    margin-top: 17px;
+    margin-left:50px;
+    background-color: transparent  !important;
+}
+
+.indexThumb
+{
+    margin-bottom: 20px;  
+    float: none !important;
+    display: inline-block;
+        vertical-align:top;
+
+}
+
+/*END---------------------------------- Environment variables for link tree*/
+
+.italicText
+{
+    font-style: italic;
+}
+
+.floatRight{
+    float: right;
+}
+
+.searchHeader
+{
+    font-size:1.3em;
+    margin-bottom:2px;
+}
+
+.phraseText
+{
+    margin-bottom: 2px;
+}
+
+.autoNavDivider
+{
+    margin-top: 30px;
+}
+
+img
+{
+    margin-bottom: 15px !important;
+    margin-top:15px !important;
+}
+
+.manualContent table, #manualContentLinks table, .simpleTable
+{
+	border-width: 1px;
+	border-collapse: collapse;
+    float:none !important;
+    clear:both;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.manualContent table th, #manualContentLinks  table th, .simpleTable th
+{
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+}
+
+.manualContent table thead td, #manualContentLinks table thead td, .simpleTable thead td
+{
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+}
+
+.manualContent table td, #manualContentLinks table td, .simpleTable td
+{
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+
+}
+
+.navbar-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+
+@media screen and (max-width: 1200px) 
+{
+    #bannerLogo
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1480px)
+{
+    ul.list-group:after 
+    {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    .list-group-item 
+    {
+        float: left;    
+    }
+
+    .projectInternalLinks 
+    {
+        z-index: 10;
+        position: absolute;
+        margin-top:15px !important;
+        left: 0.1% !important;
+        padding: 0px 20px 10px 0px ;
+        border-bottom: solid 1px;
+        border-left: solid 1px;
+        border-right: solid 1px;
+    }
+
+    .list-group
+    {
+        width: 1366px;
+    }
+
+    #siteMap
+    {
+        border-right:none !important;
+        width: 1366px !important;
+        height: inherit !important;
+        margin-left:50px !important;
+
+    }
+
+    .smallEditBar
+    {
+        margin-right: 0 !important;
+    }
+
+}
+
+.pageNavDiv
+{
+    border: 1px solid;
+    display: inline-block;
+    padding: 10px;
+    margin-top:30px;
+    margin-bottom:20px;
+}
+
+.pageNavHeader
+{
+    font-weight:bold;
+    text-align:center;
+}
+
+.pageNavDiv li
+{
+    cursor: pointer;
+}
+
+.pageNavDiv li:hover
+{
+    text-decoration:underline;
+}
+
+/* "Browse for file"-button-style  */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+/* End filebrowse-button style */
+
+#imageLinkField
+{
+    width:700px;
+    margin-top:30px;
+}
+
+#uploadImage
+{
+    margin-top: 20px;
+}
+
+fieldset
+{
+    border: 1px groove !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+    margin-top: 30px;
+}
+legend
+{
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:inherit; 
+    padding:0 10px;
+    border-bottom:none;
+}
+
+.navMenu li
+{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.caption
+{
+    margin-bottom: 15px;
+}
+
+
+
+#saveButtonSort
+{
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.indexNewGlyph, .indexSortGlyph
+{
+    margin-left: 10px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.removeThumbIcon
+{
+    margin-right: 10px;
+}
+
+#linkTreeEdit
+{
+    margin-left:20px;
+}
+
+#guideFieldContent
+{
+    display: none;
+}
+a, #guideField
+{
+    cursor: pointer;
+}
+
+.editButton
+{
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 1200px) 
+{
+    .caption img
+    {
+        width: 200px;
+    }
+
+    .caption table
+    {
+        width: 200px;
+    }
+}
+/*------------------------------------------------------------------ Modals*/
+.newMenuItemGlyph
+{
+    margin-right: 10px;
+    margin-top: 8px;
+    float:left;
+}
+
+.newMenuItemInput:focus 
+{   
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+}
+
+.rightMenuButton
+{
+    float:left;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+.editableMenuItem
+{
+    margin-right: 6px;
+        -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;     
+}
+
+.editMenuItemGlyph
+{
+    cursor: pointer;
+}
+
+.removeMenuItemGlyph
+{
+    cursor: pointer;
+    color: red;
+    margin-right: 10px;
+    margin-top: 8px;
+    float:left;
+}
+
+.editableUlItem
+{
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.modalContentDiv a:hover
+{
+    text-decoration: none;
+}
+
+.editableMenuItem input, .editableUlItem input
+{
+    width: 120% !important;
+}
+/*END--------------------------------------------------------------- Modals*/
+
+
+/*------------------------------------------------------------------ MarkItUp*/
+.markItUpContainer
+{
+    display: inline-block;
+    width: 670px;
+}
+
+.markItUp
+{
+    width: 680px !important;
+    display:inline-block;
+}
+
+.markItUpEditor
+{
+    width: 660px;
+}
+
+.markItUpHeader
+{
+    padding-bottom: 30px !important;
+}
+
+#cke_editPageArea
+{
+    width: 920px;
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1799px)
+{
+    .markItUpContainer
+    {
+        width: 1000px;
+    }
+
+    .markItUp
+    {
+        width: auto !important;
+    }
+
+    .markItUpEditor
+    {
+        width: 980px !important;
+        height: 700px !important;
+    }
+
+    #cke_editPageArea
+    {
+        width: 1000px;
+    }
+}
+
+@media screen and (min-width: 1800px) 
+{
+    .markItUpContainer
+    {
+        width: 1300px;
+    }
+
+    .markItUp
+    {
+        width: auto !important;
+    }
+
+    .markItUpEditor
+    {
+        width: 1280px !important;
+    }
+
+    #cke_editPageArea
+    {
+        width: 1300px;
+    }
+}
+
+/*------------------------------------------------------------------/End MarkItUp*/
+.projectInternalLinks
+{
+    display:none;
+    text-overflow: ellipsis;
+}
+.marginLeftTen
+{
+    margin-left: 10px;
+}
+.smallEditText a
+{
+    margin-top: 7px;
+    margin-right: 5px;
+}
+
+.content, .container, .body-content
+{
+    margin-left:20px;
+    display:inline-block;
+}
+
+@media screen and (max-width: 1337px) 
+{
+    .helloText
+    {
+       display:none !important;
+    }
+}
+
+.rightMenuText
+{
+    margin-top: 22px !important;
+    display:inline-block;
+}
+
+.rightMenuBar .navbar-text
+{
+    margin-top: 0;
+}
+
+h2
+{
+    font-size:32px !important;
+}
+
+#manualContentPage h2
+{
+     margin-bottom: 20px !important;
+}
+
+h3, h2
+{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+h3, h2
+{
+    border-bottom: 1px solid #aaa;
+}
+
+h4
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-style:italic;
+    margin-top: 20px;
+}
+
+h3{
+    margin-top: 30px;
+}
+
+title ~ h3, title ~ h2
+{
+    border-bottom:none;
+}
+
+.mainHeader
+{
+    font-weight: bold;
+    font-size:16px;
+}
+
+.projectInternalLinks
+{
+    list-style-type: none;
+    margin:0;
+    padding-left:25px;
+}
+
+#headerSection
+{
+    margin-bottom:10px;
+}
+
+
+.projectInternalLinks > li:before
+{
+    display: inline-block;
+    content: "-";
+    width: 1em;
+    margin-left: -1em;
+}
+
+#siteMap
+{
+    width: 250px;
+    display: inline-block;
+    border-right: 1px solid #ccc;
+    padding-right:15px;
+    height: 120vh;
+    float:left;
+}
+
+@media screen and (min-width: 1919px) {
+    #siteMap 
+    {
+        margin-left:15px;
+    }
+}
+
+@media screen and (max-width: 1919px) {
+    #siteMap 
+    {
+        margin-left:10px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    #siteMap 
+    {
+        margin-left:10px;
+        border:none;
+    }
+}
+
+footer
+{
+    margin-left:400px;
+}
+
+.simpleHr 
+{
+    border: 0;
+    height: 1px;
+}

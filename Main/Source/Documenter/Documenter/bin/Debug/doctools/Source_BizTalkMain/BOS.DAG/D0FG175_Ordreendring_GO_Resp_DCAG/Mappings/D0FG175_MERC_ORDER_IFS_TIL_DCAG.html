@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>
+					Map To ..\Schemas\D0FG175_GOAPI_Til_DCAG.xsd</title>
+<style type="text/css">
+					/*
+					Branding Colour palette.
+					Blue light				R:070 G:155 B:200	#469bc8
+					Blue dark				R:050 G:075 B:118	#324b76
+					Shade 1	(dark mauve)	R:129 G:158 B:187	#819ebb
+					Shade 2	(mauve)			R:174 G:200 B:216	#aec8d8
+					Shade 3	(light mauve)	R:215 G:231 B:239	#d7e7ef
+					Grey dark				R:070 G:070 B:070	#464646
+					Grey medium				R:165 G:165 B:165	#a5a5a5
+					Grey light				R:190 G:190 B:190	#bcbfbe
+					*/
+
+					body	{ font-family: Arial }
+					hr		{ border: 0; height: 2px; width: 100%; }
+					table	{ width: 100%; font-size: small; }
+					th		{ color: white;	background-color: #324b76; text-align: left;}
+					h1		{ color: #469bc8; font-family: Arial; }
+					h2		{ color: #324b76; font-family: Arial; }
+					h3		{ color: #464646; font-family: Arial; }
+
+					#pageTitle { color: #469bc8; font-size: 20px; font-weight: bold }
+
+					.titleArea { border-left: 5px solid #333366; padding-left: 5px }
+					.titleSchema { color: #324b76; font-size: 14px; font-weight: bold }
+					.linkTableAltRow { 	background-color: #ededed; }
+					.linkTableDiffNodeRow { background-color: #C8E2FF }
+					.linkTableCol { border-bottom: 1px solid black; background-color: #CCCC99 }
+					.functoidArea { font-family: Lucida Console, Courier New; font-size: 11px }
+					.functoidName { color: blue }
+					.functoidBracket { color: green; font-weight: bold }
+					.functoidScript { color: #003300 }
+					.paramComma { color: blue; font-weight: bold }
+					.internalLink { font-size: 10px }
+					.collapseref { font-size: 10px; cursor:pointer }
+				</style>
+</head>
+<body>
+<a name="top"></a>
+<div class="titleArea">
+<h1>BizTalk Map Documentation</h1>
+<table border="0">
+<tr class="titleSchema">
+<td>From Schema(s):</td>
+<td>..\Schemas\D0FG175_SEND_D0FG175_MERC_ORDER.xsd</td>
+</tr>
+<tr class="titleSchema">
+<td>To Schema:</td>
+<td>..\Schemas\D0FG175_GOAPI_Til_DCAG.xsd</td>
+</tr>
+</table>
+</div>
+<a href="#functoids" class="internalLink">Functoids</a>
+<a href="#constantvalues" class="internalLink">Constant Values</a>
+<hr />
+<h2>Direct Node-to-Node Links (No Functoids)</h2>
+<h3>Page 1: Map</h3>
+<p>
+<a id="pageDirect1Anchor" onclick="toggleCollapse('pageDirect1', 'pageDirect1Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageDirect1">
+<table>
+<tr>
+<th width="40%">From</th>
+<th width="40%">To</th>
+<th width="20%">Label</th>
+</tr>
+<tr>
+<td>D0FG_175_ORDER/USER_ID</td>
+<td>GOAPI/Record/VARDISP/vardispInfoId</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>D0FG_175_ORDER/PRODUCER_ORDER_NO</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_Orderno</td>
+<td></td>
+</tr>
+<tr>
+<td>D0FG_175_ORDER/ORDER_DATE</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_OrderDate</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>D0FG_175_ORDER/DESTINATION_KEY</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_DestinationKey</td>
+<td></td>
+</tr>
+<tr>
+<td>D0FG_175_ORDER/DISPATCH_MODE</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_DispatchMode</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>D0FG_175_ORDER/BAUMUSTER</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_Baumuster</td>
+<td></td>
+</tr>
+<tr>
+<td>D0FG_175_ORDER/LOWER_PAINT_OF_PAINT</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_PaintLower</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>D0FG_175_ORDER/UPPER_PAINT_OF_PAINT</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_PaintUpper</td>
+<td></td>
+</tr>
+<tr>
+<td>D0FG_175_ORDER/UPHOLSTERY</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_Upholstery</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>D0FG_175_ORDER/OPTIONAL_CODES</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_OptionalCodes</td>
+<td></td>
+</tr>
+</table>
+</div>
+<h3>Page 2: Tools</h3>
+<p>
+<a id="pageDirect2Anchor" onclick="toggleCollapse('pageDirect2', 'pageDirect2Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageDirect2">
+<table>
+<tr>
+<th width="40%">From</th>
+<th width="40%">To</th>
+<th width="20%">Label</th>
+</tr>
+</table>
+</div>
+<hr />
+<a name="functoids"></a>
+<span style="font-size: 12px">^ </span>
+<a href="#top" class="internalLink">Top</a>
+<br />
+<br />
+<h2>Functoid Mappings</h2>
+<h3>Page 1: Map</h3>
+<p>
+<a id="pageFunctoids1Anchor" onclick="toggleCollapse('pageFunctoids1', 'pageFunctoids1Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageFunctoids1">
+<table>
+<tr>
+<th width="40%">Functoid Sequence</th>
+<th width="40%">Destination Node</th>
+<th width="20%">Labels</th>
+</tr>
+</table>
+</div>
+<h3>Page 2: Tools</h3>
+<p>
+<a id="pageFunctoids2Anchor" onclick="toggleCollapse('pageFunctoids2', 'pageFunctoids2Anchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="pageFunctoids2">
+<table>
+<tr>
+<th width="40%">Functoid Sequence</th>
+<th width="40%">Destination Node</th>
+<th width="20%">Labels</th>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+</div>
+</td>
+<td>GOAPI/Record/mqHeaderRecord/mqhTransactionDateCreated</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+</div>
+</td>
+<td>GOAPI/Record/mqHeaderRecord/mqhTransactionTimeCreated</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string myContract(string pContract, string pUserID)
+{
+	if (pUserID.Length &gt;= 4 &amp;&amp; pUserID.StartsWith("F"))
+	{
+		pContract = pUserID.Substring(1, 3);
+	}
+	if (pContract.Length &gt; 0 &amp;&amp; pContract != "817")
+	{
+		return "555" + pContract;
+	}
+	else
+	{
+		return "555000";
+	}
+}</span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_BookingID</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispAPIBusinessCase</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispAPIBusinessCase</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispAPIBusinessCase</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispAPIBusinessCase</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispAPIBusinessCase</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispAPIVersion</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispAPIVersion</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_Version</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_Version</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_OrderClassification</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_OrderClassification</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_ReqDeliveryDate</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_ReqDeliveryDate</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_ReqFinalInspDate</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_ReqFinalInspDate</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidBracket">( </span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>GOAPI/Record/mqBUAPDATE</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidScript"><br />public string MyDelDateConv(string py, string pm, string pd)
+{
+	try
+	{
+		int iy = Convert.ToInt32(py);
+		int im = Convert.ToInt32(pm);
+		int id = Convert.ToInt32(pd);
+		DateTime Fdato = new DateTime(iy, im, id);
+		return 'D' + Fdato.ToString("yyyyMMdd")
+			+ Fdato.AddDays(120).ToString("yyyyMMdd");
+	}
+	catch
+	{
+		return "";
+	}
+}</span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqBUAPDATE/mqdBUAPDATE_Requestdate</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<span class="functoidBracket">( </span>
+<span class="functoidBracket"> )</span>
+</div>
+</td>
+<td>GOAPI/Record</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispLength</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/VARDISP/vardispLength</td>
+<td></td>
+</tr>
+<tr class="linkTableAltRow">
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqBUAPDATE</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="functoidArea"><span class="functoidName"></span>
+<br /><span class="functoidBracket">(</span>
+<br />
+<span class="paramComma">,</span>
+<br />
+<br /><span class="functoidBracket">)</span>
+</div>
+</td>
+<td>GOAPI/Record/mqBUAPNSTC/mqdBUAPNSTC_Nst</td>
+<td></td>
+</tr>
+</table>
+</div>
+<hr />
+<a name="constantvalues"></a>
+<span style="font-size: 12px">^ </span>
+<a href="#top" class="internalLink">Top</a>
+<br />
+<br />
+<h2>Constant Values</h2>
+<p>
+<a id="constant1ValuesAnchor" onclick="toggleCollapse('constant1Values', 'constant1ValuesAnchor');" title="Collapse" class="collapseref">Collapse</a>
+</p>
+<div id="constant1Values">
+<table>
+<tr>
+<th width="40%">Value</th>
+<th width="60%">Destination Node</th>
+</tr>
+<tr>
+<td>0</td>
+<td>GOAPI/Record/mqHeaderRecord/mqhNumberOfSequencedTelegrams</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>1</td>
+<td>GOAPI/Record/mqHeaderRecord/mqhTransactionVersion</td>
+</tr>
+<tr>
+<td>#</td>
+<td>GOAPI/Record/mqHeaderRecord/mqhDateTimeSeparator</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>VARDISP</td>
+<td>GOAPI/Record/VARDISP/vardispOperationName</td>
+</tr>
+<tr>
+<td>003097197185</td>
+<td>GOAPI/Record/VARDISP/vardispDispatcherChecksum</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>00</td>
+<td>GOAPI/Record/VARDISP/vardispReturnCodeDispatcher</td>
+</tr>
+<tr>
+<td>00</td>
+<td>GOAPI/Record/VARDISP/vardispReturnCodeGOService</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>ALLG</td>
+<td>GOAPI/Record/VARDISP/vardispSystemId</td>
+</tr>
+<tr>
+<td>1</td>
+<td>GOAPI/Record/VARDISP/vardispLanguageFlag</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>0</td>
+<td>GOAPI/Record/VARDISP/vardispStreamFlag</td>
+</tr>
+<tr>
+<td>0</td>
+<td>GOAPI/Record/VARDISP/vardispMessageMode</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>BUAPKERN</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_RecordId</td>
+</tr>
+<tr>
+<td>243</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_Length</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>1</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_Items</td>
+</tr>
+<tr>
+<td>B</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_OrderMode</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>N</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_AllocationSearchFlag</td>
+</tr>
+<tr>
+<td>0</td>
+<td>GOAPI/Record/mqdBUAPKERN/mqdBUAPKERN_TakeOverDate</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>BUAPCOLI</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_RecordId</td>
+</tr>
+<tr>
+<td>1066</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_Length</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>1</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_Items</td>
+</tr>
+<tr>
+<td>555</td>
+<td>GOAPI/Record/mqdBUAPCOLI/mqdBUAPCOLI_CustomerCountry</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>BUAPCUST</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_RecordId</td>
+</tr>
+<tr>
+<td>1038</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_Length</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>1</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_Items</td>
+</tr>
+<tr>
+<td>0</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_customer-consecutive-nr</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>0</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_customer-version-nr</td>
+</tr>
+<tr>
+<td>O</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_customer-disposition</td>
+</tr>
+<tr class="linkTableAltRow">
+<td>RECH</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_customer-role-1-10</td>
+</tr>
+<tr>
+<td>555</td>
+<td>GOAPI/Record/mqdBUAPCUST/mqdBUAPCUST_sales-customer</td>
+</tr>
+</table>
+</div>
+</body>
+<script type="text/javascript">
+				
+	function toggleCollapse(obj, objAnchor) {
+	var el = document.getElementById(obj);
+	var elAnchor = document.getElementById(objAnchor);
+	if ( el.style.display != "none" ) {
+	  el.style.display = 'none';
+	  elAnchor.innerHTML = 'Expand';
+	}
+	else {
+	  el.style.display = '';
+	  elAnchor.innerHTML = 'Collapse';
+	}
+	}
+	
+				</script>
+</html>

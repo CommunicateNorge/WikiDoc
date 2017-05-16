@@ -1,0 +1,27 @@
+<h2>Wiki-Deployment</h2>
+<h3>Bakgrunn</h3>
+<p>
+Dokumentasjonswikien fungerer som en portal for knytning mellom automatisk generert dokumentasjon av de ulike komponentene som leveres av Communicate til Rema.
+Disse komponentene inkluderer blant annet, C# kode for MDM Manager, MDM API og SP API, samt BizTalk integrasjoner, med Schemas, Maps, Orchestrations, Pipelines, 
+Send Ports, Recieve Ports og tabeller/views i MDC-Databasen.
+</p>
+<p>
+Dokumentasjonsrammeverket består primært av to komponenter, en wiki og et dokumenteringsprogram. Dokumenteringsprogrammet genererer den automatiske delen av 
+dokumentasjonen, men trenger ikke å deployes, kun kjøres (se veileding <a href="/Wiki/Page/Manual%C2%A3Service%C2%A3Wiki">her</a>). 
+Denne artikkelen beskriver deployment rutinen for Dokumentasjonswiki-delen av Dokumentasjonsrammeverket. 
+</p>
+
+<h3>Avgrensninger</h3>
+<p>Denne komponenten har foreløpig ingen QA eller Test-miljø, så det deployes kun til ett miljø</p>
+
+<h3>Deployment til Produksjon/Dev</h3>
+<ol>
+<li>Hent siste del av kildekoden fra rema.visualstudio.com\DefaultCollection\REMA1000\Documentation\Source</li>
+<li>Åpne og bygg "TPDoc"-løsningen.</li>
+<li>Publiser TPDoc-prosjektet (ikke TPDocWeb), med profil "tpdoc"</li>
+</ol>
+
+<p>Siden vil nå publiseres til tpdoc.azurewebsites.net som ligger på Remas Azure-konto. Publiseringsprofilen og detaljer finnes i kildekoden, under PublishProfiles</p>
+
+<h3>Kildekode</h3>
+<img src="/Images/UploadedImages/Image£Manual£Service£Wiki£Deployment£wikidocumenter£jpg"></img>

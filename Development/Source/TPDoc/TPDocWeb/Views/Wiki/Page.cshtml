@@ -1,0 +1,117 @@
+﻿@model Dictionary<string, string>
+@using Wiki.Utilities;
+@{
+    string linkToThis = @"/Wiki/Page/" + @Model["Manual_Blob_Adr"].Remove(@Model["Manual_Blob_Adr"].Length - 7);
+    string phrase = (string)ViewBag.Phrase;
+    string searchText = (string)ViewBag.searchText;
+    string[] breadCrumbs = Model["Auto_Blob_Adr"].SplitSimple("£");
+    
+    string[] environments = null;
+    string primaryEnv = null;
+}
+
+@if (Model.ContainsKey("Environments"))
+{
+    environments = Model["Environments"].SplitSimple("|");
+    primaryEnv = Model["PrimaryEnvironment"];
+}
+
+<section id="allContent" class="content">
+    <p id="hiddenPhrase" hidden>@phrase</p>
+    <p id="hiddenSearchText" hidden>@Server.HtmlDecode(searchText)</p>
+    <p id="hiddenLinkText" hidden>@linkToThis</p>
+    <p id="hiddenPageId" hidden>@Model["Auto_Blob_Adr"]</p>
+    <section id="manualContentPage">
+
+        @if (!String.IsNullOrEmpty(Model["autoContent"]) || User.CanEdit(Model["Manual_Blob_Adr"]))
+        {
+            <span class="smallEditText">@Html.ActionLink("[Edit]", "Edit", new { id = Model["Manual_Blob_Adr"] })</span>
+            <span class="smallEditText">@Html.ActionLink("[History]", "History", new { id = Model["Manual_Blob_Adr"] })</span>
+        }
+        <span class="smallEditText"><a class="getLinkToThisPage">[Link]</a></span>
+        <div class="displayLinkToThisPage"></div>
+
+        <h2>@Model["pageID"].Replace('€', '.')</h2>
+
+        @if (@Model.ContainsKey("pageNav"))
+        {
+            <div class="pageNavDiv">
+                @Html.Raw(@Model["pageNav"])
+            </div>
+        }
+        <section class="manualContent">
+            @if (Model["Manual_Content"] != null)
+            {
+                @Html.Raw(Model["Manual_Content"])
+            }
+        </section>
+    </section>
+
+    @if (environments != null && primaryEnv != null)
+	{
+        <nav class="navbar navbar-default autoNavDivider">
+            <div class="container-fluid">
+                <div class="navbar-header sectionDividerMenu">
+                    <p class="navbar-text">Auto-generated Content for Environment: </p>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" >
+                                <span id="environmentHeader">@primaryEnv</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                @foreach (var item in environments)
+                                {
+                                    <li><a class="environmentTarget">@item</a></li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    }
+    <section id="generatedContentPage">
+        @Html.Raw(Model["autoContent"])
+    </section>
+</section>
+
+
+@section scripts {
+
+    <script src="~/Scripts/PageFunctions.js"></script>
+}
+
+@section breadcrumb
+{
+    @if(@Model["Auto_Blob_Adr"].StartsWith("Integration£"))
+    { 
+        <li><a href="/Wiki">Index</a></li>
+        <li class="active">@Model["pageID"].Replace('€', '.')</li>
+    }
+    else
+    {
+        <li><a href="/Wiki">Index</a></li>
+        for (int i = 1; i < breadCrumbs.Length - 1; i++)
+        {
+            if (breadCrumbs[i].Length > 35)
+            {
+                <li><a href="@string.Concat("/Wiki/Page/Integration£", breadCrumbs[i])">@string.Concat(WikiBlob.SanitizeV2(breadCrumbs[i].Substring(0, 32)), "...")</a></li>
+            }
+            else
+            {
+                <li><a href="@string.Concat("/Wiki/Page/Integration£", breadCrumbs[i])">@WikiBlob.SanitizeV2(breadCrumbs[i])</a></li>
+            }
+        }
+
+        if (breadCrumbs[breadCrumbs.Length - 1].Length > 35)
+        {
+            <li class="active">@string.Concat(@breadCrumbs[breadCrumbs.Length - 1].Substring(0, 32).Replace('€', '.'), "...")</li>
+        }
+        else
+        {
+            <li class="active">@WikiBlob.SanitizeV2(breadCrumbs[breadCrumbs.Length - 1])</li>
+        }
+
+    }
+}

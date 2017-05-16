@@ -1,0 +1,193 @@
+﻿.searchOccurences
+{
+    color:green;
+}
+
+.yellowText{
+    background: yellow;
+}
+
+.breadcrumb a
+{
+    color:white;
+}
+
+.autoNavDivider
+{
+    border-color: #000 !important;
+}
+
+.manualContent table, #manualContentLinks table, .simpleTable
+{
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-color: #3A3A3A;
+}
+.manualContent table th, #manualContentLinks  table th, .simpleTable th
+{
+	border-color: #3A3A3A;
+	background-color: #B3B3B3;
+}
+
+.manualContent table thead td, #manualContentLinks table thead td, .simpleTable thead td
+{
+	border-color: #3A3A3A;
+	background-color: #B3B3B3;
+}
+
+.manualContent table td, #manualContentLinks table td, .simpleTable td
+{
+	border-color: #3A3A3A;
+	background-color: #ffffff;
+}
+
+@media screen and (max-width: 1480px)
+{
+    .projectInternalLinks 
+    {
+        background-color: white;
+        border-bottom-color: grey;
+        border-left-color: grey;
+        border-right-color:grey;   }
+
+}
+
+.pageNavDiv
+{
+    background-color:#f9f9f9;
+    border-color: rgb(170, 170, 170);
+    border-color: #aaa;
+}
+
+.pageNavDiv li
+{
+    color:#dd4814;
+}
+
+fieldset
+{
+    border-color: #ddd;
+}
+
+#siteMap a:link
+{
+    color: black;
+    text-decoration: none;
+}
+
+#siteMap a:visited
+{
+    color: black;
+}
+
+#siteMap a:hover
+{
+    color: black;
+    text-decoration:underline;
+}
+
+#manualContentLinks h3 a:link, .indexEditGlyph a:link, #indexNewThumbButton, .removeThumbIcon, .smallEditIndexText a:visited, .smallEditIndexText a:link, 
+#indexHistoryGlyph a:link, #indexHistoryGlyph a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
+#manualContentLinks h3 a:visited, .indexEditGlyph a:visited
+{
+    color: black;
+}
+
+#manualContentLinks h3 a:hover, .indexEditGlyph a:hover
+{
+    color: black;
+    text-decoration:underline;
+}
+
+#headerText a
+{
+    color:black;
+}
+
+#headerText a:hover
+{
+    color:black;
+    text-decoration: none;
+}
+
+.newMenuItemGlyph
+{
+    color: green;
+}
+
+font
+{
+    color: #dd4814 !important;
+}
+
+.rightMenuText a
+{
+    color: white !important;
+}
+
+.jumbotron 
+{
+    padding: 30px;
+}
+
+
+.newMenuItemInput:focus 
+{   
+  border-color: rgba(126, 239, 104, 0.8);
+}
+
+.simpleHr 
+{
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.NBText
+{
+    background-color: red;
+    color: white;
+}
+
+.thumbH3
+{
+    color: #000 !important;
+}
+
+.caption > a:link, .caption > a:visited
+{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.env0
+{   
+    color: darkgreen;
+}
+
+.env1
+{
+    color: darkred;
+}
+
+.env2{
+    color: darkblue;
+}
+
+.env3{
+    color: darkorange;
+}
+
+.env4{
+    color: darkgoldenrod;
+}
+
+.autoNavDivider
+{
+    border-color: #000 !important;
+}

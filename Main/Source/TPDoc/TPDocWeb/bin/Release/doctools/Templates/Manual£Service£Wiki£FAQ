@@ -1,0 +1,82 @@
+<h2>Wiki-FAQ</h2>
+
+<p>This page contains an overview of the frequently asked questions about functionality within this documentation wiki. We will try to keep this FAQ as simple as possible but to understand some of the features explained here some level of technical computer knowlage is required.</p>
+
+<h3>How to make a new page?</h3>
+
+<p>A new page is made by clicking the [New Page] link on the menu bar in the right top corner. An alert like this will pop up:</p>
+
+<p><img src="/Images/UploadedImages/Image£Manual£Service£Wiki£FAQ£newpagealert£png£Manual£Service£Wiki£FAQ" style="width:350px" /></p>
+
+<p>The &quot;level1-n&quot; denotes the logical levels of the new page, this has no actual affect on where or how the page is saved but is purely for the purpose of creating a more easy to use environment for the users of the wiki. I.e. if your page is to be linked to under this FAQ page which is located under <em>Service/Wiki/FAQ</em> (you can find this pattern by looking at the breadcrumbs or the URL) you should name your page like this: <em>Service/Wiki/FAQ/SiteName</em>.</p>
+
+<p>There are no rules enforcing this pattern on the creation of new sites but using it is encouraged to get the most out of the wikis&#39; built in functions, like the breadcrumbs.</p>
+
+<h3>How to rollback a page?</h3>
+
+<p>If you need to roll a page pack to a previous version you simply click the [History] link on the top left side of the page. This will take you to the &quot;History&quot; page where you can view all previous versions of the page as well as the person who saved them. This data is contained in the &quot;History&quot; table which looks like this:</p>
+
+<p><img src="/Images/UploadedImages/Image£Manual£Service£Wiki£FAQ£history_table_rollback£png£Manual£Service£Wiki£FAQ" style="width:500px" /></p>
+
+<p>To rollback to a specified version just click the [Rollback] link in the right most cell of the table. A new version will then be created containing the version you roll backed from and the old version will be placed as the &quot;Current Version&quot;.</p>
+
+<h3>How to search?</h3>
+
+<p>To search this wiki you simply type whatever query you have into the search bar at the topmost left side of the page. When you press enter or click the button labeled &quot;Search&quot; you are, after a short wait, presented with your results in a view similar to this:</p>
+
+<p><img src="/Images/UploadedImages/Image£Manual£Service£Wiki£FAQ£serach_faq£png£Manual£Service£Wiki£FAQ" style="width:600px" /></p>
+
+<p>The blue title is the name of the page that contains your query string. All results are sorted by relevancy, which is displayed in the bottom green text line. Relevancy is primarily calculated by query occurrence count per document. If you have multiple query words this is accounted for as well. The black line in between the aforementioned is the snippet taken from the first occurrence of your query inside the relevant document. It gets 100 characters before the match and after.</p>
+
+<h3>Editing the index page</h3>
+
+<h4>How to add a thumbnail to the index page?</h4>
+
+<p>To add a thumbnail to the index page you click the &quot;Add new thumbnail&quot; button located in the top left corner of the page. This spawns a editable box in the first viable position for a new thumbnail on the page itself, and also automatically scrolls down to it. The box looks like this:</p>
+
+<p><img src="/Images/UploadedImages/Image£Manual£Service£Wiki£FAQ£edit_index_new_box£png£Manual£Service£Wiki£FAQ" style="width:600px" /></p>
+
+<p>The edit box has 4 input fields that expects the following:</p>
+
+<table class="simpleTable">
+	<tbody>
+		<tr>
+			<th>Field name</th>
+			<th>Expected value</th>
+		</tr>
+		<tr>
+			<td>Url to image</td>
+			<td>A link to the image to use as a visual aid to your thumbnail. Formatted like a normal link ie. &quot;http://www.isocket.eu/media/img-uncuted-common/iSocket-full-of-extra-features.jpg&quot; For internal links you should use the &quot;Link&quot; button on the page and copy the href tag ie. &quot;/Wiki/Page/Manual&pound;Project&pound;BiB&quot;</td>
+		</tr>
+		<tr>
+			<td>Title link</td>
+			<td>The link you want a user to be redirected to when he clicks the title of the thumbnail.</td>
+		</tr>
+		<tr>
+			<td>Title</td>
+			<td>The text of the title itself.</td>
+		</tr>
+		<tr>
+			<td>Text</td>
+			<td>The body text of the thumbnail.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>How to edit a thumbnail?</h4>
+
+<p>You can edit a thumbnail by clicking the &quot;Edit&quot; button on the relevant thumbnail. When you click on the button the thubnail transforms into an edit box with the same four inputs as the new thumbnail box, but now filled with the data already contained on the thumbnail. You can transform multiple thumbnails into edit boxes at a time but you cannot save more than one.</p>
+
+<p><img src="/Images/UploadedImages/Image£Manual£Service£Wiki£FAQ£edit_index_edit_box£png£Manual£Service£Wiki£FAQ" style="width:600px" /></p>
+
+<h4>How to delete a thumbnail?</h4>
+
+<p>Deleting a thumbnail is easy, you simply click the &quot;Delete&quot; button on the relevant element. A confirm dialog will appear and as soon as you confirm the thumbnail will disappear from the front page.</p>
+
+<h4>How to view the history of the thumbnails?</h4>
+
+<p>The front page thumbnails are generated as all other pages on the wiki; as HTML. So if you want to view the history or rollback to a previous version it&#39;s exactly the same as for all other pages on the wiki. The only difference is that you use the &quot;History&quot; button instead of a [History]-link.</p>
+
+<h3>How to edit the Main Menu?</h3>
+
+<p>To be continued...</p>

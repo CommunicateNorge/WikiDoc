@@ -1,0 +1,53 @@
+﻿@model Tuple<string, string>
+
+<section id="allContent" class="content">
+
+    <h3>Wiki diff tool</h3>
+    <p>Select a diff type:</p>
+    <div class="viewType">
+        <input type="radio" name="_viewtype" id="sidebyside" onclick="diffUsingJS(0);" /> <label for="sidebyside">Side by Side Diff</label>
+        &nbsp; &nbsp;
+        <input type="radio" name="_viewtype" id="inline" onclick="diffUsingJS(1);" /> <label for="inline">Inline Diff</label>
+    </div>
+    <div id="diffoutput"> </div>
+
+</section>
+
+
+@section scripts {
+
+    <script src="~/Scripts/difflib.js"></script>
+    <script src="~/Scripts/diffview.js"></script>
+    <script>
+        function diffUsingJS(viewType)
+        {
+            var blobOne = '';
+            var blobTwo = '';
+            @{
+                @:blobOne = "@Model.Item1";
+                @:blobTwo = "@Model.Item2";
+            }
+
+            base = difflib.stringAsLines(blobOne);
+            newtxt = difflib.stringAsLines(blobTwo);
+            sm = new difflib.SequenceMatcher(base, newtxt);
+            opcodes = sm.get_opcodes();
+            diffoutputdiv = document.getElementById("diffoutput");
+            diffoutputdiv.innerHTML = "";
+
+            diffoutputdiv.appendChild(diffview.buildView({
+                baseTextLines: base,
+                newTextLines: newtxt,
+                opcodes: opcodes,
+                baseTextName: "Left article",
+                newTextName: "Right article",
+                contextSize: null,
+                viewType: viewType
+            }));
+        }
+    </script>
+}
+
+@section styles{
+    <link href="~/Content/diffview.css" rel="stylesheet" /> 
+}

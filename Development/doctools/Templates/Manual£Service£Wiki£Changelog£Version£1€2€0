@@ -1,0 +1,15 @@
+<h3>Version 1.2.0</h3>
+
+<h4>Changed</h4>
+<p>5932	Hot-fixes for multiple environments functionality, also corrected bug pertaining to saving templated pages</p>
+<p>5923 Changed CSS for letters in link tree</p>
+
+<h4>Added</h4>
+<p>5923	Added template support on edit, you now get the template automatically when editing an appropriate page</p> 
+<p>5923	Colored letters symbolizing each environment in link tree added.</p> 
+<p>5903	Link tree support for multiple environments added.</p> 
+<p>5894	Added multiple environment functionality for all auto-generated pages</p>
+<p>5872	Added multiple environments support in back end.</p>
+<p>5863	Added possibility of supplying container to constructor in Azure Blob Framework</p>
+
+<h4>Removed</h4>

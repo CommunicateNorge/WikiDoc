@@ -1,0 +1,310 @@
+Log Verbose: 0 : Documenter executable startet
+Log Information: 0 : Validating configuration
+Log Verbose: 0 : Config: Prop: ConfigPath Val: C:\WikiDoc\Development\Source\Documenter\Documenter\bin\Release\App.config.json
+Log Verbose: 0 : Config: Prop: solutionDir Val: C:\WikiDoc\Development\Source\Documenter\Documenter\bin\Release\
+Log Verbose: 0 : Config: Prop: doctools Val: C:\WikiDoc\Development\Source\Documenter\Documenter\bin\Release\doctools
+Log Verbose: 0 : Config: Prop: Name Val: TP-Doc
+Log Verbose: 0 : Config: Prop: PrimaryAzureStorage Val-Length: 154
+Log Verbose: 0 : Config: Prop: SecondaryAzureStorage Val-Length: 151
+Log Verbose: 0 : Config: Prop: PrimaryAzureStorageContainerName Val: tpdoc
+Log Verbose: 0 : Config: Prop: PrimaryAzureStorageTableAudit Val: tpdocaudit
+Log Verbose: 0 : Config: Prop: PrimaryAzureStorageTableIndex Val: tpdocIndex
+Log Verbose: 0 : Config: Prop: SecondaryAzureStorageContainerName Val: docublob
+Log Verbose: 0 : Config: Prop: EnvironmentInfo.Count Val: 3
+Log Verbose: 0 : Config: Prop: EnvironmentInfo[0].Name Val: Main
+Log Verbose: 0 : Config: Prop: EnvironmentInfo[0].Container Val: tpdoc
+Log Verbose: 0 : Config: Prop: EnvironmentInfo[1].Name Val: Test
+Log Verbose: 0 : Config: Prop: EnvironmentInfo[1].Container Val: tpdoctest
+Log Verbose: 0 : Config: Prop: EnvironmentInfo[2].Name Val: Production
+Log Verbose: 0 : Config: Prop: EnvironmentInfo[2].Container Val: tpdocprod
+Log Verbose: 0 : Config: Prop: BizTalk[0].Name Val: BizTalk
+Log Verbose: 0 : Config: Prop: BizTalk[0].Type Val: TFS
+Log Verbose: 0 : Config: Prop: BizTalk[0].Domain Val: rema.no
+Log Verbose: 0 : Config: Prop: BizTalk[0].Environments Val: EnvNo:0 Address:$/REMA1000/BizTalk/Main/SourceEnvNo:1 Address:$/REMA1000/BizTalk/Test/SourceEnvNo:2 Address:$/REMA1000/BizTalk/Production/Source
+Log Verbose: 0 : Config: Prop: BizTalk[0].IgnoreApps Val: SplunkLogServiceBizTalk Application 1BizTalk.SystemShared_BinariesMonitoringServiceMdm_Common_DllBizTalk.WCF.OpenIdWcfBehaviors
+Log Verbose: 0 : Config: Prop: BizTalk[0].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: BizTalk[0].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: BizTalk[0].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: ApiServices[0].Name Val: Mdm.Api
+Log Verbose: 0 : Config: Prop: ApiServices[0].Type Val: Swagger
+Log Verbose: 0 : Config: Prop: ApiServices[0].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[0].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[0].Type Val: OAuthApp
+Log Verbose: 0 : Config: Prop: ApiServices[0].Resource Val: https://services.rema.no/mdm/api
+Log Verbose: 0 : Config: Prop: ApiServices[0].AuthenticationEndpoint Val: https://login.microsoftonline.com/bbf77a8f-7fa8-45a0-81db-7ad345a349c0/oauth2/token
+Log Verbose: 0 : Config: Prop: ApiServices[0].ClientId Val: 52204e45-f57c-4ea8-8db3-ab686307e847
+Log Verbose: 0 : Config: Prop: ApiServices[0].ClientSecret Val-Length: 44
+Log Verbose: 0 : Config: Prop: ApiServices[0].Environments Val: EnvNo:0 Address:http://reitancsdev001/mdm/api/v1/swagger/docs/v1EnvNo:1 Address:https://services-test.rema.no/mdm/api/v1/swagger/docs/v1EnvNo:2 Address:https://services.rema.no/mdm/api/v1/swagger/docs/v1
+Log Verbose: 0 : Config: Prop: ApiServices[1].Name Val: Api.Bella v2
+Log Verbose: 0 : Config: Prop: ApiServices[1].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[1].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[1].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[1].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[1].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[1].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[1].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[1].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[1].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58f9fd63ba29cb190489c733?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58f9fd63ba29cb190489c733?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58f9fd63ba29cb190489c733?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[2].Name Val: Api.Bella
+Log Verbose: 0 : Config: Prop: ApiServices[2].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[2].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[2].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[2].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[2].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[2].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[2].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[2].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[2].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58738b2d66dc691b302b35a7?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58738b2d66dc691b302b35a7?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58738b2d66dc691b302b35a7?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[3].Name Val: Api.Bella MS
+Log Verbose: 0 : Config: Prop: ApiServices[3].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[3].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[3].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[3].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[3].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[3].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[3].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[3].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[3].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58738d9dba29cb1bc85be603?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58738d9dba29cb1bc85be603?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58738d9dba29cb1bc85be603?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[4].Name Val: Api.Bella RSB
+Log Verbose: 0 : Config: Prop: ApiServices[4].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[4].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[4].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[4].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[4].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[4].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[4].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[4].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[4].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58750d5566dc690c109e4bfa?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58750d5566dc690c109e4bfa?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58750d5566dc690c109e4bfa?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[5].Name Val: Api.Bella Web
+Log Verbose: 0 : Config: Prop: ApiServices[5].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[5].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[5].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[5].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[5].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[5].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[5].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[5].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[5].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58cf8ef566dc6911cc0d0587?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58cf8ef566dc6911cc0d0587?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58cf8ef566dc6911cc0d0587?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[6].Name Val: Graph.Api
+Log Verbose: 0 : Config: Prop: ApiServices[6].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[6].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[6].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[6].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[6].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[6].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[6].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[6].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[6].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58886d8466dc6915f0fab876?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58886d8466dc6915f0fab876?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58886d8466dc6915f0fab876?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[7].Name Val: Mdm.Api
+Log Verbose: 0 : Config: Prop: ApiServices[7].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[7].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[7].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[7].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[7].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[7].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[7].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[7].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[7].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/1?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/1?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/1?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[8].Name Val: Mdm.Api v2
+Log Verbose: 0 : Config: Prop: ApiServices[8].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[8].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[8].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[8].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[8].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[8].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[8].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[8].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[8].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/2?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/2?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/2?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[9].Name Val: Orders.Api
+Log Verbose: 0 : Config: Prop: ApiServices[9].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[9].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[9].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[9].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[9].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[9].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[9].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[9].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[9].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58a5bff766dc691604246aff?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58a5bff766dc691604246aff?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58a5bff766dc691604246aff?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[10].Name Val: SMS.Api
+Log Verbose: 0 : Config: Prop: ApiServices[10].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[10].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[10].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[10].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[10].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[10].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[10].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[10].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[10].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/582cc56a66dc6901a49c15fa?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/582cc56a66dc6901a49c15fa?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/582cc56a66dc6901a49c15fa?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[11].Name Val: Sp.Api
+Log Verbose: 0 : Config: Prop: ApiServices[11].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[11].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[11].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[11].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[11].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[11].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[11].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[11].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[11].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/3?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/3?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/3?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[12].Name Val: Sp.Api v2
+Log Verbose: 0 : Config: Prop: ApiServices[12].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[12].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[12].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[12].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[12].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[12].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[12].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[12].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[12].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/4?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/4?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/4?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[13].Name Val: Units.Api
+Log Verbose: 0 : Config: Prop: ApiServices[13].Type Val: ApiManagement
+Log Verbose: 0 : Config: Prop: ApiServices[13].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[13].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[13].Type Val: SAS
+Log Verbose: 0 : Config: Prop: ApiServices[13].Resource Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[13].AuthenticationEndpoint Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[13].ClientId Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[13].ClientSecret Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[13].Environments Val: EnvNo:0 Address:https://apitestrema.management.azure-api.net/apis/58db9f1e3e1bff781d5d9c3a?api-version=2016-07-07EnvNo:1 Address:https://apitestrema.management.azure-api.net/apis/58db9f1e3e1bff781d5d9c3a?api-version=2016-07-07EnvNo:2 Address:https://apitestrema.management.azure-api.net/apis/58db9f1e3e1bff781d5d9c3a?api-version=2016-07-07
+Log Verbose: 0 : Config: Prop: ApiServices[14].Name Val: Mdm.Api v2
+Log Verbose: 0 : Config: Prop: ApiServices[14].Type Val: Swagger
+Log Verbose: 0 : Config: Prop: ApiServices[14].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[14].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[14].Type Val: OAuthApp
+Log Verbose: 0 : Config: Prop: ApiServices[14].Resource Val: https://services.rema.no/mdm/api
+Log Verbose: 0 : Config: Prop: ApiServices[14].AuthenticationEndpoint Val: https://login.microsoftonline.com/bbf77a8f-7fa8-45a0-81db-7ad345a349c0/oauth2/token
+Log Verbose: 0 : Config: Prop: ApiServices[14].ClientId Val: 52204e45-f57c-4ea8-8db3-ab686307e847
+Log Verbose: 0 : Config: Prop: ApiServices[14].ClientSecret Val-Length: 44
+Log Verbose: 0 : Config: Prop: ApiServices[14].Environments Val: EnvNo:0 Address:https://services-test.rema.no/mdm/api/v2/swagger/v2/swagger.jsonEnvNo:1 Address:https://services-test.rema.no/mdm/api/v2/swagger/v2/swagger.jsonEnvNo:2 Address:https://services.rema.no/mdm/api/v2/swagger/v2/swagger.json
+Log Verbose: 0 : Config: Prop: ApiServices[15].Name Val: Sp.Api
+Log Verbose: 0 : Config: Prop: ApiServices[15].Type Val: Swagger
+Log Verbose: 0 : Config: Prop: ApiServices[15].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[15].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[15].Type Val: OAuthApp
+Log Verbose: 0 : Config: Prop: ApiServices[15].Resource Val: https://services.rema.no/mdm/api
+Log Verbose: 0 : Config: Prop: ApiServices[15].AuthenticationEndpoint Val: https://login.microsoftonline.com/bbf77a8f-7fa8-45a0-81db-7ad345a349c0/oauth2/token
+Log Verbose: 0 : Config: Prop: ApiServices[15].ClientId Val: 52204e45-f57c-4ea8-8db3-ab686307e847
+Log Verbose: 0 : Config: Prop: ApiServices[15].ClientSecret Val-Length: 44
+Log Verbose: 0 : Config: Prop: ApiServices[15].Environments Val: EnvNo:0 Address:http://reitancsdev001/sp/api/v1/swagger/docs/v1EnvNo:1 Address:https://services-test.rema.no/sp/api/v1/swagger/docs/v1EnvNo:2 Address:https://services.rema.no/sp/api/v1/swagger/docs/v1
+Log Verbose: 0 : Config: Prop: ApiServices[16].Name Val: Sp.Api v2
+Log Verbose: 0 : Config: Prop: ApiServices[16].Type Val: Swagger
+Log Verbose: 0 : Config: Prop: ApiServices[16].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[16].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[16].Type Val: OAuthApp
+Log Verbose: 0 : Config: Prop: ApiServices[16].Resource Val: https://services.rema.no/mdm/api
+Log Verbose: 0 : Config: Prop: ApiServices[16].AuthenticationEndpoint Val: https://login.microsoftonline.com/bbf77a8f-7fa8-45a0-81db-7ad345a349c0/oauth2/token
+Log Verbose: 0 : Config: Prop: ApiServices[16].ClientId Val: 52204e45-f57c-4ea8-8db3-ab686307e847
+Log Verbose: 0 : Config: Prop: ApiServices[16].ClientSecret Val-Length: 44
+Log Verbose: 0 : Config: Prop: ApiServices[16].Environments Val: EnvNo:0 Address:https://services-test.rema.no/sp/api/v2/swagger/v2/swagger.jsonEnvNo:1 Address:https://services-test.rema.no/sp/api/v2/swagger/v2/swagger.jsonEnvNo:2 Address:https://services.rema.no/sp/api/v2/swagger/v2/swagger.json
+Log Verbose: 0 : Config: Prop: ApiServices[17].Name Val: Graph.Api v2
+Log Verbose: 0 : Config: Prop: ApiServices[17].Type Val: Swagger
+Log Verbose: 0 : Config: Prop: ApiServices[17].Pwd Val-Length: 
+Log Verbose: 0 : Config: Prop: ApiServices[17].Username Val: 
+Log Verbose: 0 : Config: Prop: ApiServices[17].Type Val: OAuthApp
+Log Verbose: 0 : Config: Prop: ApiServices[17].Resource Val: https://services.rema.no/mdm/api
+Log Verbose: 0 : Config: Prop: ApiServices[17].AuthenticationEndpoint Val: https://login.microsoftonline.com/bbf77a8f-7fa8-45a0-81db-7ad345a349c0/oauth2/token
+Log Verbose: 0 : Config: Prop: ApiServices[17].ClientId Val: 52204e45-f57c-4ea8-8db3-ab686307e847
+Log Verbose: 0 : Config: Prop: ApiServices[17].ClientSecret Val-Length: 44
+Log Verbose: 0 : Config: Prop: ApiServices[17].Environments Val: EnvNo:0 Address:https://services-test.rema.no/graph/api/v2/swagger/v2/swagger.jsonEnvNo:1 Address:https://services-test.rema.no/graph/api/v2/swagger/v2/swagger.jsonEnvNo:2 Address:https://services.rema.no/graph/api/v2/swagger/v2/swagger.json
+Log Verbose: 0 : Config: Prop: Databases[0].Name Val: MDM_Cache
+Log Verbose: 0 : Config: Prop: Databases[0].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Cache;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[1].Name Val: MDM_CodeAndRule
+Log Verbose: 0 : Config: Prop: Databases[1].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_CodeAndRule;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[2].Name Val: MDM_Data
+Log Verbose: 0 : Config: Prop: Databases[2].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Data;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[3].Name Val: MDM_Engine
+Log Verbose: 0 : Config: Prop: Databases[3].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Engine;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[4].Name Val: MDM_Integration
+Log Verbose: 0 : Config: Prop: Databases[4].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Integration;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[5].Name Val: MDM_Log
+Log Verbose: 0 : Config: Prop: Databases[5].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Log;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[6].Name Val: MDM_Master
+Log Verbose: 0 : Config: Prop: Databases[6].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Master;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[7].Name Val: MDM_Reporting
+Log Verbose: 0 : Config: Prop: Databases[7].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Reporting;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[8].Name Val: MDM_Stage
+Log Verbose: 0 : Config: Prop: Databases[8].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Stage;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[9].Name Val: MDM_Wage
+Log Verbose: 0 : Config: Prop: Databases[9].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=MDM_Wage;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[10].Name Val: SP_Data
+Log Verbose: 0 : Config: Prop: Databases[10].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=SP_Data;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: Databases[11].Name Val: SP_Log
+Log Verbose: 0 : Config: Prop: Databases[11].Environments Val: EnvNo:2 Address:Server=REITANCSDEV001;Database=SP_Log;integrated security=True;User Id=remadoc;Password=Heisann7;
+Log Verbose: 0 : Config: Prop: WebJobs[0].Name Val: Visma.StoreBox.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[0].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[0].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[0].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[0].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[0].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.Storebox.PoslogEnvNo:1 Address:$/REMA1000/ESB/Test/Source/Esb.Poslog.Webjobs/Visma.Storebox.PoslogEnvNo:2 Address:$/REMA1000/ESB/Production/Source/Esb.Poslog.Webjobs/Visma.Storebox.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[1].Name Val: Visma.StoreBox.Poslog.Retry
+Log Verbose: 0 : Config: Prop: WebJobs[1].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[1].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[1].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[1].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[1].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.Storebox.Poslog.RetryEnvNo:1 Address:$/REMA1000/ESB/Test/Source/Esb.Poslog.Webjobs/Visma.Storebox.Poslog.RetryEnvNo:2 Address:$/REMA1000/ESB/Production/Source/Esb.Poslog.Webjobs/Visma.Storebox.Poslog.Retry
+Log Verbose: 0 : Config: Prop: WebJobs[2].Name Val: Visma.TradeSolution.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[2].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[2].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[2].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[2].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[2].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.TradeSolution.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[3].Name Val: Visma.TradeSolution.Poslog.Retry
+Log Verbose: 0 : Config: Prop: WebJobs[3].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[3].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[3].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[3].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[3].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.TradeSolution.Poslog.Retry
+Log Verbose: 0 : Config: Prop: WebJobs[4].Name Val: Visma.ConsumerCouncil.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[4].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[4].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[4].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[4].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[4].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.ConsumerCouncil.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[5].Name Val: Visma.ConsumerCouncil.Poslog.Retry
+Log Verbose: 0 : Config: Prop: WebJobs[5].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[5].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[5].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[5].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[5].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.ConsumerCouncil.Poslog.Retry
+Log Verbose: 0 : Config: Prop: WebJobs[6].Name Val: Visma.Audit.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[6].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[6].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[6].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[6].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[6].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.Audit.PoslogEnvNo:1 Address:$/REMA1000/ESB/Test/Source/Esb.Poslog.Webjobs/Visma.Audit.PoslogEnvNo:2 Address:$/REMA1000/ESB/Production/Source/Esb.Poslog.Webjobs/Visma.Audit.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[7].Name Val: Mdm.Facebook.Worker
+Log Verbose: 0 : Config: Prop: WebJobs[7].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[7].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[7].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[7].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[7].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.FacebookAtWork.Webjobs/Mdm.Facebook.Worker
+Log Verbose: 0 : Config: Prop: WebJobs[8].Name Val: Blaa.Facebook.Gjennomforinger
+Log Verbose: 0 : Config: Prop: WebJobs[8].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[8].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[8].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[8].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[8].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.FacebookAtWork.Webjobs/Blaa.Facebook.Gjennomforinger
+Log Verbose: 0 : Config: Prop: WebJobs[9].Name Val: Blaa.Facebook.Driftsmeldinger
+Log Verbose: 0 : Config: Prop: WebJobs[9].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[9].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[9].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[9].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[9].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.FacebookAtWork.Webjobs/Blaa.Facebook.Driftsmeldinger
+Log Verbose: 0 : Config: Prop: WebJobs[10].Name Val: Smarts.Facebook.GroupMembership
+Log Verbose: 0 : Config: Prop: WebJobs[10].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[10].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[10].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[10].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[10].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.FacebookAtWork.Webjobs/Smarts.Facebook.GroupMembership
+Log Verbose: 0 : Config: Prop: WebJobs[11].Name Val: Visma.Lis.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[11].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[11].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[11].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[11].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[11].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.Lis.PoslogEnvNo:1 Address:$/REMA1000/ESB/Test/Source/Esb.Poslog.Webjobs/Visma.Lis.PoslogEnvNo:2 Address:$/REMA1000/ESB/Production/Source/Esb.Poslog.Webjobs/Visma.Lis.Poslog
+Log Verbose: 0 : Config: Prop: WebJobs[12].Name Val: Visma.Lis.Poslog.Retry
+Log Verbose: 0 : Config: Prop: WebJobs[12].Pwd Val-Length: 7
+Log Verbose: 0 : Config: Prop: WebJobs[12].Type Val: TFS
+Log Verbose: 0 : Config: Prop: WebJobs[12].User Val: jonas.moltzau
+Log Verbose: 0 : Config: Prop: WebJobs[12].TfsUri Val: https://rema.visualstudio.com:443/
+Log Verbose: 0 : Config: Prop: WebJobs[12].Environments Val: EnvNo:0 Address:$/REMA1000/ESB/Main/Source/Esb.Poslog.Webjobs/Visma.Lis.Poslog.RetryEnvNo:1 Address:$/REMA1000/ESB/Test/Source/Esb.Poslog.Webjobs/Visma.Lis.Poslog.RetryEnvNo:2 Address:$/REMA1000/ESB/Production/Source/Esb.Poslog.Webjobs/Visma.Lis.Poslog.Retry
+Log Information: 1 : Configuration validated OK!

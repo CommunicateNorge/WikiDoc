@@ -1,0 +1,21 @@
+<h3>Version 1.1.0</h3>
+
+<h4>Changed</h4>
+<p>5377 - Implemented GUI for search</p>
+<p>5335 - Search set up, is now fully functional with optimizations</p>
+<p>9120 - Changed search to only show 15 results, pagination in the works</p>
+<p>5318 - Implemented table operations in search indexer</p>
+<p>5209 - Changed client Id and secret to Remas sharepoint</p>
+<p>5477 - Restricted "make new page" to only allow supported formats</p>
+<p>5477 - Restricted access to versioning and edit from versioned sites and pure manual sites</p>
+<p>5486	- Fixed search to only show full pages in links</p>
+
+<h4>Added</h4>
+<p>5395 - Added search parsing</p>
+<p>5390 - Added yellow text to search words and scrolling</p>
+<p>5386 - Added sorting by relevance to Search Items</p>
+<p>5333 - Added result class</p
+<p>5464 - Added versioning and new history view</p>
+<p>5464 - Added rollback functionality</p>
+
+<h4>Removed</h4>

@@ -1,0 +1,41 @@
+<li class="list-group-item">
+        <a class="linkHeader mainHeader" href="#" id="projectHeader">Projects</a>
+	<ul class="projectInternalLinks manualLinkTree">
+		<li><a href="/Wiki/Page/Manual£Project£ProjectA">Project A</a></li>
+	</ul>
+	</li>
+	<li class="list-group-item"><a class="linkHeader mainHeader" href="#" id="externalHeader">External Services</a>
+	<ul class="projectInternalLinks manualLinkTree">
+		<li><a href="/Wiki/Page/Manual£External£CompanyA">Company A</a></li>
+		<li><a href="/Wiki/Page/Manual£External£CompanyB">Company B</a></li>
+	</ul>
+	</li>
+	<li class="list-group-item"><a class="linkHeader mainHeader" href="#" id="servicesHeader">Services</a>
+	<ul class="projectInternalLinks manualLinkTree">
+		<li><a href="/Wiki/Page/Manual£Service£My€Api">My Api</a></li>
+	<li><a href="/Wiki/Page/Manual£Service£Wiki">Documentation Wiki</a></li></ul>
+	</li>
+	<li class="list-group-item"><a class="linkHeader mainHeader" href="#" id="ArchitectureHeader">Architecture</a>
+	<ul class="projectInternalLinks manualLinkTree">
+		<li><a href="/Wiki/Page/Manual£TechnicalArchitecture">Technical Architecture</a></li>
+	</ul>
+	</li>
+	<li class="list-group-item"><a class="linkHeader mainHeader" href="#" id="DeliveriesHeader">Deliveries</a>
+	<ul class="projectInternalLinks manualLinkTree">
+		<li><a href="/Wiki/Page/Manual£Deliveries">Deliveries</a></li>
+		<li><a href="/Wiki/Page/Manual£PlannedIntegrations">Planned Integrations</a></li>
+	</ul>
+	</li>
+	<li class="list-group-item"><a class="linkHeader mainHeader" href="#" id="buildNDeployHeader">Routines</a>
+	<ul class="projectInternalLinks manualLinkTree">
+		<li><a href="/Wiki/Page/Manual£Routines">Deploy - manual routines</a></li>
+		<li><a href="/Wiki/Page/Manual£ReleaseManagement">Release Management</a></li>
+		<li><a href="/Wiki/Page/Manual£Manual£Handoveroperations">Handover Operations</a></li>
+	</ul>
+	</li>
+	<li class="list-group-item"><a class="linkHeader mainHeader" href="#" id="supportHeader">Support</a>
+	<ul class="projectInternalLinks manualLinkTree">
+		<li><a href="/Wiki/Page/Manual£Support€FAQ€MDM">Communicate support FAQ</a></li>
+		<li><a href="/Wiki/Page/Manual£support£monitorering">Monitoring and Logging</a></li>
+	</ul>
+	</li>

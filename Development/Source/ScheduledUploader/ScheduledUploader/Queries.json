@@ -1,0 +1,68 @@
+{
+  "Queries": [
+    {
+      "Query": "SELECT Id, Text, Title, Description, ContractTextElementTypeId, ContractTextElementOrdering FROM [MDM_CodeAndRule].[dbo].[ContractTextElement]",
+      "ConnectionName": "Mdm_Engine",
+      "BlobName": "ContractTextElement"
+    },
+    {
+      "Query": "SELECT JobTypeID, JobTypeName, Modified FROM [MDM_Cache].[DataModel].[JobType]",
+      "ConnectionName": "MDM_Cache",
+      "BlobName": "JobTypesList"
+    },
+    {
+      "Query": "SELECT [DataEntityID], [DataEntityName], [FromApplication], [Description] FROM [MDM_Engine].[engine].[tblDataEntity] order by DataEntityID",
+      "ConnectionName": "Mdm_Engine",
+      "BlobName": "DataEntityList"
+    },
+    {
+      "Query": "SELECT [PrivilegeID],[SystemID],[SystemName],[OperationID],[OperationName],[ObjectTypeID],[ObjectTypeName],[ObjectTypeValue] FROM [MDM_Integration].[Graph].[vwPrivilege]",
+      "ConnectionName": "MDM_Integration",
+      "BlobName": "PrivilegeList"
+    },
+    {
+      "Query": "SELECT [RoleID],[SystemName],[SystemID],[PrivilegeID],[OperationName],[OperationID],[ObjectTypeID],[ObjectTypeName],[ObjectTypeValue] FROM [MDM_Integration].[Graph].[vwRolePrivilege]",
+      "ConnectionName": "MDM_Integration",
+      "BlobName": "RolePrivilegeList"
+    },
+   {
+      "Query": "SELECT [DataControlSetTypeId],[DataControlSetTypeName] FROM [MDM_Integration].[Service].[vwDataControlSetTypes]",
+      "ConnectionName": "MDM_Integration",
+      "BlobName": "DataControlSetTypes"
+    },
+   {
+      "Query": "SELECT [PayGradeID],[Description],[HourlyWage],[MonthlyWage],[ValidFrom],[ValidTo],[EngineTransactionID],[EngineDataEntityID],[Modified],[UbwScaleId],[CodeTypeID] FROM [MDM_Cache].[DataModel].[PayGrade]",
+      "ConnectionName": "MDM_Cache"
+      "BlobName": "PayGrades"
+    },
+   {
+      "Query": "SELECT [Id],[PeriodStart],[PeriodEnd],[PeriodMonth],[DeadlineDelayedWage],[MainFileGeneration],[MainWageFileCreated],[MainWageFileCreatedTimeStamp] FROM [MDM_Wage].[dbo].[WagePeriod]",
+      "ConnectionName": "MDM_Wage"
+      "BlobName": "WageFileGeneration"
+    },
+  {
+      "Query": "SELECT [SystemID],[SystemName] FROM [MDM_Integration].[Service].[vwSystem]",
+      "ConnectionName": "MDM_Integration",
+      "BlobName": "System"
+    }
+  ],
+
+  "ConnectionStrings": [
+    {
+      "Connection": "data source=Z52OS2CS7CN1\\A135151;initial catalog=MDM_CodeAndRule;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;",
+      "Name": "Mdm_Engine"
+    },
+    {
+      "Connection": "data source=Z52OS2CS7CN1\\A135151;initial catalog=MDM_Integration;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;",
+      "Name": "MDM_Integration"
+    },
+    {
+      "Connection": "data source=Z52OS2CS7CN1\\A135151;initial catalog=MDM_Wage;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;",
+      "Name": "MDM_Wage"
+    },
+    {
+      "Connection": "data source=Z52OS2CS7CN1\\A135151;initial catalog=MDM_Cache;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;",
+      "Name": "MDM_Cache"
+    }
+  ]
+}

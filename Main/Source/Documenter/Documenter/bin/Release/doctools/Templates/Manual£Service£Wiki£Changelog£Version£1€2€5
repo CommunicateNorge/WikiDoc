@@ -1,0 +1,27 @@
+<h3>Version 1.2.5</h3>
+
+<h4>Changed</h4>
+
+<p>8727&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;5/11/2016 3:43:28 PM&nbsp;&nbsp; &nbsp;Changed bannertext and image to be more generic<br />
+8725&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;5/11/2016 3:23:33 PM&nbsp;&nbsp; &nbsp;Reworked new page to use modal and be more restrictive.<br />
+8609&nbsp;&nbsp; &nbsp;Martin Wits&oslash; L&oslash;kkeberg&nbsp;&nbsp; &nbsp;5/6/2016 10:49:17 PM&nbsp;&nbsp; &nbsp;Renamed profile page<br />
+8587&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;5/6/2016 12:28:06 PM&nbsp;&nbsp; &nbsp;Fixed css tags on Sandcatsle page<br />
+8578&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;5/6/2016 9:56:11 AM&nbsp;&nbsp; &nbsp;Refactored WikiController to use HtmlGenerator class for all generation of HTML<br />
+8572&nbsp;&nbsp; &nbsp;Martin Wits&oslash; L&oslash;kkeberg&nbsp;&nbsp; &nbsp;5/6/2016 2:07:16 AM&nbsp;&nbsp; &nbsp;Tons of refactoring, &quot;Page&quot; among others<br />
+8392&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;4/27/2016 3:45:53 PM&nbsp;&nbsp; &nbsp;Fixed css bug on edit page for screens under 1800 width<br />
+8377&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;4/27/2016 12:40:46 PM&nbsp;&nbsp; &nbsp;Enabled editing on API pages</p>
+
+<h4>Added</h4>
+
+<p>8722&nbsp;&nbsp; &nbsp;Martin Wits&oslash; L&oslash;kkeberg&nbsp;&nbsp; &nbsp;5/11/2016 1:59:51 PM&nbsp;&nbsp; &nbsp;Sandcastle support<br />
+8569&nbsp;&nbsp; &nbsp;Martin Wits&oslash; L&oslash;kkeberg&nbsp;&nbsp; &nbsp;5/5/2016 12:16:34 AM&nbsp;&nbsp; &nbsp;Added profile page<br />
+8565&nbsp;&nbsp; &nbsp;Martin Wits&oslash; L&oslash;kkeberg&nbsp;&nbsp; &nbsp;5/4/2016 7:20:27 PM&nbsp;&nbsp; &nbsp;Added diff view and functionality and&nbsp;SandCastle css.<br />
+8531&nbsp;&nbsp; &nbsp;Martin Wits&oslash; L&oslash;kkeberg&nbsp;&nbsp; &nbsp;5/3/2016 10:45:19 PM &nbsp; &nbsp;Added sandcastle parsing<br />
+8490&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;5/2/2016 2:11:46 PM&nbsp;&nbsp; &nbsp;Added draw.io graph library<br />
+8476&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;5/2/2016 9:38:44 AM&nbsp;&nbsp; &nbsp;Added page for all TFS logs<br />
+8431&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;4/28/2016 2:29:28 PM&nbsp;&nbsp; &nbsp;Added TFS log view, also fixed images for orchestrations temporarily, this should be bettered<br />
+8419&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;4/28/2016 12:20:30 PM&nbsp;&nbsp; &nbsp;Added draggable to index thumbnails</p>
+
+<h4>Removed</h4>
+
+<p>8489&nbsp;&nbsp; &nbsp;Jonas Moltzau&nbsp;&nbsp; &nbsp;5/2/2016 1:55:45 PM&nbsp;&nbsp; &nbsp;Removed markitup references</p>

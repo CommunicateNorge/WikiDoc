@@ -1,0 +1,77 @@
+<h2>Service Name</h2>
+<p><strong>Project affiliation: </strong>Some project</p>
+<p>Short description of service</p>
+
+<h3>Services/Applications using this Service</h3>
+
+<h4>Internal usage</h4>
+<p><a href="/Wiki/Page/Integration£PartnerA€PartnerB">Integration 1</a></p>
+<p><a href="/Wiki/Page/Manual£">Service 2</a></p>
+
+<h3>Related processes/projects</h3>
+<p><a href="https://reitan.sharepoint.com/oversikten/BizzDesign/views/view_3.html">RNxx Example link to Oversikten</a></p>
+<p><a href="/Wiki/Page/somepage">Example nightly job that uses this integration</a></p>
+
+<h4>External usage</h4>
+<p><a href="#">Parter 1</a></p>
+<p><a href="#">Partner 2</a></p>
+<p><a href="#">Partner n</a></p>
+
+<h3>Hosting/Servers</h3>
+<p><a href="#">Server A (maintained by Rema 1000)</a></p>
+<p><a href="#">Server U (maintained by Communicate AS)</a></p>
+
+<h3>Components</h3>
+<p><a href="#">Integration PartnerA.PartnerB</a></p>
+<p><a href="#">Integration PartnerX.PartnerZ</a></p>
+
+<h3>SLA</h3>
+<p><a href="/Wiki/Page/Manual£SLA£Generic€Project">SLA-document for project XY</a></p>
+<p><a href="/Wiki/Page/Manual£SLA£General">General SLA-document</a></p>
+
+<h3>Release management</h3>
+<p><strong>Where is the source code?:</strong> somepage.visualstudio.com/tfs/DefaultCollection/Project</p>
+<p><strong>How do you build?:</strong> <a href="#">Link to build step-by-step</a></p>
+<p><strong>How do you deploy?:</strong> <a href="#">Link to deploy step-by-step</a></p>
+<p><strong>Development guidelines:</strong> <a href="#">Link to development guidelines</a></p>
+
+<h3>To do</h3>
+<p class="NBText">More information is needed on this section</p>
+<ol>
+<li>First priority, add stuff to index</li>
+<li>Second priority, add gremlins to file</li>
+<li>Third priority, change authentication to allow for burglars</li>
+</ol>
+
+<h3>Relevant documents</h3>
+<p><a href="#">Some document/page relevant to this integration</a></p>
+
+
+<h3>Changelog</h3>
+<table class="simpleTable ">
+<tr>
+     <th>Date:</th>
+     <th>Version:</th>
+     <th>Comment:</th>
+</tr>
+<tr>
+     <td>18.01.2016</td>
+     <td><a href="/Wiki/Page/Manual£Service£ServiceName£Changelog£Version£1€0€0">Versjon 1.0.0</a></td>
+     <td>Initial version</td>
+</tr>
+<tr>
+     <td>03.02.2016</td>
+     <td><a href="/Wiki/Page/Manual£Service£ServiceName£Changelog£Version£1€0€1">Versjon 1.1.0</a></td>
+     <td>Added some awesomeness to fix issue 82142</td>
+</tr>
+<tr>
+     <td>08.02.2016</td>
+     <td><a href="/Wiki/Page/Manual£Service£ServiceName£Changelog£Version£1€1€1">Versjon 1.1.1</a></td>
+     <td></td>
+</tr>
+<tr>
+     <td>15.02.2016</td>
+     <td><a href="/Wiki/Page/Manual£Service£ServiceName£Changelog£Version£1€2€0">Versjon 1.2.0</a></td>
+     <td>Added big functionality XYZ</td>
+</tr>
+<table>

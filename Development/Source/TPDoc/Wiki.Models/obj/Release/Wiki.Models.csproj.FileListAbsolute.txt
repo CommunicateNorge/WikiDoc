@@ -1,0 +1,10 @@
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Wiki.Models.dll
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Wiki.Models.pdb
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Newtonsoft.Json.dll
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\bin\Release\Newtonsoft.Json.xml
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\obj\Release\Wiki.Models.dll
+C:\WikiDoc\Development\Source\TPDoc\Wiki.Models\obj\Release\Wiki.Models.pdb
