@@ -1,0 +1,45 @@
+﻿{
+  "Name": "BD-Documentation",
+  "PrimaryAzureStorage": "DefaultEndpointsProtocol=https;AccountName=wikidocbdprimary;AccountKey=Ia84uUOBwFLVVA+Db8qXbKBabLcNKigFRykThcfDJngtd2kMi10wXlIxTOabaV2XmSIJ5gCrd8Cj2P3H+vOuLQ==",
+  "SecondaryAzureStorage": "DefaultEndpointsProtocol=https;AccountName=wikidocbdback;AccountKey=aqLbIPLS6l/w/Wzrksd9pGHGRUmtJDXLppF10p0saoI/zcKvWguz57qq+iup5nPfF4ZoVv8YuakyVYYMjmoZMw==",
+  "PrimaryAzureStorageContainerName": "main",
+  "PrimaryAzureStorageTableIndex": "index",
+  "PrimaryAzureStorageTableAudit": "audit",
+  "SecondaryAzureStorageContainerName": "main",
+  "TfsCacheDurationMin": 1440,
+  "EnvironmentInfo": [
+    {
+      "Name": "Main",
+      "Container": "main"
+    },
+    {
+      "Name": "Prod",
+      "Container": "production"
+    }
+  ],
+  "BizTalk": [
+    {
+      "Name": "BizTalk",
+      "Type": "TFS",
+      "User": "CNOT6004387",
+      "Domain": "ZF",
+      "Pwd": "Jabbathehut2",
+      "TfsUri": "https://cnosvno0279ap46.zf.if.atcsg.net:443/",
+      "Environments": [
+        {
+          "EnvNo": 1,
+          "Address": "$/IPB/Prod"
+        }
+      ],
+      "IgnoreApps": [
+        "BD.IPB.eKanaler",
+        "BizTalk Application 1",
+        "BizTalk.System",
+        "BizTalkBuildTools",
+        "BuildScripts"
+      ]
+    }
+  ],
+  "ApiServices": [ ],
+  "Databases": [ ]
+}

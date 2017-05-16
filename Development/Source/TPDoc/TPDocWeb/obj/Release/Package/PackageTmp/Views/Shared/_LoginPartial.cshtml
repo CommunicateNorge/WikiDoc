@@ -1,8 +1,0 @@
-﻿@if (Request.IsAuthenticated)
-{
-    <span class="navbar-text rightMenuText helloText">Hello, <a href="/Wiki/UserProfile">@User.Identity.Name</a>!</span>
-}
-else
-{
-    <span class="navbar-text rightMenuText">Hello!</span>
-}

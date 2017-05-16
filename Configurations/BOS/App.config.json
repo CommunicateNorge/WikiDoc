@@ -1,0 +1,68 @@
+﻿{
+  "Name": "BOS-Documentation",
+  "PrimaryAzureStorage": "DefaultEndpointsProtocol=https;AccountName=wikidocbos;AccountKey=WwPn+rEnNNdV5vbrGapsVEZ1KVKqpUM0i2p1c3L/YWOQ2QVTtRJVVWGZ0NAPUmS2BMxhdwlieBi41hHkcZD7Ig==",
+  "SecondaryAzureStorage": "DefaultEndpointsProtocol=https;AccountName=wikidocbosbackup;AccountKey=6zcWg6GYjkr86mzfF4qa6XAVbiFkoD1J9yUn8aGXBCbqOigsIOWPWQ2BHSMoUDyKF8zf3Qmu3JZqbRzzyu81zg==",
+  "PrimaryAzureStorageContainerName": "main",
+  "PrimaryAzureStorageTableIndex": "index",
+  "PrimaryAzureStorageTableAudit": "audit",
+  "SecondaryAzureStorageContainerName": "main",
+  "TfsCacheDurationMin": 1440,
+  "EnvironmentInfo": [
+    {
+      "Name": "Main",
+      "Container": "main"
+    },
+    {
+      "Name": "Test",
+      "Container": "test"
+    },
+    {
+      "Name": "Production",
+      "Container": "production"
+    }
+  ],
+  "BizTalk": [
+    {
+      "Name": "BizTalk",
+      "Type": "TFS",
+      "User": "kjhano",
+      "Domain": "outlook.com",
+      "Pwd": "Nak1dans!",
+      "TfsUri": "https://bertelosteen.visualstudio.com:443/",
+      "Environments": [
+        {
+          "EnvNo": 0,
+          "Address": "$/BOSAPI/Main/BizTalk"
+        },
+        {
+          "EnvNo": 1,
+          "Address": "$/BOSAPI/Main/BizTalk"
+        },
+        {
+          "EnvNo": 2,
+          "Address": "$/BOSAPI/Main/BizTalk"
+        }
+      ],
+      "IgnoreApps": [
+        "BizTalk Application 1",
+        "BizTalk.System",
+        "BizTalkBuildTools"
+      ]
+    }
+  ],
+  "ApiServices": [
+        {
+      "Name": "Bos.Api2",
+      "Type": "Swagger",
+      "Username": "asd",
+      "Pwd": "asd",
+      "Environments": [
+        {
+          "EnvNo": 1,
+          "Address": "https://prbaapim.azure-api.net/devtest/api/swaggerdef?Subscription-Key=111be54bf4a147ddbf77e968778fb01e"
+        }
+      ]
+    }
+  ],
+  "Databases": [ ]
+}

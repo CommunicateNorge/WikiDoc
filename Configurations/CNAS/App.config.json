@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Communicate Demo",
+  "PrimaryAzureStorage": "DefaultEndpointsProtocol=https;AccountName=wikdoccnas;AccountKey=mt8tuq+LCy6T0+Q0aRjN0GXkY3au5VZ1cXDKCsvpGVOcwkP9Sj0CtnC2Slhx4UIfERS3sU5LP31H736nGgogrg==",
+  "SecondaryAzureStorage": "DefaultEndpointsProtocol=https;AccountName=wikidoccnasbackup;AccountKey=FbDVZMgDWDZpgojLGYchggAB2wt1OpS/KmaT7uWZ415DZAbULnk2EnzSsclkmjVVv+XHLusYrnsHS7JVRSlPpg==",
+  "PrimaryAzureStorageContainerName": "main",
+  "PrimaryAzureStorageTableIndex": "index",
+  "PrimaryAzureStorageTableAudit": "audit",
+  "SecondaryAzureStorageContainerName": "main",
+  "TfsCacheDurationMin": 1440,
+  "EnvironmentInfo": [
+    {
+      "Name": "Main",
+      "Container": "main"
+    }
+  ]
+}
