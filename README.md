@@ -9,7 +9,7 @@ We are currently updating the readme and documentation for the project and ironi
 
 The main documentation will be contained within WikiDoc itself at some point. For now onjoy this diagram that explains how the project functions in broad strokes:
 
-![alt text](http://imgur.com/a/vZD1t "Diagram WikiDoc")
+![alt text](http://i.imgur.com/DLZcDMS.png "Diagram WikiDoc")
 
 ## Getting started
 
