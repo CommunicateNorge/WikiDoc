@@ -2,12 +2,12 @@
 
 This is WikiDoc, a documentation framework for IT-Solutions. We had the basic idea to make a targeted Wiki solution to automaticly and manually docuement individual components and procedures in a unified way on one single web-site. 
 
-##Disclaimer
+## Disclaimer
 We are currently updating the readme for the project and ironing out the set up process. If you want to download the source now i wont't stop you but be prepared to make it work on your own. Hopefully a full setup guide will be up and running pretty soon.  
 
 ## Getting started
 
-###Config file
+### Config file
 Firstly you need to clone the repo and start it in Visual Studio. The solution will probably not run off the bat as you need a configuration file. You can use this sample configuration file to get started:
 
 ```{
