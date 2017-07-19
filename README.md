@@ -22,9 +22,73 @@ Depending on the size of the project, if it is small and simple enough the refer
 
 Describe and show how to run the tests with code examples.
 
-## Contributors
+## Sample Config File
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+```{
+  "Name": "Demo",
+  "PrimaryAzureStorage": "**",
+  "SecondaryAzureStorage": "**",
+  "PrimaryAzureStorageContainerName": "main",
+  "PrimaryAzureStorageTableIndex": "index",
+  "PrimaryAzureStorageTableAudit": "audit",
+  "SecondaryAzureStorageContainerName": "main",
+  "TfsCacheDurationMin": 1440,
+  "EnvironmentInfo": [
+    {
+      "Name": "Main",
+      "Container": "main"
+    },
+    {
+      "Name": "Test",
+      "Container": "test"
+    },
+    {
+      "Name": "Production",
+      "Container": "production"
+    }
+  ],
+  "BizTalk": [
+    {
+      "Name": "BizTalk",
+      "Type": "TFS",
+      "User": null,
+      "Domain": "test.com",
+      "Pwd": null,
+      "TfsUri": "",
+      "Environments": [
+        {
+          "EnvNo": 0,
+          "Address": ""
+        },
+        {
+          "EnvNo": 1,
+          "Address": ""
+        },
+        {
+          "EnvNo": 2,
+          "Address": ""
+        }
+      ],
+      "IgnoreApps": []
+    }
+  ],
+  "ApiServices": [
+    {
+      "Name": "Petstore",
+      "Type": "Swagger",
+      "Authentication": {
+        "Type": "None"
+      },
+      "Environments": [
+        {
+          "EnvNo": 1,
+          "Address": "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/json/petstore.json"
+        }
+      ]
+    }
+  ],
+  "Databases": [ ]
+}```
 
 ## License
 
