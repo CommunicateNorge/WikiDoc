@@ -3,7 +3,13 @@
 This is WikiDoc, a documentation framework for IT-Solutions. We had the basic idea to make a targeted Wiki solution to automaticly and manually docuement individual components and procedures in a unified way on one single web-site. 
 
 ## Disclaimer
-We are currently updating the readme for the project and ironing out the set up process. If you want to download the source now i wont't stop you but be prepared to make it work on your own. Hopefully a full setup guide will be up and running pretty soon.  
+We are currently updating the readme and documentation for the project and ironing out the set up process. If you want to download the source now i wont't stop you but be prepared to make it work on your own. Hopefully a full setup guide and documentation will be up and running pretty soon.  
+
+## Documentation
+
+The main documentation will be contained within WikiDoc itself at some point. For now onjoy this diagram that explains how the project functions in broad strokes:
+
+![alt text](http://imgur.com/a/vZD1t "Diagram WikiDoc")
 
 ## Getting started
 
