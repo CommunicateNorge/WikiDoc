@@ -2,6 +2,8 @@
 
 This is WikiDoc, a documentation framework for IT-Solutions. We had the basic idea to make a targeted Wiki solution to automaticly and manually docuement individual components and procedures in a unified way on one single web-site. 
 
+The project came about while working for Communicate Norge AS and is developed in full by Jonas Moltzau and Martin Witsø Løkkeberg. 
+
 ## Disclaimer
 We are currently updating the readme and documentation for the project and ironing out the set up process. If you want to download the source now i wont't stop you but be prepared to make it work on your own. Hopefully a full setup guide and documentation will be up and running pretty soon.  
 
