@@ -1,6 +1,6 @@
 ## WikiDoc
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+This is WikiDoc, a documentation framework for IT-Solutions. We had the basic idea to make a targeted Wiki solution to automaticly and manually docuement individual components and procedures in a unified way on one single web-site. 
 
 ## Code Example
 

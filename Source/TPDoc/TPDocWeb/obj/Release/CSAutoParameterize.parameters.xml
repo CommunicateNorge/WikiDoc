@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="SecondaryAzureStorage-Web.config Connection String" description="SecondaryAzureStorage Connection String used in web.config by the application to access the database." defaultValue="DefaultEndpointsProtocol=https;AccountName=docublob;AccountKey=sbWj2fyq8t16kXl5dwzsl1X2Px6zhZMut3LzyQVEuwYgm2CM9Fg4pgabE66qm8pWJ7cxXxV9FkYj9AVtqRanDw==" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\WikiDoc\\Development\\Source\\TPDoc\\TPDocWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SecondaryAzureStorage']/@connectionString" />
-  </parameter>
-  <parameter name="PrimaryAzureStorage-Web.config Connection String" description="PrimaryAzureStorage Connection String used in web.config by the application to access the database." defaultValue="DefaultEndpointsProtocol=https;AccountName=remastorage;AccountKey=B8JeVc4aFYkqLTW80SuZqLXxH613s4yYys+TAfVsuEJL0f6xfy11eXiddRXMTLss31AujEoRpeoPEW62bOJ0yg==" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\WikiDoc\\Development\\Source\\TPDoc\\TPDocWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PrimaryAzureStorage']/@connectionString" />
-  </parameter>
-</parameters>
